@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商库",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "uni-pop": "/components/uniPop"
+  }
+}

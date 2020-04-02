@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商圈券",
+  "usingComponents": {
+    "coupon-item": "/components/coupon-item"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="{{['goods-item',noMargin&&'no-margion']}}"><image class="img" src></image><view class="title clamp">麻辣小龙虾发哈哈书法课和饭卡饭卡</view><view class="bottom"><view class="price">¥59.00</view><view class="default">¥99.00</view><image class="add-icon"></image></view></view>

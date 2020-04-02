@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.collection {
+  padding: 185rpx 20rpx 20rpx 20rpx;
+}
+.collection .header {
+    position: fixed;
+    width: 710rpx;
+    height: 185rpx;
+    background-color: #fff;
+    z-index: 10;
+    top: 0;
+    left: 20rpx;
+}
+.collection .search-bar {
+    width: 700rpx;
+    height: 60rpx;
+    text-align: center;
+    color: #808080;
+    font-size: 24rpx;
+    line-height: 60rpx;
+    background-color: #f6f6f6;
+    margin-top: 20rpx;
+    border-radius: 30rpx;
+}
+.collection .labels {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    margin-top: 20rpx;
+}
+.collection .labels .label {
+      width: 348rpx;
+      height: 80rpx;
+      border-radius: 8rpx;
+      text-align: center;
+      line-height: 80rpx;
+      color: #FF474D;
+      border: 1rpx solid #FF474D;
+}
+.collection .labels .label.active {
+        background-color: #FF474D;
+        color: #fff;
+}
+.collection .list .store {
+    padding: 30rpx 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    border-bottom: 1rpx solid #eee;
+}
+.collection .list .store .left {
+      width: 140rpx;
+}
+.collection .list .store .left .img {
+        display: block;
+        width: 140rpx;
+        height: 140rpx;
+        background-color: #ddd;
+        border-radius: 20rpx;
+}
+.collection .list .store .right {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+              flex: 1;
+      padding-left: 20rpx;
+}
+.collection .list .store .right .title {
+        font-size: 31rpx;
+        color: #333;
+}
+.collection .list .store .right .address {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        font-size: 25rpx;
+        color: #808080;
+        margin-top: 10rpx;
+}
+.collection .list .store .right .distance {
+        font-size: 21rpx;
+        color: #808080;
+        margin-top: 20rpx;
+}
+

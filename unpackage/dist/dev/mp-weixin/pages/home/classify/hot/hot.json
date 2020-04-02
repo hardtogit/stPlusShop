@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "爆品",
+  "usingComponents": {
+    "goods-item": "/components/goods-item"
+  }
+}

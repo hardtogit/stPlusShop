@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "mpvue-picker": "/components/mpvue-picker/mpvuePicker"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "聚划算",
+  "usingComponents": {
+    "goods-item": "/components/goods-item"
+  }
+}

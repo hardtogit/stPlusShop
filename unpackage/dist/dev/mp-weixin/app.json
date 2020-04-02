@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/product/product",
+    "pages/set/set",
+    "pages/userinfo/userinfo",
+    "pages/cart/cart",
+    "pages/public/login",
+    "pages/user/user",
+    "pages/detail/detail",
+    "pages/order/order",
+    "pages/money/money",
+    "pages/order/createOrder",
+    "pages/address/address",
+    "pages/collection/collection",
+    "pages/address/addressManage",
+    "pages/money/pay",
+    "pages/money/paySuccess",
+    "pages/notice/notice",
+    "pages/product/list",
+    "pages/search/search",
+    "pages/invite/invite",
+    "pages/home/classify/classify",
+    "pages/home/classify/hot/hot",
+    "pages/home/classify/coupon/coupon",
+    "pages/home/classify/platform/platform",
+    "pages/home/detail/goods/goods",
+    "pages/home/detail/coupon/coupon",
+    "pages/home/order/createOrder",
+    "pages/home/order/order",
+    "pages/home/dynamic/dynamic"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#C0C4CC",
+    "selectedColor": "#004da0",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/homeH.png"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "iconPath": "static/icon/love.png",
+        "selectedIconPath": "static/icon/loveH.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "static/icon/car.png",
+        "selectedIconPath": "static/icon/carH.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/icon/people.png",
+        "selectedIconPath": "static/icon/peopleH.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
