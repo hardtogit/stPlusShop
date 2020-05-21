@@ -24,6 +24,128 @@
 				margin-top: 30upx;
 			}
 		}
+		&.two{
+			.header{
+				display: flex;
+				.store-img{
+					display: block;
+					width: 120upx;
+					height: 120upx;
+					border-radius: 7upx;
+				}
+				&>.right{
+					padding-left: 35upx;
+					flex: 1;
+					.store-title{
+						font-size: 33upx;
+						color: #1d1d1d;
+					}
+					.address{
+						display: flex;
+						margin-top: 22upx;
+						align-items: center;
+						.left{
+							image{
+								display: block;
+								width: 24upx;
+								height: 32upx;
+								position: relative;
+								top:-10upx;
+							}
+						}
+						.center{
+							flex: 1;
+							padding: 0 24upx 0 12upx;
+							.top{
+								font-size: 25upx;
+								color: #000;
+								font-weight: 400;
+							}
+							.sub{
+								font-size: 21upx;
+								color:#7E7E7E ;
+							}
+						}
+						.right{
+							padding-left: 24upx;
+							border-left: 1px dashed #999;
+							image{
+								width: 42upx;
+								height: 42upx;
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		&.item{
+			padding: 30upx;
+			.inner{
+				display: flex;
+				.img{
+					display: block;
+					width: 204upx;
+					height: 176upx;
+				}
+				.right{
+					flex: 1;
+					padding-left: 20upx;
+					.title{
+						font-size: 32upx;
+						color:#141414;
+					}
+					.sub{
+						font-size: 22upx;
+						color: #6D6D6D;
+					}
+					.price{
+						display: flex;
+						align-items: baseline;
+						color: #F0351C;
+						margin-right: 10upx;
+						.unit{
+							font-size: 25upx;
+							margin-right: 4upx;
+						}
+						.num{
+							font-size: 42upx;
+						}
+					}
+					.default{
+						display: flex;
+						align-items: baseline;
+						position: relative;
+						top:8upx;
+						color: #A5A5A5;
+					    font-size: 25upx;
+						text-decoration: line-through;
+					}
+					.btns{
+						display: flex;
+						justify-content: flex-end;
+						.btn{
+							width: 147upx;
+							height: 44upx;
+							border-radius: 22upx;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							font-size: 21upx;
+							color: #fff;
+							&.cart{
+								background-color: #FFBA21;
+								margin-right: 10upx;
+							};
+							&.buy{
+								background-color:#FF474C;
+								margin-right: 20upx;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	.bottom{
 		height: 110upx;
@@ -92,26 +214,69 @@
 <template>
 	<view class="coupon">
 		<view class="card one">
-			<view class="title">超值2-3人羊蝎子套餐7折抢</view>
-			<image class="img"></image>
+			<view class="title">{{coupon.name}}</view>
+			<image :src="ctx+coupon.imgPath" class="img"></image>
 		</view>
-		<view class="card one">
-			<view class="title">超值2-3人羊蝎子套餐7折抢</view>
-			<image class="img"></image>
+		<view class="card two">
+			<view class="header">
+				<image class="store-img" :src="ctx+store.logoPath">
+				</image>
+				<view class="right">
+					<view class="store-name">{{store.name}}</view>
+					<view class="address" @click="openLocation">
+						<view class="left">
+							<image src="../../../../static/icon/home/address.png"></image>
+						</view>
+						<view class="center">
+							<view class="top ellipsis">{{store.address}}</view>
+							<view class="sub ellipsis">{{store.addressStr}}</view>
+						</view>
+						<view class="right">
+							<image src="../../../../static/icon/home/phone.png"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="discription">
+				
+			</view>
 		</view>
+		<view class="card item" >
+			<view class="inner" v-for="item in couponList" :key="item.id" @click="changeCoupon(item.id)">
+				<image class="img" :src="ctx+item.imgPath">
+				</image>
+				<view class="right">
+					<view class="title">
+						{{item.name}}
+					</view>
+					<view class="sub">
+						{{item.instro}}
+					</view>
+					<view class="price">
+						<view class="unit">¥</view>
+						<view class="num">{{item.value}}</view>
+					</view>
+					<view class="btns">
+						<view class="btn cart" @click="addCart(item.id)">加入购物车</view>
+						<view class="btn buy">立即抢购</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		
 		<view class="bottom">
 			<view class="left">
 				<view class="price">
 					<view class="unit">¥</view>
-					<view class="num">23.4</view>
+					<view class="num">{{coupon.value}}</view>
 				</view>
-				<view class="default">
+			<!-- 	<view class="default">
 					<view class="unit">¥</view>
 					<view class="num">33.6</view>
-				</view>
+				</view> -->
 			</view>
 			<view class="right">
-				<view class="btn cart">加入购物车</view>
+				<view class="btn cart"  @click="addCart(coupon.id)">加入购物车</view>
 				<view class="btn buy">立即抢购</view>
 			</view>
 		</view>
@@ -122,11 +287,71 @@
 	export default {
 		data() {
 			return {
-				
+				id:null,
+				ctx:this.$ctx,
+				coupon:{},
+				store:{},
+				couponList:[]
 			}
 		},
+		onShow(){
+			this.getData()
+		},
 		methods: {
+			getData(){
+				//获取详情
+				this.$getJson('/api/v3/coupon/info.jsp',{id:this.id},'POST',res=>{
+					this.coupon=res.data
+					//获取店铺详情
+					this.$getJson('/api/v2/vue/sqPlus/company/companyInfo.jsp',{data:JSON.stringify({companyId:res.data.storeId})},'POST',response=>{
+						console.log(response)
+						this.store=response.data.cjCompany
+					})
+					//获取店铺的优惠券
+					this.$getJson('/api/v2/vue/sqPlus/coupon/couponList.jsp',{companyId:res.data.storeId,pageNumber:1},'POST',result=>{	
+						this.couponList=result.data
+					})
+					
+				})				
+			},
+			addCart(goodsId){
+				//加入购物车
+				let data = {
+					goodsId: goodsId,
+					goodsType: 3
+				}
+				this.$getJson('/api/v2/vue/ydd/cart/addCart.jsp',{data:JSON.stringify(data)}, 'POST', res => {
+					console.log('----res------------', res);
+					if (res.data == 1) {
+						uni.showToast({
+							title: "加入成功",
+							icon: 'none'
+						})
+						this.cartCount += 1
+					} else {
+						uni.showToast({
+							title: res.message,
+							icon: 'none'
+						})
+					}
+				});
+			},
 			
+			changeCoupon(id){
+			  this.id=id;
+				  this.getData()
+			},
+			openLocation(){
+				wx.openLocation({
+					latitude:this.store.lat,
+					longitude:this.store.lng,
+					name:this.store.address,
+					address:this.store.addressStr
+				})
+			}
+		},
+		onLoad(options){
+			this.id=options.id||26
 		}
 	}
 </script>

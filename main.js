@@ -4,9 +4,15 @@ import App from './App'
 
 import Json from './Json' //测试用数据
 
-
+import QQMapWX  from './static/js/qqmap-wx-jssdk.min.js';
 import common from './common/common.js'
-Vue.prototype.$ctx = 'https://web.51youduoduo.com'
+import {upload} from './utils/uploadImg.js'
+
+Vue.prototype.$qqmapsdk = new QQMapWX({
+            key: 'PVIBZ-WA2RF-7TIJB-J5FNN-LZSEQ-WXBRV'
+        });
+Vue.prototype.$upload = upload;
+Vue.prototype.$ctx = 'http://gezen.51youduoduo.com/ydd1/'
 Vue.prototype.$getJson = common.urlRequest;
 
 

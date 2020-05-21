@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "销售管理",
+  "usingComponents": {
+    "ec-canvas": "/wxcomponents/ec-canvas/ec-canvas"
+  }
+}

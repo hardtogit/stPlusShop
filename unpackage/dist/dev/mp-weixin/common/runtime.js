@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/uni-load-more/uni-load-more":1,"components/uni-popup/uni-popup":1,"components/uniPop":1,"components/uni-number-box":1,"components/mix-list-cell":1,"components/share":1,"components/empty":1,"components/mpvue-picker/mpvuePicker":1,"components/goods-item":1,"components/coupon-item":1};
+/******/ 		var cssChunks = {"components/uni-popup/uni-popup":1,"components/uniPop":1,"components/uni-load-more/uni-load-more":1,"components/uni-number-box":1,"components/share":1,"components/goods-item":1,"components/coupon-bar":1,"components/empty":1,"components/mix-list-cell":1,"components/upload-images":1,"components/article-edit":1,"components/goods-type":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/uni-load-more/uni-load-more":"components/uni-load-more/uni-load-more","components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/uniPop":"components/uniPop","components/uni-number-box":"components/uni-number-box","components/mix-list-cell":"components/mix-list-cell","components/share":"components/share","components/empty":"components/empty","components/mpvue-picker/mpvuePicker":"components/mpvue-picker/mpvuePicker","components/goods-item":"components/goods-item","components/coupon-item":"components/coupon-item"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/uniPop":"components/uniPop","components/uni-load-more/uni-load-more":"components/uni-load-more/uni-load-more","components/uni-number-box":"components/uni-number-box","components/share":"components/share","components/goods-item":"components/goods-item","components/coupon-bar":"components/coupon-bar","components/empty":"components/empty","components/mix-list-cell":"components/mix-list-cell","components/upload-images":"components/upload-images","components/article-edit":"components/article-edit","components/goods-type":"components/goods-type","components/industry":"components/industry"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

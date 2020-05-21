@@ -60,12 +60,20 @@
 					.title{
 						font-size: 31upx;
 						color: #333;
+						font-weight: bold;
 					}
 					.address{
 						display: flex;
+						align-items: center;
 						font-size: 25upx;
 						color: #808080;
 						margin-top: 10upx;
+						image{
+							display: block;
+							width: 19upx;
+							height: 23upx;
+							margin-right: 4upx;
+						}
 					}
 					.distance{
 						font-size: 21upx;
@@ -85,41 +93,21 @@
 			</view>
 			<view class="labels">
 				<view :class="['label',collectionType==1&&'active']" @click="changeCollectionType(1)">
-					全部收藏
+					收藏的店铺
 				</view>
 				<view :class="['label',collectionType==2&&'active']" @click="changeCollectionType(2)">
-					最近浏览
+					收藏的商品
 				</view>
 			</view>			
 		</view>
 		<view class="list">
 			<view class="store" v-for="(item,index) in storeList" :key='index'>
 				<view class="left">
-					<image class="img" :src="item.url"></image>
+					<image class="img" :src="ctx+item.logoPath"></image>
 				</view>
 				<view class="right">
-					<view class="title clamp">{{item.title}}</view>
-					<view class="address clamp">{{item.address}}</view>
-					<view class="distance">{{item.distance}}</view>
-				</view>					
-			</view>
-			<view class="store" v-for="(item,index) in storeList" :key='index'>
-				<view class="left">
-					<image class="img" :src="item.url"></image>
-				</view>
-				<view class="right">
-					<view class="title clamp">{{item.title}}</view>
-					<view class="address clamp">{{item.address}}</view>
-					<view class="distance">{{item.distance}}</view>
-				</view>					
-			</view>
-			<view class="store" v-for="(item,index) in storeList" :key='index'>
-				<view class="left">
-					<image class="img" :src="item.url"></image>
-				</view>
-				<view class="right">
-					<view class="title clamp">{{item.title}}</view>
-					<view class="address clamp">{{item.address}}</view>
+					<view class="title clamp">{{item.name}}</view>
+					<view class="address clamp"><image src="../../static/icon/home/address.png"></image> {{item.address}}</view>
 					<view class="distance">{{item.distance}}</view>
 				</view>					
 			</view>				
@@ -130,15 +118,23 @@
 	export default{
 		data(){
 			return{
-				collectionType:1,
-				storeList:[{url:'',title:'阿福发噶个哥萨克广发卡上',address:'尽快发噶时间广发卡帅哥发',distance:'12.5km'},
-				{url:'',title:'阿福发噶个哥萨克广发卡上',address:'尽快发噶时间广发卡帅哥发',distance:'12.5km'},
-				{url:'',title:'阿福发噶个哥萨克广发卡上',address:'尽快发噶时间广发卡帅哥发',distance:'12.5km'}]
+				ctx:this.$ctx,
+				storeList:[]
 			}
+		},
+		onShow(){
+			this.getData()
 		},
 		methods:{
 			changeCollectionType(type){
 				this.collectionType=type
+			},
+			getData(){
+				this.$getJson('/api/v3/my/store/collectList.jsp',{pageNumber:1},'POST',res=>{
+					console.log(res.data,'sssssssssssssss')
+					this.storeList=res.data
+				}) 
+				
 			}
 		}
 	}

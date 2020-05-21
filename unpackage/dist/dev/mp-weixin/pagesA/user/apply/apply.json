@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "upload-images": "/components/upload-images",
+    "industry": "/components/industry"
+  }
+}

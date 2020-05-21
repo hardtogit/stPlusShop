@@ -58,7 +58,13 @@
         "usingComponents" : true,
         "appid" : "wxcf34eb890a5b3794",
         "setting" : {
-            "urlCheck" : true
+            "urlCheck" : true,
+            "postcss" : true
+        },
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "你的位置信息将用于物流配送，以及商家位置计算"
+            }
         }
     }
 }

@@ -14,9 +14,15 @@ var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 11));
 
 var _Json = _interopRequireDefault(__webpack_require__(/*! ./Json */ 17));
 
+var _qqmapWxJssdkMin = _interopRequireDefault(__webpack_require__(/*! ./static/js/qqmap-wx-jssdk.min.js */ 18));
+var _common = _interopRequireDefault(__webpack_require__(/*! ./common/common.js */ 19));
+var _uploadImg = __webpack_require__(/*! ./utils/uploadImg.js */ 23);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
-var _common = _interopRequireDefault(__webpack_require__(/*! ./common/common.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-_vue.default.prototype.$ctx = 'https://web.51youduoduo.com';
+_vue.default.prototype.$qqmapsdk = new _qqmapWxJssdkMin.default({
+  key: 'PVIBZ-WA2RF-7TIJB-J5FNN-LZSEQ-WXBRV' });
+
+_vue.default.prototype.$upload = _uploadImg.upload;
+_vue.default.prototype.$ctx = 'http://gezen.51youduoduo.com/ydd1/';
 _vue.default.prototype.$getJson = _common.default.urlRequest;
 
 

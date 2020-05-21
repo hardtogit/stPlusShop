@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.backSale {
+  padding-bottom: 110rpx;
+}
+.backSale .flow {
+    padding: 0 23rpx;
+    height: 125rpx;
+    font-size: 31rpx;
+    color: #090909;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    border-bottom: 1rpx solid #eee;
+}
+.backSale .flow .step-one {
+      width: 26rpx;
+      height: 26rpx;
+      display: block;
+      margin-right: 4rpx;
+}
+.backSale .flow .step-two,
+    .backSale .flow .step-three {
+      width: 47rpx;
+      margin: 0 6rpx 0 32rpx;
+      height: 15rpx;
+      display: block;
+}
+.backSale .flow .active {
+      color: #FF474C;
+}
+.backSale .sition {
+    padding: 0 23rpx 30rpx 23rpx;
+    color: #141414;
+    border-bottom: 1rpx solid #eee;
+}
+.backSale .sition .title {
+      font-size: 29rpx;
+      padding: 30rpx 0;
+}
+.backSale .sition .dis {
+      margin-top: 26rpx;
+      height: 24rpx;
+      font-size: 24rpx;
+      font-family: PingFang SC;
+      font-weight: 400;
+      color: #616161;
+      line-height: 33rpx;
+}
+.backSale .sition .choice {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+}
+.backSale .sition .choice .left {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+                flex: 1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        font-size: 31rpx;
+        font-family: PingFang SC;
+        font-weight: 500;
+}
+.backSale .sition .choice .left .one {
+          width: 34rpx;
+          height: 31rpx;
+          display: block;
+          margin-right: 28rpx;
+}
+.backSale .sition .choice .left .two {
+          width: 39rpx;
+          height: 35rpx;
+          display: block;
+          margin-right: 28rpx;
+}
+.backSale .sition .choice.sub {
+        margin-top: 56rpx;
+}
+.backSale .sition .goods {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+      padding: 0;
+}
+.backSale .sition .goods .left {
+        width: 120rpx;
+}
+.backSale .sition .goods .left .img {
+          display: block;
+          width: 120rpx;
+          height: 120rpx;
+}
+.backSale .sition .goods .right {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+                flex: 1;
+        padding-left: 38rpx;
+}
+.backSale .sition .goods .right .name {
+          font-size: 25rpx;
+}
+.backSale .sition .goods .right .spec {
+          font-size: 21rpx;
+          display: inline-block;
+          color: #6C6C6C;
+          padding: 2rpx 10rpx;
+          border-radius: 7rpx;
+          background-color: #F2F2F2;
+}
+.backSale .sition .reson {
+      border: 1rpx solid #ddd;
+      border-radius: 7rpx;
+      font-size: 25rpx;
+      padding: 20rpx;
+}
+.backSale .sition .textarea {
+      display: block;
+      padding: 20rpx;
+      width: 100%;
+      height: 240rpx;
+      border: 1px solid #ddd;
+      font-size: 25rpx;
+}
+.backSale .bottomFixed {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    height: 110rpx;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 19px 1px rgba(97, 97, 97, 0.13);
+    padding: 10rpx 55rpx;
+}
+.backSale .bottomFixed .btn {
+      width: 640rpx;
+      height: 90rpx;
+      color: #fff;
+      background-color: #FF474D;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+              align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+}
+

@@ -1,18 +1,22 @@
 
-.unipop__ui_tit{
+.unipop__ui_main {
+	background-color: #fff;
+}
+.unipop__ui_tit {
 	text-align: center;
 	position: relative;
 }
-.unipop__ui_cnt{
+.unipop__ui_cnt {
 	text-align: center;
 	position: relative;
 }
-.unipop__ui_btns{
-	display:block;
+.unipop__ui_btns {
+	display: block;
+	height: 80rpx;
 }
-.unipop__ui_mask{
+.unipop__ui_mask {
 	width: 50%;
-	height:20%;
+	height: 20%;
 	margin-top: 20%;
 	margin-left: 20%;
 }

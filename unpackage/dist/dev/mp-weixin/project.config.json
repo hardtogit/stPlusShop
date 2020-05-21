@@ -4,12 +4,30 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
 	"appid": "wxcf34eb890a5b3794",
 	"projectname": "stPlusShop",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -36,57 +54,23 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/home/order/createOrder",
-					"pathName": "pages/home/order/createOrder",
+					"name": "pagesA/user/backSale/backSale",
+					"pathName": "pagesA/user/backSale/backSale",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/money/pay",
-					"pathName": "pages/money/pay",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/money/paySuccess",
-					"pathName": "pages/money/paySuccess",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/collection/collection",
-					"pathName": "pages/collection/collection",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/cart/cart",
-					"pathName": "pages/cart/cart",
-					"query": "",
+					"name": "pagesA/user/backSale/backSale",
+					"pathName": "pagesA/user/backSale/backSale",
+					"query": "id=556&orderNo=1820051592576262",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "pages/user/user",
 					"pathName": "pages/user/user",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/home/dynamic/dynamic",
-					"pathName": "pages/home/dynamic/dynamic",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/home/detail/coupon/coupon",
-					"pathName": "pages/home/detail/coupon/coupon",
+					"query": "id=556&orderNo=1820051592576262",
 					"scene": null
 				}
 			]

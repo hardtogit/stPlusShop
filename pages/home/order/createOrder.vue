@@ -1,7 +1,7 @@
 <template>
-	<view>
+	<view class="create-order">
 		<!-- 地址 -->
-		<navigator url="/pages/address/address?source=1" class="address-section">
+		<navigator url="/pagesA/address/address?source=1" class="address-section">
 			<view class="order-content">
 				<text class="yticon icon-shouhuodizhi"></text>
 				<view class="cen">
@@ -15,80 +15,116 @@
 			</view>
 		</navigator>
 
-		<view class="goods-section">
-			<!-- <view class="g-header b-b">
-				<image class="logo" src="http://duoduo.qibukj.cn/./Upload/Images/20190321/201903211727515.png"></image>
-				<text class="name">西城小店铺</text>
-			</view> -->
-			<view class="g-header b-b">
-				<text class="name nameLeft">商品信息</text>
-			</view>
-			<!-- 商品列表 -->
-			<view class="g-item"  v-for="(item, index) in shopList" :key="item.goods.id">
-				<image :src="url+item.resource.samllCoverImg"></image>
-				<view class="item-right">
-					<text class="title clamp">{{item.resource.name}}</text>
-				<!-- 	<text class="spec">{{item.label}}</text> -->
-					<view class="price-box price-box-top">
-						<text class="price">￥{{item.goods.priceEdit}}</text>
+		<view class="goods-section" v-if="shopData.hot&&shopData.hot.length!==0">
+			<view v-for="item in shopData.hot" :key="item.store.storeId">
+				<view class="g-header">
+					<text class="label">店铺商品</text>
+					<text class="name">-{{item.store.name}}</text>
+				</view>
+				<!-- 商品列表 -->
+				<view class="g-item" v-for="goods in item.list" :key="goods.goods.id">
+					<view class="top">
+						<image :src="url+goods.goods.firstImg"></image>
+						<view class="item-right">
+							<text class="title clamp">{{goods.goods.prodName}}</text>
+							<text class="spec">{{goods.goods.subHeading}}</text>
+						</view>
 					</view>
-					<uni-number-box
-						class="step"
-						:min="1" 
-						:max="item.goods.stock"
-						:value="item.number>item.goods.stock?item.goods.stock:item.number"
-						:isMax="item.number>=item.goods.stock?true:false"
-						:isMin="item.number===1"
-						:index="index"
-						@eventChange="numberChange"
-					></uni-number-box>
+					<!-- 金额明细 -->
+					<view class="yt-list">
+						<view class="yt-list-cell b-b">
+							<text class="cell-tit clamp">价格</text>
+							<text class="cell-tip">￥{{goods.goods.priceEdit}} x {{goods.cpCart.goodsCount}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="yt-list-cell b-b receve">
+					<text class="cell-tit clamp">收货方式</text>
+					<view class="content">
+						<view :class="['radio',item.acceptType=='zq'&&'active']" @click="changeAcceptType(item.store.storeId,'zq')" class="radio">
+							<view class="circle"></view> 自取
+						</view>
+						<view :class="['radio',item.acceptType=='dd'&&'active']" @click="changeAcceptType(item.store.storeId,'dd')" class="radio">
+							<view class="circle"></view> 快递¥{{item.fee.fee}}
+						</view>
+					</view>
+				</view>
+				<view class="yt-list-cell  b-b">
+					<text class="cell-tit clamp">备注</text>
+					<input class="cell-tip" style="text-align: right;" type="text" v-model="item.buyerMessage" placeholder="请填写备注信息" />
 				</view>
 			</view>
 		</view>
 
-		<!-- 优惠明细 -->
-		<!-- <view class="yt-list">
-			<view class="yt-list-cell b-b" @click="toggleMask('show')">
-				<view class="cell-icon">
-					券
+		<view class="goods-section" v-if="shopData.platform&&shopData.platform.length!==0">
+			<view v-for="item in shopData.platform" :key="item.store.storeId">
+				<view class="g-header">
+					<text class="label">巨划算商品</text>
+					<text class="name">-{{item.store.name}}</text>
 				</view>
-				<text class="cell-tit clamp">优惠券</text>
-				<text class="cell-tip active">
-					选择优惠券
-				</text>
-				<text class="cell-more wanjia wanjia-gengduo-d"></text>
-			</view>
-			<view class="yt-list-cell b-b">
-				<view class="cell-icon hb">
-					减
+				<!-- 商品列表 -->
+				<view class="g-item" v-for="goods in item.list" :key="goods.goods.id">
+					<view class="top">
+						<image :src="url+goods.goods.firstImg"></image>
+						<view class="item-right">
+							<text class="title clamp">{{goods.goods.prodName}}</text>
+							<text class="spec">{{goods.goods.subHeading}}</text>
+						</view>
+					</view>
+					<!-- 金额明细 -->
+					<view class="yt-list">
+						<view class="yt-list-cell b-b">
+							<text class="cell-tit clamp">价格</text>
+							<text class="cell-tip">￥{{goods.goods.priceEdit}} x {{goods.cpCart.goodsCount}}</text>
+						</view>
+					</view>
 				</view>
-				<text class="cell-tit clamp">商家促销</text>
-				<text class="cell-tip disabled">暂无可用优惠</text>
-			</view>
-		</view> -->
-		<!-- 金额明细 -->
-		<view class="yt-list">
-			<view class="yt-list-cell b-b">
-				<text class="cell-tit clamp">商品金额</text>
-				<text class="cell-tip">￥{{total}}</text>
-			</view>
-			<!-- <view class="yt-list-cell b-b">
-				<text class="cell-tit clamp">优惠金额</text>
-				<text class="cell-tip red">-￥35</text>
-			</view> -->
-			<view class="yt-list-cell b-b receve">
-				<text class="cell-tit clamp">收货方式</text>
-				<view class="content">
-					<view :class="['radio',acceptType==1&&'active']" @tap="changeAcceptType(1)" class="radio"><view class="circle"></view> 自取 </view>
-					<view  :class="['radio',acceptType==2&&'active']" @tap="changeAcceptType(2)" class="radio"><view class="circle"></view> 快递¥23 </view>
+				<view class="yt-list-cell b-b receve">
+					<text class="cell-tit clamp">收货方式</text>
+					<view class="content">
+						<view v-if="!item.free" :class="['radio','active']" class="radio">
+							<view class="circle"></view> 自取
+						</view>
+						<view v-if="item.free" :class="['radio','active']" class="radio">
+							<view class="circle"></view> 快递免邮
+						</view>
+					</view>
 				</view>
-			</view>
-			<view class="yt-list-cell desc-cell">
-				<text class="cell-tit clamp">备注</text>
-				<textarea class="desc" type="text" v-model="buyerMemo" placeholder="请填写备注信息"  />
+				<view class="yt-list-cell  b-b">
+					<text class="cell-tit clamp">备注</text>
+					<input class="cell-tip" style="text-align: right;" type="text" v-model="item.buyerMessage" placeholder="请填写备注信息" />
+				</view>
 			</view>
 		</view>
-		
+		<view class="goods-section" v-if="shopData.coupon&&shopData.coupon.length!==0">
+			<view v-for="item in shopData.coupon" :key="item.store.storeId">
+				<view class="g-header">
+					<text class="label">商圈券</text>
+					<text class="name">-{{item.store.name}}</text>
+				</view>
+				<!-- 商品列表 -->
+				<view class="g-item" v-for="goods in item.list" :key="goods.goods.id">
+					<view class="top">
+						<image :src="url+goods.goods.imgPath"></image>
+						<view class="item-right">
+							<text class="title clamp">{{goods.goods.name}}</text>
+							<text class="spec">{{goods.goods.instro}}</text>
+						</view>
+					</view>
+					<!-- 金额明细 -->
+					<view class="yt-list">
+						<view class="yt-list-cell b-b">
+							<text class="cell-tit clamp">价格</text>
+							<text class="cell-tip">￥{{goods.goods.value/100}} x {{goods.cpCart.goodsCount}}</text>
+						</view>
+					</view>
+				</view>
+				<view class="yt-list-cell  b-b">
+					<text class="cell-tit clamp">备注</text>
+					<input class="cell-tip" style="text-align: right;" type="text" v-model="item.buyerMessage" placeholder="请填写备注信息" />
+				</view>
+			</view>
+		</view>
 		<!-- 底部 -->
 		<view class="footer">
 			<view class="price-content">
@@ -98,62 +134,26 @@
 			</view>
 			<text class="submit" @click="submit">提交订单</text>
 		</view>
-		
-		<!-- 优惠券面板 -->
-		<view class="mask" :class="maskState===0 ? 'none' : maskState===1 ? 'show' : ''" @click="toggleMask">
-			<view class="mask-content" @click.stop.prevent="stopPrevent">
-				<!-- 优惠券页面，仿mt -->
-				<view class="coupon-item" v-for="(item,index) in couponList" :key="index">
-					<view class="con">
-						<view class="left">
-							<text class="title">{{item.title}}</text>
-							<text class="time">有效期至2019-06-30</text>
-						</view>
-						<view class="right">
-							<text class="price">{{item.price}}</text>
-							<text>满30可用</text>
-						</view>
-						
-						<view class="circle l"></view>
-						<view class="circle r"></view>
-					</view>
-					<text class="tips">限新用户使用</text>
-				</view>
-			</view>
-		</view>
-
 	</view>
 </template>
 
 <script>
 	import uniNumberBox from '@/components/uni-number-box.vue'
-	import {mapState} from 'vuex'
+	import {
+		mapState
+	} from 'vuex'
 	export default {
 		components: {
 			uniNumberBox
 		},
 		data() {
 			return {
-				url:this.$ctx,
+				url: this.$ctx,
 				maskState: 0, //优惠券面板显示状态
 				buyerMemo: '', //备注
 				payType: 1, //1微信 2支付宝
-				total:0,
-				inviteCode:'',
-				couponList: [
-					{
-						title: '新用户专享优惠券',
-						price: 5,
-					},
-					{
-						title: '庆五一发一波优惠券',
-						price: 10,
-					},
-					{
-						title: '优惠券优惠券优惠券优惠券',
-						price: 15,
-					}
-				],
+				total: 0,
+				inviteCode: '',
 				addressData: {
 					name: '',
 					mobile: '',
@@ -162,144 +162,302 @@
 					area: '149',
 					default: false,
 				},
-				shopList:[],
-				type:1,
-				userInfo:uni.getStorageSync(`userInfo`),
-				cheapPurchaseCompanyId:"",
-				acceptType:1
+				shopData: {},
+				type: 1,
+				userInfo: uni.getStorageSync(`userInfo`),
+				cheapPurchaseCompanyId: "",
+				acceptType: 1
 			}
 		},
-		// computed:{
-		// 	...mapState(['userInfo']),
-		// },
-		onLoad(option){
-			//商品数据
-			console.log(option)
-			let data = JSON.parse(option.data)
-			console.log(data)
-			this.type = data.type
-			console.log("type-------------",this.type)
-			this.shopList = data.goodsData;
-			this.inviteCode = data.inviteCode
-			this.cheapPurchaseCompanyId = data.cheapPurchaseCompanyId
-			console.log("shopList",this.shopList)
+		onLoad(option) {
+			let shopData = uni.getStorageSync('goodsData')
+			//普通商品   超过99免费配送、低于99只能自提
+			if (shopData.hot.length !== 0) {
+				shopData.hot.forEach((store) => {
+					store.acceptType = 'zq',
+						store.fee = ''
+				})
+			}
+
+			//巨划算   超过99免费配送、低于99只能自提
+			if (shopData.platform.length !== 0) {
+				shopData.platform.forEach((store) => {
+					let total = 0; //每家店费用
+					store.list.forEach((goods) => {
+						total += goods.goods.price * goods.cpCart.goodsCount
+					})
+					if (total > 9900 || total === 9900) {
+						store.free = true
+					} else {
+						store.free = false
+					}
+				})
+			}
+			this.shopData = shopData
+			this.calcTotal()
 			this.getDefaultAddr()
-			this.calcTotal();
 		},
 		methods: {
-			//显示优惠券面板
-			toggleMask(type){
-				let timer = type === 'show' ? 10 : 300;
-				let	state = type === 'show' ? 1 : 0;
-				this.maskState = 2;
-				setTimeout(()=>{
-					this.maskState = state;
-				}, timer)
-			},
-			//数量
-			numberChange(data){
-				let row = this.shopList[data.index];
-				if(this.type==2){
-					let datas = {data: JSON.stringify({memberId:this.userInfo.id,goodId:row.goods.id,cartId:row.cart.id,number:data.number})}
-					this.$getJson('/api/v2/vue/ydd/cart/editCartCount.jsp', datas, 'POST', res => {
-						console.log(`data中`,res)
-						if(res.data==1){
-							this.shopList[data.index].number = data.number;
-							this.calcTotal();
-						}else{
-							uni.showToast({title:res.message,icon:'none'})
+			//计算总价
+			calcTotal() {
+				let total = 0;
+				if (this.shopData.hot.length !== 0) {
+					this.shopData.hot.forEach((store) => {
+						store.list.forEach((goods) => {
+							total += goods.goods.price * goods.cpCart.goodsCount;
+
+						})
+						if (store.acceptType === 'dd') {
+							total += store.fee.fee * 100
 						}
 					})
-				}else{
-					this.shopList[data.index].number = data.number;
-					this.calcTotal();
 				}
-				
-			},
-			//计算总价
-			calcTotal(){
-				let list = this.shopList;
-				if(list.length === 0){
-					this.empty = true;
-					return;
+				if (this.shopData.platform.length !== 0) {
+					this.shopData.platform.forEach((store) => {
+						store.list.forEach((goods) => {
+							total += goods.goods.price * goods.cpCart.goodsCount
+						})
+					})
 				}
-				let total = 0;
-				let checked = true;
-				list.forEach(item=>{
-						total += item.goods.priceShow * item.number;
-				})
-				this.total = Number(total.toFixed(2));
+				if (this.shopData.coupon.length !== 0) {
+					this.shopData.coupon.forEach((store) => {
+						store.list.forEach((goods) => {
+							total += goods.goods.value * goods.cpCart.goodsCount
+						})
+					})
+				}
+				this.total = Number((total / 100).toFixed(2));
 			},
-			getDefaultAddr(){
-				let data = {data: JSON.stringify({memberId:this.userInfo.id})}
+			getDefaultAddr() {
+				let data = {
+					data: JSON.stringify({
+						memberId: this.userInfo.id
+					})
+				}
 				this.$getJson('/api/v2/vue/ydd/order/getDefaultAddr.jsp', data, 'POST', res => {
-					console.log(`data中`,res)
-					this.addressData = res.data.addr;
+					this.choiceAddress(res.data.addr)
 				})
 			},
-			// numberChange(data) {
-			// 	this.number = data.number;
-			// },
-			changePayType(type){
+			choiceAddress(addressData) {
+				this.addressData = addressData;
+				//运费计算参数
+				let stores = []
+				//循环计算运费,只有店铺商品参与
+				if (this.shopData.hot.length !== 0) {
+					this.shopData.hot.forEach((store) => {
+						let total = 0; //每家店费用
+						store.list.forEach((goods) => {
+							total += goods.goods.price * goods.cpCart.goodsCount
+						})
+						stores.push({
+							storeId: store.store.storeId,
+							price: total / 100,
+							type: 1
+						})
+					})
+				}
+				//计算运费
+				this.$getJson('/api/v3/express/deliveryCost.jsp', {
+					stores: JSON.stringify(stores),
+					receiver_addressId: this.addressData.id
+				}, 'POST', res => {
+					this.shopData.hot.forEach((store) => {
+						res.data.success.forEach((fee) => {
+							if (store.store.storeId === fee.storeId) {
+								store.fee = fee
+							}
+						})
+					})
+					console.log(this.shopData)
+					this.$forceUpdate()
+				})
+			},
+			changePayType(type) {
 				this.payType = type;
+
 			},
 			//切换收货方式
-			changeAcceptType(type){
-			  this.acceptType=type	
+			changeAcceptType(storeId, acceptType) {
+				this.shopData.hot.forEach((store) => {
+					if (store.store.storeId == storeId) {
+						store.acceptType = acceptType
+					}
+				})
+				this.calcTotal()
+				this.$forceUpdate()
 			},
-			submit(){
+			submit() {
+				const $this = this
+				// console.log(this.shopData)
+				// return
 				if (!this.addressData) {
-					uni.showToast({title: '请选择地址'});
+					uni.showToast({
+						title: '请选择地址'
+					});
 					return;
 				}
-				let goodsCount = 0,goodsId=0,cartIds='';
-				if(this.type==1){
-					goodsCount = this.shopList[0].number
-					goodsId = this.shopList[0].goods.id
-				}else{
-					this.shopList.forEach(item=>{
-							goodsCount +=  item.number;
-							cartIds +=","+item.cart.id
-					})
-					console.log("cartIds",cartIds)
-					cartIds = cartIds.substring(1,cartIds.length)
-				}
-				let data = {data: JSON.stringify({
-						type:this.type,
-						memberId:this.userInfo.id,
-						goodsId: goodsId,
-						addrId: this.addressData.id,
-						cartIds:cartIds,
-						goodsCount: goodsCount,
-						inviteCode:this.inviteCode,
-						buyerMemo:this.buyerMemo,
-						cheapPurchaseCompanyId:this.cheapPurchaseCompanyId
-					})}
-				this.$getJson('/api/v2/vue/ydd/order/doSubmitOrder.jsp',data,'POST',function(res) {
-						if (res.message == '请求成功') {
-							if (res.data.isPay == '1' || res.data.isPay == 1) {
-								uni.navigateTo({
-									url: '/pages/handle/paySuccend/paySuccend?sn=' + res.data.sn
-								});
-							} else {
-								uni.navigateTo({
-									url:'/pages/money/pay?money=' +res.data.money +'&sn=' +res.data.sn
-								});
+				let postFee = 0;
+				let orders = []
+
+
+				if (this.shopData.hot.length !== 0) {
+					this.shopData.hot.forEach((store) => {
+						let order = {}
+						let products = []
+						let total = 0
+						if (store.acceptType == 'dd') {
+							if (store.fee && store.fee.fee) {
+								postFee += store.fee.fee * 100
+							}
+						}
+						store.list.forEach((goods) => {
+							total += goods.goods.price * goods.cpCart.goodsCount;
+							products.push({
+								proId: goods.goods.id,
+								cartId: goods.cpCart.id,
+								specId: goods.spec.id,
+								num: goods.cpCart.goodsCount,
+								price: goods.goods.price,
+								shareId: "",
+								shareUserId: 0
+							})
+						})
+						if (store.acceptType === 'dd') {
+							total += store.fee.fee * 100
+							order = {
+								storeId: store.store.storeId,
+								dadaNo: store.fee.deliveryNo,
+								yddNo: store.fee.origin_id,
+								totalPay: total,
+								productPay: total - store.fee.fee,
+								paymentType: 0,
+								expFee: store.fee.fee,
+								receivingWay: 1,
+								buyerMessage: store.buyerMessage,
+								type: 1,
+								products
 							}
 						} else {
-							uni.showToast({
-								title: res.message
-							});
+							order = {
+								storeId: store.store.storeId,
+								dadaNo: "",
+								yddNo: "",
+								totalPay: total,
+								productPay: total,
+								paymentType: 0,
+								expFee: 0,
+								receivingWay: 1,
+								buyerMessage: store.buyerMessage,
+								type: 1,
+								products
+							}
 						}
+						orders.push(order)
+					})
+				}
+				if (this.shopData.platform.length !== 0) {
+					this.shopData.platform.forEach((store) => {
+						let order = {}
+						let products = []
+						let total = 0
+						store.list.forEach((goods) => {
+							total += goods.goods.price * goods.cpCart.goodsCount;
+							products.push({
+								proId: goods.goods.id,
+								cartId: goods.cpCart.id,
+								specId: goods.spec.id,
+								num: goods.cpCart.goodsCount,
+								price: goods.goods.price,
+								shareId: "",
+								shareUserId: 0
+							})
+						})
+						order = {
+							storeId: store.store.storeId,
+							dadaNo: "",
+							yddNo: "",
+							totalPay: total,
+							productPay: total,
+							paymentType: 0,
+							expFee: 0,
+							receivingWay: 1,
+							buyerMessage: store.buyerMessage,
+							type: 2,
+							products
+						}
+						orders.push(order)
+					})
+				}
+				if (this.shopData.coupon.length !== 0) {
+					this.shopData.coupon.forEach((store) => {
+						let order = {}
+						let products = []
+						let total = 0
+						store.list.forEach((goods) => {
+							total += goods.goods.value * goods.cpCart.goodsCount;
+							products.push({
+								proId: goods.goods.id,
+								cartId: goods.cpCart.id,
+								specId: '',
+								num: goods.cpCart.goodsCount,
+								price: goods.goods.value,
+								shareId: "",
+								shareUserId: 0
+							})
+						})
+						order = {
+							storeId: store.store.storeId,
+							dadaNo: "",
+							yddNo: "",
+							totalPay: total,
+							productPay: total,
+							paymentType: 0,
+							expFee: 0,
+							receivingWay: 1,
+							buyerMessage: store.buyerMessage,
+							type: 3,
+							products
+						}
+						orders.push(order)
+					})
+				}
+				let params = {
+					totalPay: this.total * 100,
+					postFee: postFee,
+					paymentType: 0, //微信支付
+					productPay: this.total * 100 - postFee,
+					nickName: '',
+					receiverId: this.addressData.id,
+					receiverName: this.addressData.consignee,
+					receiverMobile: this.addressData.mobile,
+					lat: this.addressData.lat,
+					lng: this.addressData.lng,
+					orders: JSON.stringify(orders)
+				}
+				console.log(params)
+				this.$getJson('/api/v3/order/add.jsp', params, 'POST', function(res) {
+					console.log(res)
+					if (res.success) {
+						uni.navigateTo({
+							url: '/pages/money/pay?money=' + $this.total + '&sn=' + res.data.paysn
+						});
+					} else {
+						uni.showToast({
+							title: res.message
+						});
 					}
-				);
+				});
 			},
-			stopPrevent(){}
+			stopPrevent() {}
 		}
 	}
 </script>
 
 <style lang="scss">
+	.create-order {
+		padding: 25upx;
+	}
+
 	page {
 		background: $page-color-base;
 		padding-bottom: 100upx;
@@ -307,10 +465,14 @@
 
 	.address-section {
 		padding: 30upx 0;
+		display: flex;
+		align-items: center;
+		height: 180upx;
 		background: #fff;
 		position: relative;
 
 		.order-content {
+			flex: 1;
 			display: flex;
 			align-items: center;
 		}
@@ -359,22 +521,29 @@
 			height: 5upx;
 		}
 	}
-	.goods-section{
-		.nameLeft{
-			margin-left: 0 !important;
-		}
-	}
+
 	.goods-section {
-		margin-top: 16upx;
+		margin-top: 28upx;
 		background: #fff;
-		padding-bottom: 1px;
+		padding: 0 35upx;
 
 		.g-header {
 			display: flex;
 			align-items: center;
 			height: 84upx;
-			padding: 0 30upx;
 			position: relative;
+
+			.label {
+				font-size: 31upx;
+				color: #000;
+			}
+
+			.name {
+				font-size: 31upx;
+				color: #a6a6a6;
+			}
+
+			border-bottom: 1upx solid #eee;
 		}
 
 		.logo {
@@ -391,9 +560,14 @@
 		}
 
 		.g-item {
-			display: flex;
-			margin: 20upx 30upx;
-			position:relative;
+			margin: 30upx 0;
+			position: relative;
+			border-bottom: 1upx solid #eee;
+
+			.top {
+				display: flex;
+			}
+
 			image {
 				flex-shrink: 0;
 				display: block;
@@ -401,10 +575,12 @@
 				height: 140upx;
 				border-radius: 4upx;
 			}
-			.uni-numbox{
+
+			.uni-numbox {
 				right: 0;
 				left: initial;
 			}
+
 			.right {
 				flex: 1;
 				padding-left: 24upx;
@@ -430,22 +606,26 @@
 
 				.price {
 					margin-bottom: 4upx;
-					color:#ff0000;
+					color: #ff0000;
 				}
-				.number{
+
+				.number {
 					font-size: 26upx;
 					color: $font-color-base;
 					margin-left: 20upx;
 				}
 			}
-			.price-box-top{
+
+			.price-box-top {
 				margin-top: 46upx;
 			}
+
 			.step-box {
 				position: relative;
 			}
 		}
 	}
+
 	.yt-list {
 		margin-top: 16upx;
 		background: #fff;
@@ -454,37 +634,45 @@
 	.yt-list-cell {
 		display: flex;
 		align-items: center;
-		padding: 10upx 30upx 10upx 40upx;
-		line-height: 70upx;
+		padding: 10upx 0;
+		line-height: 50upx;
 		position: relative;
-		&.receve{
-			.clamp{
+
+		&.receve {
+			margin-top: 40upx;
+
+			.clamp {
 				flex: 1;
 			}
-			.content{
+
+			.content {
 				flex: 1;
 				display: flex;
-				.radio{
+
+				.radio {
 					flex: 1;
 					display: flex;
 					align-items: center;
+					justify-content: flex-end;
 					font-size: 24upx;
 					color: #808080;
-					.circle{
+
+					.circle {
 						width: 25upx;
 						height: 25upx;
 						border-radius: 50%;
 						border: 1upx solid #FF474D;
 						margin-right: 6upx;
 					}
-					&.active{
-						.circle{
+
+					&.active {
+						.circle {
 							background-color: #FF474D;
 						}
 					}
 				}
 			}
-			
+
 		}
 
 		&.cell-hover {
@@ -493,6 +681,7 @@
 
 		&.b-b:after {
 			left: 30upx;
+			border: none;
 		}
 
 		.cell-icon {
@@ -533,7 +722,7 @@
 
 		.cell-tip {
 			font-size: 26upx;
-			color: #FF474C;
+			color: #808080;
 
 			&.disabled {
 				color: $font-color-light;
@@ -542,13 +731,15 @@
 			&.active {
 				color: $base-color;
 			}
-			&.red{
+
+			&.red {
 				color: $base-color;
 			}
 		}
 
 		&.desc-cell {
 			display: block;
+
 			.cell-tit {
 				max-width: 90upx;
 			}
@@ -564,31 +755,35 @@
 			border: 1upx solid #ddd;
 		}
 	}
-	
+
 	/* 支付列表 */
-	.pay-list{
+	.pay-list {
 		padding-left: 40upx;
 		margin-top: 16upx;
 		background: #fff;
-		.pay-item{
+
+		.pay-item {
 			display: flex;
 			align-items: center;
 			padding-right: 20upx;
 			line-height: 1;
-			height: 110upx;	
+			height: 110upx;
 			position: relative;
 		}
-		.icon-weixinzhifu{
+
+		.icon-weixinzhifu {
 			width: 80upx;
 			font-size: 40upx;
 			color: #6BCC03;
 		}
-		.icon-alipay{
+
+		.icon-alipay {
 			width: 80upx;
 			font-size: 40upx;
 			color: #06B4FD;
 		}
-		.icon-xuanzhong2{
+
+		.icon-xuanzhong2 {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -597,47 +792,56 @@
 			font-size: 40upx;
 			color: $base-color;
 		}
-		.tit{
+
+		.tit {
 			font-size: 32upx;
 			color: $font-color-dark;
 			flex: 1;
 		}
 	}
-	.item-right{
-		display:flex;
+
+	.item-right {
+		display: flex;
 		flex-direction: column;
 		flex: 1;
 		overflow: hidden;
-		position:relative;
+		position: relative;
 		padding-left: 30upx;
-		.title{
+
+		.title {
 			padding-right: 60upx;
 		}
-		.title,.price{
-			font-size:$font-base + 2upx;
+
+		.title,
+		.price {
+			font-size: $font-base + 2upx;
 			color: $font-color-dark;
 			height: 40upx;
 			line-height: 40upx;
 		}
-		.attr{
+
+		.attr {
 			font-size: $font-sm + 2upx;
 			color: $font-color-light;
 			height: 50upx;
 			line-height: 50upx;
 		}
-		.price{
+
+		.price {
 			height: 50upx;
-			line-height:50upx;
+			line-height: 50upx;
 			margin-top: 70upx;
-			color:$font-color-pink;
+			color: $font-color-pink;
 		}
-		.step{
-			position:absolute;
+
+		.step {
+			position: absolute;
 			right: 0;
 			bottom: 0;
 		}
 	}
-	.footer{
+
+	.footer {
 		position: fixed;
 		left: 0;
 		bottom: 0;
@@ -651,21 +855,25 @@
 		background-color: #fff;
 		z-index: 998;
 		color: $font-color-base;
-		box-shadow: 0 -1px 5px rgba(0,0,0,.1);
-		.price-content{
+		box-shadow: 0 -1px 5px rgba(0, 0, 0, .1);
+
+		.price-content {
 			padding-left: 30upx;
 		}
-		.price-tip{
+
+		.price-tip {
 			color: #ff0000;
 			margin-left: 8upx;
 		}
-		.price{
+
+		.price {
 			font-size: 36upx;
-			color:#ff0000;
+			color: #ff0000;
 		}
-		.submit{
-			display:flex;
-			align-items:center;
+
+		.submit {
+			display: flex;
+			align-items: center;
 			justify-content: center;
 			width: 258upx;
 			height: 80upx;
@@ -676,9 +884,9 @@
 			margin-right: 26upx;
 		}
 	}
-	
+
 	/* 优惠券面板 */
-	.mask{
+	.mask {
 		display: flex;
 		align-items: flex-end;
 		position: fixed;
@@ -686,44 +894,48 @@
 		top: var(--window-top);
 		bottom: 0;
 		width: 100%;
-		background: rgba(0,0,0,0);
+		background: rgba(0, 0, 0, 0);
 		z-index: 9995;
 		transition: .3s;
-		
-		.mask-content{
+
+		.mask-content {
 			width: 100%;
 			min-height: 30vh;
 			max-height: 70vh;
 			background: #f3f3f3;
 			transform: translateY(100%);
 			transition: .3s;
-			overflow-y:scroll;
+			overflow-y: scroll;
 		}
-		&.none{
+
+		&.none {
 			display: none;
 		}
-		&.show{
-			background: rgba(0,0,0,.4);
-			
-			.mask-content{
+
+		&.show {
+			background: rgba(0, 0, 0, .4);
+
+			.mask-content {
 				transform: translateY(0);
 			}
 		}
 	}
 
 	/* 优惠券列表 */
-	.coupon-item{
+	.coupon-item {
 		display: flex;
 		flex-direction: column;
 		margin: 20upx 24upx;
 		background: #fff;
-		.con{
+
+		.con {
 			display: flex;
 			align-items: center;
 			position: relative;
 			height: 120upx;
 			padding: 0 30upx;
-			&:after{
+
+			&:after {
 				position: absolute;
 				left: 0;
 				bottom: 0;
@@ -734,7 +946,8 @@
 				transform: scaleY(50%);
 			}
 		}
-		.left{
+
+		.left {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -742,16 +955,19 @@
 			overflow: hidden;
 			height: 100upx;
 		}
-		.title{
+
+		.title {
 			font-size: 32upx;
 			color: $font-color-dark;
 			margin-bottom: 10upx;
 		}
-		.time{
+
+		.time {
 			font-size: 24upx;
 			color: $font-color-light;
 		}
-		.right{
+
+		.right {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -760,21 +976,25 @@
 			color: $font-color-base;
 			height: 100upx;
 		}
-		.price{
+
+		.price {
 			font-size: 44upx;
 			color: $base-color;
-			&:before{
+
+			&:before {
 				content: '￥';
 				font-size: 34upx;
 			}
 		}
-		.tips{
+
+		.tips {
 			font-size: 24upx;
 			color: $font-color-light;
 			line-height: 60upx;
 			padding-left: 30upx;
 		}
-		.circle{
+
+		.circle {
 			position: absolute;
 			left: -6upx;
 			bottom: -10upx;
@@ -783,11 +1003,11 @@
 			height: 20upx;
 			background: #f3f3f3;
 			border-radius: 100px;
-			&.r{
+
+			&.r {
 				left: auto;
 				right: -6upx;
 			}
 		}
 	}
-
 </style>

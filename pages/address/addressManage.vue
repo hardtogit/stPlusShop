@@ -32,11 +32,11 @@
 <script>
 	import {mapState,mapMutations} from 'vuex';
 	import mpvuePicker from '@/components/mpvue-picker/mpvuePicker.vue';
-	import {cityData}  from '@/common/city.js';
+	// import {cityData}  from '@/common/city.js';
 	export default {
 		components: {
 			mpvuePicker,
-		},
+		}, 
 		data() {
 			return {
 				pickerCity:'请选择所在城市',//选择地区城市
@@ -88,8 +88,7 @@
 					this.addressData.isDefault = 1;
 				}else{
 					this.addressData.isDefault = 0;
-				}
-				
+				}			
 			},
 			//提交
 			confirm(){

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加动态",
+  "usingComponents": {
+    "article-edit": "/components/article-edit"
+  }
+}

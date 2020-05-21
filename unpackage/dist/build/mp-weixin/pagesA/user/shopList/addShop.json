@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "新增商品",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "article-edit": "/components/article-edit",
+    "upload-images": "/components/upload-images",
+    "goods-type": "/components/goods-type"
+  }
+}

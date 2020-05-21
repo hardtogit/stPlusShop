@@ -1,0 +1,10 @@
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/goods-type"],{1499:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.default=void 0;var o=function(){return e.e("components/uni-popup/uni-popup").then(e.bind(null,"4a96"))},a={props:{onChange:{type:Function,default:function(){}}},components:{uniPopup:o},data:function(){return{data:[],value:0,type:""}},mounted:function(){this.getData()},methods:{handleChange:function(t){this.value=t.detail.value,this.$emit("onChange",this.data[t.detail.value])},add:function(){this.$refs.specPop.open()},getData:function(){var t=this;this.$getJson("/api/v3/store/goods/category/list.jsp",{storeId:203},"GET",function(n){t.data=n.data})},saveType:function(){var t=this;this.$getJson("/api/v3/store/goods/category/addOrUpdate.jsp",{storeId:203,name:this.type},"POST",function(n){t.$refs.specPop.close(),t.getData()})}}};n.default=a},"4c6f":function(t,n,e){},"5d9d":function(t,n,e){"use strict";e.r(n);var o=e("1499"),a=e.n(o);for(var u in o)"default"!==u&&function(t){e.d(n,t,function(){return o[t]})}(u);n["default"]=a.a},ab29:function(t,n,e){"use strict";var o={"uni-popup":()=>e.e("components/uni-popup/uni-popup").then(e.bind(null,"4a96"))},a=function(){var t=this,n=t.$createElement;t._self._c},u=[];e.d(n,"b",function(){return a}),e.d(n,"c",function(){return u}),e.d(n,"a",function(){return o})},acf0:function(t,n,e){"use strict";e.r(n);var o=e("ab29"),a=e("5d9d");for(var u in a)"default"!==u&&function(t){e.d(n,t,function(){return a[t]})}(u);e("dd6d");var i,c=e("f0c5"),s=Object(c["a"])(a["default"],o["b"],o["c"],!1,null,null,null,!1,o["a"],i);n["default"]=s.exports},dd6d:function(t,n,e){"use strict";var o=e("4c6f"),a=e.n(o);a.a}}]);
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+    'components/goods-type-create-component',
+    {
+        'components/goods-type-create-component':(function(module, exports, __webpack_require__){
+            __webpack_require__('543d')['createComponent'](__webpack_require__("acf0"))
+        })
+    },
+    [['components/goods-type-create-component']]
+]);

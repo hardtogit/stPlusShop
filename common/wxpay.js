@@ -21,11 +21,11 @@ function accMul(arg1, arg2) {
  function wxpay(res) {
  		console.log(res)
 		var appId = "wxcf34eb890a5b3794";
-		var key = 'youduoduoyouduoduoyouduoduos2019';
+		var key = 'sdlsjo32Y23ms023L923nnd98Hjd032Y';
  		var nonce_str = randomString(32);
 		var openid = uni.getStorageSync('openid');
  		var stringA = "appid="+appId+"&body=youduoduo&device_info=1000&mch_id=1508331751&nonce_str=" +
- 			nonce_str + "&notify_url=https://web.51youduoduo.com/api/v2/vue/ydd/wxPay/wxPayBack.jsp" + "&openid=" +
+ 			nonce_str + "&notify_url=http://gezen.51youduoduo.com/ydd1/api/v3/wxPay/wxPayBack.jsp" + "&openid=" +
 			openid + "&out_trade_no=" +
  			res.sn + "&spbill_create_ip=47.105.143.198&total_fee=" + accMul(res.money,100) + "&trade_type=JSAPI";
  		var stringSignTemp = stringA + "&key="+key; //注：key为商户平台设置的密钥key
@@ -38,7 +38,7 @@ function accMul(arg1, arg2) {
 			"<device_info><![CDATA[1000]]></device_info>" +
  			"<mch_id><![CDATA[1508331751]]></mch_id>" +
  			"<nonce_str><![CDATA[" + nonce_str + "]]></nonce_str>" +
- 			"<notify_url><![CDATA[https://web.51youduoduo.com/api/v2/vue/ydd/wxPay/wxPayBack.jsp]]></notify_url>" +
+ 			"<notify_url><![CDATA[http://gezen.51youduoduo.com/ydd1/api/v3/wxPay/wxPayBack.jsp]]></notify_url>" +
  			"<openid><![CDATA[" + openid + "]]></openid>" +
  			"<out_trade_no><![CDATA[" + res.sn + "]]></out_trade_no>" +
  			"<spbill_create_ip><![CDATA[47.105.143.198]]></spbill_create_ip>" +
@@ -135,23 +135,6 @@ function accMul(arg1, arg2) {
 						url: '/pages/money/paySuccess'
 					})
 				},1000)
-				
- 				/* wx.navigateBack({
- 					delta: 1, // 回退前 delta(默认为1) 页面
- 					success: function(res) {
- 						wx.showToast({
- 							title: '支付成功',
- 							icon: 'success',
- 							duration: 2000
- 						})
- 					},
- 					fail: function() {
- 						// fail
- 					},
- 					complete: function() {
- 						// complete
- 					}
- 				}) */
  			},
  			fail: function(e) {
  				// fail
@@ -165,7 +148,7 @@ function accMul(arg1, arg2) {
  			}
  		})
  	}
-
  	export {
- 		wxpay
+ 		wxpay,
+		randomString
  	};

@@ -1,255 +1,92 @@
-<template>
-	<view class="container">
-	<view class="header">
-		<view class="icons">
-			<image class="icon love" src="../../static/icon/home/love.png"></image>
-			<image class="icon turn" src="../../static/icon/home/turn.png"></image>
-			<image class="icon qrcode" src="../../static/icon/home/qrcode.png"></image>
-		</view>
-	</view>
-	<view class="lables">
-		<view class="lable active">店铺</view>
-		<view class="lable">商圈券</view>
-		<view class="lable">聚划算</view>
-	</view>
-	<view class="swiper-item">
-		<view class="title" @click="push('/pages/home/classify/hot/hot')">
-			<view class="inner">
-			<view class="text">
-				爆品
-			</view>
-			<view class="icon">
-				<text class="cell-more yticon icon-you"></text>
-			</view>
-			</view>
-		</view>
-		<scroll-view  class="swiper " :scroll-x="true">
-			<view class="guess-section">
-				 <view v-for="(item, index) in goodsList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'hot')">
-				 	<view class="image-wrapper">
-				 		<image :src="url+item.resource.samllCoverImg" mode="aspectFill"></image>
-				 	</view>
-				 	<text class="title clamp">{{item.resource.name}}</text>
-				    <text class="text">干笋在发水烹饪后，其口感质嫩味鲜，清脆爽口</text>
-				 	<view class="price-box">
-				 		<view class="price-box" v-if="item.goods.isFaceToFace != 1">
-				 			<text class="price">{{item.goods.priceEdit}}</text>
-				 			<text class="default">{{item.goods.priceEdit}}</text>
-				 		</view>
-				 		<view class="price-box" v-if="item.goods.isFaceToFace == 1 || item.goods.isFaceToFace == '1'">
-				 			<text class="price">面议</text>
-				 		</view>
-				 		<text class="label">限时购</text>
-				 	</view>
-				 </view>
-				 </view>
-		</scroll-view> 
-	</view>
-	<view class="swiper-item">
-		<view class="title" @click="push('/pages/home/classify/coupon/coupon')">
-			<view class="inner">
-			<view class="text">
-				商圈券
-			</view>
-			<view class="icon">
-				<text class="cell-more yticon icon-you"></text>
-			</view>
-			</view>
-		</view>
-		<scroll-view  class="swiper " :scroll-x="true">
-			<view class="guess-section">
-				 <view v-for="(item, index) in goodsList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'coupon')">
-				 	<view class="image-wrapper">
-				 		<image :src="url+item.resource.samllCoverImg" mode="aspectFill"></image>
-				 	</view>
-				 	<text class="title clamp">{{item.resource.name}}</text>
-				    <text class="text">干笋在发水烹饪后，其口感质嫩味鲜，清脆爽口</text>
-				 	<view class="price-box">
-				 		<view class="price-box" v-if="item.goods.isFaceToFace != 1">
-				 			<text class="price">{{item.goods.priceEdit}}</text>
-				 			<text class="default">{{item.goods.priceEdit}}</text>
-				 		</view>
-				 		<view class="price-box" v-if="item.goods.isFaceToFace == 1 || item.goods.isFaceToFace == '1'">
-				 			<text class="price">面议</text>
-				 		</view>
-				 		<text class="label">限时购</text>
-				 	</view>
-				 </view>
-				 </view>
-		</scroll-view> 
-	</view>
-	<view class="swiper-item">
-		<view class="title" @click="push('/pages/home/classify/platform/platform')">
-			<view class="inner">
-			<view class="text">
-				聚划算
-			</view>
-			<view class="icon">
-				<text class="cell-more yticon icon-you"></text>
-			</view>
-			</view>
-		</view>
-		<scroll-view  class="swiper " :scroll-x="true">
-			<view class="guess-section">
-				 <view v-for="(item, index) in goodsList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'platform')">
-				 	<view class="image-wrapper">
-				 		<image :src="url+item.resource.samllCoverImg" mode="aspectFill"></image>
-				 	</view>
-				 	<text class="title clamp">{{item.resource.name}}</text>
-				    <text class="text">干笋在发水烹饪后，其口感质嫩味鲜，清脆爽口</text>
-				 	<view class="price-box">
-				 		<view class="price-box" v-if="item.goods.isFaceToFace != 1">
-				 			<text class="price">{{item.goods.priceEdit}}</text>
-				 			<text class="default">{{item.goods.priceEdit}}</text>
-				 		</view>
-				 		<view class="price-box" v-if="item.goods.isFaceToFace == 1 || item.goods.isFaceToFace == '1'">
-				 			<text class="price">面议</text>
-				 		</view>
-				 		<text class="label">限时购</text>
-				 	</view>
-				 </view>
-				 </view>
-		</scroll-view> 
-		<view class="swiper-item">
-			<view class="title">
-				<view class="inner">
-				<view class="text">
-					店铺动态
-				</view>
-				<view class="icon">
-					<text class="cell-more yticon icon-you"></text>
-				</view>
-				</view>
-			</view>
-			<view class="store-title">东坡故里  泡博会探寻东坡味道</view>
-			<view class="sub-title">
-				第十一届中国泡菜食品 国际博览会，11月13日在四川眉山正式开幕，“健康食品 世界共享”。
-			</view>
-			<view class="pictures">
-				<image class="picture" src=""></image>
-				<image class="picture" src=""></image>
-				<image class="picture" src=""></image>
-				<image class="picture" src=""></image>
-				<image class="picture" src=""></image>
-				<image class="picture" src=""></image>
-				<image class="picture" src=""></image>
-				<image class="picture" src=""></image>
-			</view>
-		</view>
-		<view class="swiper-item">
-			<view class="title">
-				<view class="inner">
-				<view class="text">
-					店铺介绍
-				</view>
-				<view class="icon">
-					<text class="cell-more yticon icon-you"></text>
-				</view>
-				</view>
-			</view>
-			<image class="store-banner" src=''></image>
-			<view class="introduce-title">
-				<image class="logo"/>
-				<view class="name">华创大健康事业平台</view>
-			</view>
-	
-		</view>
-	</view>
-	</view>
-</template>
-
-<script>
-	export default {
-		data() {
-			return {
-				goodsList:[]
-			}
-		},
-		methods: {
-			getData(){
-				var url = '/api/v2/vue/ydd/index/resList.jsp'
-				let data = {
-					data: JSON.stringify({
-						pageNumber: 1,
-						pageSize:10,
-						companyId: uni.getStorageSync('companyId')
-					})
-				}
-				this.$getJson(url, data, 'POST', res => {
-					console.log('----list------------', res);
-					if (res.data) {
-						this.goodsList=res.data
-					}
-				});
-			},
-			push(url){
-				uni.navigateTo({
-					url
-				})
-			},
-			//详情页
-			navToDetailPage(item,type) {
-				if(type=='hot'||type=='platform'){//爆品和平台商品
-					//测试数据没有写id，用title代替
-					let id = item.resource.id;
-					uni.navigateTo({
-						url: `/pages/home/detail/goods/goods?id=${id}` + "&companyId=" + this.companyId +
-							"&cheapPurchaseCompanyId=" + this.cheapPurchaseCompanyId + "&classification=" + this.classification
-					})					
-				}else if(type=='coupon'){ //优惠券
-					//测试数据没有写id，用title代替
-					let id = item.resource.id;
-					uni.navigateTo({
-						url: `/pages/product/product?id=${id}` + "&companyId=" + this.companyId +
-							"&cheapPurchaseCompanyId=" + this.cheapPurchaseCompanyId + "&classification=" + this.classification
-					})
-				}
-			},
-		},
-		mounted(){
-			this.getData()
-		}
-	}
-</script>
-
 <style lang="scss">
-	.container{
-		padding: 0 25upx;  
+	.container {
+		padding: 0 25upx;
 	}
-	.header{
-		background-color: #FF872F;
+	.header {
+		background-image: url(../../static/home/index_bg.png);
+		background-size: 100% 100%;
 		height: 300upx;
 		border-radius: 10upx;
 		position: relative;
-		.icons{
+		text-align: center;
+		padding-top: 38upx;
+		.icons {
 			position: absolute;
 			width: 100%;
 			top: 25upx;
-			.icon{
+			.icon {
 				display: inline-block;
 				width: 32upx;
 				height: 32upx;
-				&.love{
+				&.love {
 					float: left;
 					margin-left: 25upx;
 				}
-				&.qrcode{
+				&.qrcode {
 					float: right;
 					margin-right: 25upx;
 				}
-				&.turn{
+				&.turn {
 					float: right;
 					margin-right: 25upx;
 				}
 			}
+
+			.share {
+				display: inline-block;
+				background: none;
+				float: right;
+				border: none;
+				width: 59upx;
+				padding: 0;
+
+				&::after {
+					border: none;
+				}
+			}
+		}
+
+		.logo {
+			width: 125upx;
+			height: 125upx;
+			border-radius: 50%;
+
+			display: block;
+			margin: 0 auto;
+		}
+
+		.name {
+			text-align: center;
+			margin-top: 18upx;
+			color: #fff;
+		}
+
+		.people {
+			display: inline-block;
+			position: relative;
+			margin: 0 auto;
+			color: #fff;
+
+			.label {
+				position: absolute;
+				right: -86upx;
+				top: 10upx;
+				font-size: 21upx;
+				color: #F26131;
+				background-color: #F8E489;
+				height: 25upx;
+				border-radius: 12.5upx;
+				line-height: 25upx;
+				padding: 0 16upx;
+			}
 		}
 	}
-	.lables{
+	.lables {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin: 30upx 0 20upx 0;
-		.lable{
+		.lable {
 			width: 186upx;
 			height: 65upx;
 			line-height: 65upx;
@@ -257,72 +94,101 @@
 			font-size: 33upx;
 			text-align: center;
 			color: #525252;
-			&.active{
+			&.active {
 				background-color: #FF474C;
 				color: #fff;
 			}
 		}
 	}
-    .swiper-item{
-		.title{
-			padding: 16upx 0;
-			border-bottom: 0.5upx solid #DCDCDC;
-			.inner{
+
+	.swiper-item {
+		.title {
+			padding: 20upx 0;
+			border-bottom: 0.5upx solid #eee;
+
+			.inner {
 				display: flex;
 				align-items: center;
-				border-left: 6upx solid #FF474C;
+				// height: 34upx;
 				padding-left: 10upx;
-				.text{
-					font-size: 40upx;
-					font-weight: bold;
+
+				.shu {
+					width: 6upx;
+					height: 34upx;
+					background-color: #FF474C;
+					margin-right: 15upx;
 				}
-				.icon{
+
+				.text {
+					font-size: 40upx;
+					font-weight: 500;
+				}
+
+				.icon {
 					flex: 1;
 					text-align: right;
+					color: #5a5a5a;
+
 				}
 			}
 		}
-		.swiper{
-			height: 540upx;
-			.guess-section{
+
+		.swiper {
+
+			// height: 540upx;
+			.guess-section {
 				white-space: nowrap;
+
 				padding: 38upx 0;
 				background: #fff;
+
 				.guess-item {
 					display: inline-block;
+					position: relative;
+					vertical-align: top;
 					width: 303upx;
 					margin-right: 18upx;
+
+					.bottom {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						// height: ;
+					}
 				}
-			
+
 				.image-wrapper {
 					width: 100%;
 					height: 334upx;
-					border-radius: 3px;
+					border-radius: 9upx;
 					overflow: hidden;
+
 					image {
 						width: 100%;
 						height: 100%;
 						opacity: 1;
 					}
 				}
-			
+
 				.title {
 					font-size: 30upx;
-					color: $font-color-dark;
+					color: #121212;
 					font-family: Arial, Helvetica, sans-serif;
 					margin-top: 8upx;
 					border-bottom: none;
 					padding: 0;
 				}
-				.text{
+
+				.text {
 					color: #777;
 					display: block;
 					font-size: 22upx;
 					line-height: 26upx;
 					white-space: normal;
-					margin: 8upx 0; 
+					margin: 8upx 0 28upx 0;
 				}
-		
+
 				.price-box {
 					display: flex;
 					align-items: center;
@@ -332,85 +198,466 @@
 					color: $font-color-light;
 					font-family: Arial;
 				}
+
 				.price {
 					font-size: 37upx;
 					color: #ea6143;
 					line-height: 1;
 					font-family: Arial;
+
 					&:before {
 						content: '￥';
+						margin-right: -6upx;
 						font-size: 37upx;
-						margin-right: 2upx;
 					}
 				}
-				.default{
+
+				.default {
 					font-size: 22upx;
 					display: inline-block;
 					align-items: baseline;
 					color: #B1B1B1;
 					text-decoration: line-through;
+
 					&:before {
 						content: '￥';
 						font-size: 22upx;
-						margin-right: 2upx;
+						margin-right: -4upx;
 						text-decoration: line-through;
 					}
 				}
-			    .label{
+
+				.label {
 					color: #F0351C;
-					font-size:24upx;
+					font-size: 24upx;
 					border: 0.5upx solid #F0351C;
 					padding: 1upx 4upx;
 					border-radius: 4upx;
 				}
+
+				&.coupon {
+					.guess-item {
+						height: 467upx;
+						padding: 20upx;
+						background-color: #fff;
+						box-shadow: 0px 2px 21px 1px rgba(104, 101, 101, 0.14);
+
+						.bottom {
+							padding: 20upx;
+						}
+
+						.image-wrapper {
+							width: 260upx;
+							height: 223upx;
+							overflow: hidden;
+
+							image {
+								width: 100%;
+								height: 100%;
+								opacity: 1;
+							}
+						}
+
+						.text {
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							overflow: hidden;
+							border-bottom: 1px dashed #C3C3C3;
+							padding-bottom: 18upx;
+							margin-bottom: 0;
+						}
+
+						.store-box {
+							display: inline-block;
+							.box {
+								display: flex;
+								height: 30upx;
+								padding: 0 6upx;
+								align-items: center;
+								border: 1upx solid rgba(128, 128, 128, 1);
+								border-radius: 16upx;
+								font-size: 17upx;
+								color: #808080;
+								.pass {
+									margin-right: 4upx;
+									.num {
+										color: #333;
+									}
+								}
+								.leve {
+									.num {
+										color: #FF474C;
+									}
+								}
+							}
+						}
+					}
+
+
+				}
 			}
-			}
-			// 店铺
-		.store-title{
+		}
+
+		// 店铺
+		.store-title {
 			font-size: 31upx;
 			margin-top: 28upx;
-		}	
-		.sub-title{
+		}
+
+		.sub-title {
 			font-size: 26upx;
 			color: #616161;
 			margin-top: 26upx;
 		}
-		.pictures{
+
+		.pictures {
 			margin-top: 40upx;
-			.picture{
+
+			.picture {
 				width: 208upx;
 				display: inline-block;
 				height: 203upx;
 				background-color: #ddd;
 				margin-right: 34rpx;
 				margin-bottom: 20upx;
-				&:nth-child(3n){
+
+				&:nth-child(3n) {
 					margin-right: 0;
 				}
 			}
 		}
-		.store-banner{
+
+		.store-banner {
 			display: block;
 			width: 692upx;
 			height: 565upx;
 			margin: 0 auto;
 		}
-		.introduce-title{
+
+		.introduce-title {
 			display: flex;
 			align-items: center;
-			.logo{
+
+			.logo {
 				width: 120upx;
 				height: 120upx;
 				display: block;
 				background-color: #ddd;
 			}
-			.name{
+
+			.name {
 				font-size: 38upx;
 				color: #0F0F0F;
 				flex: 1;
 				padding-left: 34upx;
 			}
 		}
-			
+
 	}
 </style>
+<template>
+	<view class="container">
+		<view class="header">
+			<view class="icons">
+				<image class="icon love" src="../../static/icon/home/love.png" @click="toFavorite"></image>
+				<button class="share" open-type="share">
+					<image class="icon turn" src="../../static/icon/home/turn.png"></image>
+				</button>
+				<image class="icon qrcode" src="../../static/icon/home/qrcode.png"></image>
+			</view>
+			<image class="logo" :src="ctx+companyInfo.logoPath" alt="">
+				<view class="name">{{companyInfo.name}}</view>
+				<view class="people">
+					{{companyUser.realName}}
+					<view class="label">
+						店长
+					</view>
+				</view>
+		</view>
+		<view class="lables">
+			<view class="lable active">店铺</view>
+			<view class="lable" @click="push('/pages/home/classify/coupon/coupon')">商圈券</view>
+			<view class="lable" @click="push('/pages/home/classify/platform/platform')">巨划算</view>
+		</view>
+		<view class="swiper-item">
+			<view class="title" @click="push('/pages/home/classify/hot/hot')">
+				<view class="inner">
+					<view class="shu"></view>
+					<view class="text">
+						爆品
+					</view>
+					<view class="icon">
+						<text class="cell-more yticon icon-you"></text>
+					</view>
+				</view>
+			</view>
+			<scroll-view class="swiper " :scroll-x="true">
+				<view class="guess-section">
+					<view v-for="(item, index) in goodsList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'hot')">
+						<view class="image-wrapper">
+							<image :src="ctx+item.firstImg" mode="aspectFill"></image>
+						</view>
+						<text class="title clamp">{{item.proName}}</text>
+						<text class="text">{{item.subheading}}</text>
+						<view class="price-box">
+							<view class="price-box" v-if="item.isFaceToFace != 1">
+								<text class="price">{{item.price/100}}</text>
+								<text class="default">{{item.marketPrice/100}}</text>
+							</view>
+							<!-- 	<view class="price-box" v-if="item.goods.isFaceToFace == 1 || item.goods.isFaceToFace == '1'">
+				 			<text class="price">面议</text>
+				 		</view> -->
+							<text class="label">限时购</text>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="swiper-item">
+			<view class="title" @click="push('/pages/home/classify/coupon/coupon')">
+				<view class="inner">
+					<view class="shu"></view>
+					<view class="text">
+						商圈券
+					</view>
+					<view class="icon">
+						<text class="cell-more yticon icon-you"></text>
+					</view>
+				</view>
+			</view>
+			<scroll-view class="swiper " :scroll-x="true">
+				<view class="guess-section coupon">
+					<view v-for="(item, index) in couponList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'coupon')">
+						<view class="image-wrapper">
+							<image :src="ctx+item.imgPath" mode="aspectFill"></image>
+						</view>
+						<text class="title clamp">{{item.name}}</text>
+						<text class="text">{{item.instro}}</text>
+						<view class="store-box">
+							<view class="box">
+								<view class="pass">已抢<text class="num">{{productInfo.sales}}</text>件</view>
+								<view class="leve">仅剩<text class="num">{{productInfo.stock}}</text>件</view>
+							</view>
+						</view>
+						<view class="price-box bottom">
+							<view class="price-box">
+								<text class="price">{{item.value/100}}</text>
+							</view>
+							<!-- 	<view class="price-box" v-if="item.goods.isFaceToFace == 1 || item.goods.isFaceToFace == '1'">
+							<text class="price">面议</text>
+						</view> -->
+							<!-- <text class="label">限时购</text> -->
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="swiper-item">
+			<view class="title" @click="push('/pages/home/classify/platform/platform')">
+				<view class="inner">
+					<view class="shu"></view>
+					<view class="text">
+						巨划算
+					</view>
+					<view class="icon">
+						<text class="cell-more yticon icon-you"></text>
+					</view>
+				</view>
+			</view>
+			<scroll-view class="swiper " :scroll-x="true">
+				<view class="guess-section">
+					<view v-for="(item, index) in platformList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'platform')">
+						<view class="image-wrapper">
+							<image :src="ctx+item.firstImg" mode="aspectFill"></image>
+						</view>
+						<text class="title clamp">{{item.proName}}</text>
+						<text class="text">{{item.subheading}}</text>
+						<view class="price-box">
+							<view class="price-box">
+								<text class="price">{{item.price/100}}</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+			<view class="swiper-item">
+				<view class="title">
+					<view class="inner" @click="push('/pages/home/dynamic/dynamic')">
+						<view class="shu"></view>
+						<view class="text">
+							店铺动态
+						</view>
+						<view class="icon">
+							<text class="cell-more yticon icon-you"></text>
+						</view>
+					</view>
+				</view>
+				<view class="store-title">东坡故里 泡博会探寻东坡味道</view>
+				<view class="sub-title">
+					第十一届中国泡菜食品 国际博览会，11月13日在四川眉山正式开幕，“健康食品 世界共享”。
+				</view>
+				<view class="pictures">
+					<image class="picture" src=""></image>
+					<image class="picture" src=""></image>
+					<image class="picture" src=""></image>
+					<image class="picture" src=""></image>
+					<image class="picture" src=""></image>
+					<image class="picture" src=""></image>
+					<image class="picture" src=""></image>
+					<image class="picture" src=""></image>
+				</view>
+			</view>
+			<view class="swiper-item">
+				<view class="title" style="border-bottom: none;">
+					<view class="inner">
+						<view class="shu"></view>
+						<view class="text">
+							店铺介绍
+						</view>
+					</view>
+				</view>
+				<image class="store-banner" :src='ctx+companyInfo.introduceImg'></image>
+				<view class="introduce-title">
+					<image class="logo" :src="ctx+companyInfo.logoPath" />
+					<view class="name">{{companyInfo.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				ctx: this.$ctx,
+				goodsList: [],
+				couponList: [],
+				platformList: [],
+				companyInfo: {},
+				companyUser: {}
+			}
+		},
+		//设置分享内容
+		onShareAppMessage(res) {
+			if (res.from === 'button') { // 来自页面内分享按钮
+				console.log(res.target)
+			}
+			return {
+				title: '友哆哆',
+				path: "/pages/home/home",
+				imageUrl: ''
+			}
+		},
+		methods: {
+			getData() {
+				var url = '/api/v2/vue/ydd/index/resList.jsp'
+				let data = {
+					data: JSON.stringify({
+						pageNumber: 1,
+						pageSize: 10,
+						companyId: uni.getStorageSync('companyId')
+					})
+				}
+				this.$getJson(url, data, 'POST', res => {
+					console.log('----list------------', res);
+					if (res.data) {
+						// this.goodsList=res.data
+					}
+				});
+				this.$getJson('/api/v3/busiSettings/getSettings.jsp', {
+					data: JSON.stringify({
+						'HOMEPAGE.SHOPID': 1
+					})
+				}, 'POST', res => {
+					console.log(res)
+				})
+				//获取热门商品
+				this.$getJson('/api/v3/vue/home/hotGoods.jsp', {
+					storeId: 202
+				}, 'POST', res => {
+					console.log(res.data, 'sssssssssssssss')
+					this.goodsList = res.data
+				})
+				//获取商圈券
+				this.$getJson('/api/v3/vue/home/yyCoupon.jsp', {
+					storeId: 202
+				}, 'POST', res => {
+					console.log(res.data, 'sssssssssssssss')
+					this.couponList = res.data
+				})
+
+				//获取巨划算
+				this.$getJson('/api/v3/vue/home/jhs.jsp', {
+					storeId: 202
+				}, 'POST', res => {
+					this.platformList = res.data
+				})
+				//首页动态
+				this.$getJson('/api/v3/vue/home/dt.jsp', {
+					storeId: 202
+				}, 'POST', res => {
+					console.log(res, 'ss')
+				})
+				//店铺介绍
+				this.$getJson('/api/v2/vue/sqPlus/company/companyInfo.jsp', {
+					data: JSON.stringify({
+						'companyId': 202
+					})
+				}, 'POST', res => {
+					this.companyInfo = res.data.cjCompany
+					this.companyUser = res.data.cjCompany.cjUser
+					console.log(this.companyInfo, 'sss')
+				})
+
+
+			},
+			//收藏
+			toFavorite() {
+				this.$getJson('/api/v3/my/store/collect.jsp', {
+					storeId: 202,
+					action: 1
+				}, 'POST', res => {
+					if (res.success) {
+						uni.showToast({
+							title: '收藏成功',
+							icon: 'none'
+						})
+					} else {
+						uni.showToast({
+							title: res.message,
+							icon: 'none'
+						})
+					}
+
+				});
+			},
+			push(url) {
+				uni.navigateTo({
+					url
+				})
+			},
+			//详情页
+			navToDetailPage(item, type) {
+				if (type == 'hot' || type == 'platform') { //爆品和平台商品
+					//测试数据没有写id，用title代替
+					let id = item.id;
+					uni.navigateTo({
+						url: `/pages/home/detail/goods/goods?id=${id}` + "&companyId=" + this.companyId +
+							"&cheapPurchaseCompanyId=" + this.cheapPurchaseCompanyId + "&classification=" + this.classification
+					})
+				} else if (type == 'coupon') { //优惠券
+					//测试数据没有写id，用title代替
+					let id = item.id;
+					uni.navigateTo({
+						url: `/pages/home/detail/coupon/coupon?id=${id}`
+
+					})
+				}
+			},
+		},
+		mounted() {
+			this.getData()
+		}
+	}
+</script>

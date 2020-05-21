@@ -76,14 +76,24 @@
 .collection .list .store .right .title {
         font-size: 31rpx;
         color: #333;
+        font-weight: bold;
 }
 .collection .list .store .right .address {
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
         font-size: 25rpx;
         color: #808080;
         margin-top: 10rpx;
+}
+.collection .list .store .right .address image {
+          display: block;
+          width: 19rpx;
+          height: 23rpx;
+          margin-right: 4rpx;
 }
 .collection .list .store .right .distance {
         font-size: 21rpx;

@@ -5,11 +5,12 @@
 import { contactPhone } from '@/common/util.js';
 // #endif  
 // #ifdef MP-WEIXIN
-const apiUrl = 'https://web.51youduoduo.com';
+const apiUrl = 'http://gezen.51youduoduo.com/ydd1';
 // const apiUrl = 'http://192.168.4.4:8080';
+ let timer;
 // #endif
 // 请求方式
-const urlRequest = async (url, param, way, callBack) => {
+const urlRequest = async (url, param, way, callBack,json) => {
 	let token = "";  
 	uni.getStorage({
 		key: 'token',
@@ -32,9 +33,10 @@ const urlRequest = async (url, param, way, callBack) => {
 			// #endif  
 			// #ifdef MP-WEIXIN 
 			'openid': uni.getStorageSync("openid"),
+			'Cookie': `SESSION=${uni.getStorageSync('SESSION')}`,
 			// #endif  
 			'Accept': 'application/json',
-			'Content-Type': 'application/x-www-form-urlencoded',
+			'Content-Type': json?'application/json':'application/x-www-form-urlencoded',
 		},
 		method: way,
 		success: (res) => {
@@ -43,7 +45,17 @@ const urlRequest = async (url, param, way, callBack) => {
 			if(res.data.status == 99) 
 			contactPhone({type: 'logOut'});
 			// #endif  
- 
+             if(res.data.message=='请登录'){
+				 if(timer){
+					 clearInterval(timer)
+				 }
+				timer=setTimeout(()=>{
+					 uni.navigateTo({
+					 	url:'/pages/login/login'
+					 })
+				 },2000)
+				
+			 }
 			callBack(res.data);
 		}
 	});

@@ -32,6 +32,8 @@
 </script>
 
 <style lang='scss'>
+		@import "./static/css/base.css";
+		@import "./static/css/style.css";
 	/*
 		全局公共样式和字体图标
 	*/

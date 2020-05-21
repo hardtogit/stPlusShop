@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import store from '@/common/common.js'
 export default {
 	data() {
 		return {
@@ -64,17 +65,20 @@ export default {
 				title: '请稍后..',
 				mask: true,
 			})
+			let uploadUrl=null
 			try{
-				const uploadUrl = await this.uploadImage(images[0]);
+				uploadUrl = await this.uploadImage(images[0]);
+				console.log(uploadUrl)
 			}catch(err){
 				console.log(err);
 				return;
+			}finally{ 
+				uni.hideLoading()
 			}
 			
-			if(uploadUrl !== false){
+			if(uploadUrl){
 				images.splice(0, 1);
 				this.imageList[this.imageList.length - 1].src = uploadUrl;
-
 				//判断是否需要继续上传
 				if(images.length > 0 && this.rduLength > 0){
 					this.uploadFiles(images);
@@ -96,26 +100,28 @@ export default {
 		uploadImage: function(file){
 			return new Promise((resolve, reject)=> {
 				//发送给后端的附加参数
-				const formData = {
-					thumb_mode: 1,  
+				const formData = { 
+					thumb_mode: 1, 
+					fileSingleSizeLimit: 10 * 1024 * 1024,
+					fileSizeLimit: '10MB',
+					originalName: "ceshi.jpg",
+					token: `TwfyW3Xe1tblRSns91567764332116`
 				};
 				this.uploadTask = uni.uploadFile({
-					url: this.url, 
+					url: this.url||`${store.apiUrl}/jsp/api/grem/doUploadFile.jsp`, 
 					filePath: file,
 					name: 'file',
 					formData: formData,
-					success(uploadFileResult){
-						const uploadFileRes = JSON.parse(uploadFileResult.data) || {};
-						if(uploadFileRes.status === 1 && uploadFileRes.data){
-							resolve(uploadFileRes.data);
-						}else{
-							reject('接口返回错误');
-						}
+					success(res){
+						let {data} = JSON.parse(res.data)
+					      console.log('路劲', data[0].relativePath)
+						  resolve(data[0].relativePath)
 					}, 
 					fail(){
 						reject('网络链接错误');
 					}
 				});
+		
 				//上传进度
 				this.uploadTask.onProgressUpdate((progressRes)=> {
 					this.imageList[this.imageList.length - 1].progress = progressRes.progress;

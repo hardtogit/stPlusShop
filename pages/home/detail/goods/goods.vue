@@ -1,31 +1,26 @@
 <template>
 	<view class="container">
-		<uni-popup ref="popup" class="userPop" type="center">
-			<view>
-				<uni-pop ref="uniPop" @changes="childClick"></uni-pop>
-			</view>
-		</uni-popup>
 		<view class="carousel">
 			<swiper indicator-dots circular=true duration="400">
-				<swiper-item class="swiper-item" v-for="(item,index) in productInfo.resources.smallBannerImgArr" :key="index">
+				<swiper-item class="swiper-item" v-for="(item,index) in banners" :key="index">
 					<view class="image-wrapper">
-						<image :src="url+item" class="loaded" mode="aspectFill" @tap="saveQrcode(1)"></image>
+						<image :src="ctx+item" class="loaded" mode="aspectFill" @tap="saveQrcode(1)"></image>
 					</view>
 				</swiper-item>
 			</swiper>
 		</view>
 
-		<view class="introduce-section" v-if="productInfo.goods.isFaceToFace != 1">
-			<text class="title">{{productInfo.resources.name}}</text>
+		<view class="introduce-section">
+			<text class="title">{{productInfo.prodName}}</text>
 			<view class="price-store">
 				<view class="price-box">
 					<text class="price-tip">¥</text>
-					<text class="price">{{productInfo.goods.priceShow}}</text>
+					<text class="price">{{productInfo.price}}</text>
 				</view>
 				<view class="store-box">
 					<view class="box">
-						<view class="pass">已抢<text class="num">38</text>件</view>
-						<view class="leve">仅剩<text class="num">134</text>件</view>
+						<view class="pass">已抢<text class="num">{{productInfo.sales}}</text>件</view>
+						<view class="leve">仅剩<text class="num">{{productInfo.stock}}</text>件</view>
 					</view>
 				</view>
 			</view>
@@ -46,22 +41,22 @@
 
 		<!-- 底部操作菜单 -->
 		<view class="page-bottom">
-			<navigator url="/pages/index/index" open-type="switchTab" class="p-b-btn">
-				<text class="yticon icon-xiatubiao--copy"></text>
-				<text>首页</text>
-			</navigator>
 			<view @tap="shareShowBtn(1)" class="p-b-btn">
-				<text class="yticon icon-fenxiang2"></text>
+				<image class="icon" src="../../../../static/icon/home/fenxiang.png"></image>
 				<text>分享</text>
 			</view>
 			<view class="p-b-btn" :class="{active: favorite}" @click="toFavorite">
-				<text class="yticon icon-shoucang"></text>
+				<image class="icon" v-if="favorite" src="../../../../static/icon/home/shouchang_h.png"></image>
+				<image class="icon" v-if="!favorite" src="../../../../static/icon/home/shouchang.png"></image>
 				<text>收藏</text>
+			</view>
+			<view class="p-b-btn" @click="toFavorite">
+				<image class="icon" src="../../../../static/icon/home/kefu.png"></image>
+				<text>客服</text>
 			</view>
 			<view class="action-btn-group">
 				<button type="primary" class=" action-btn no-border add-cart-btn" @click="setOptionType('cart')">加入购物车</button>
-				<button type="primary" class=" action-btn no-border buy-now-btn" @click="setOptionType('buy')" v-if="productInfo.resources.status == 2">立即购买</button>
-				<button type="primary" class=" action-btn no-border add-cart-btn" style="background-color: #C0C0C0;" v-if="productInfo.resources.status != 2">已下架</button>
+				<button type="primary" class=" action-btn no-border buy-now-btn" @click="setOptionType('buy')">立即购买</button>
 			</view>
 		</view>
 		<navigator url="/pages/cart/cart" open-type="switchTab" class="productCare">
@@ -77,22 +72,26 @@
 				<view class="a-t">
 					<image src="https://gd3.alicdn.com/imgextra/i3/0/O1CN01IiyFQI1UGShoFKt1O_!!0-item_pic.jpg_400x400.jpg"></image>
 					<view class="right">
-						<text class="price">¥328.00</text>
-						<text class="stock">库存：188件</text>
-						<view class="selected">
-							已选：
-							<text class="selected-text" v-for="(sItem, sIndex) in specSelected" :key="sIndex">
-								{{sItem.name}}
-							</text>
+						<view class="name">{{productInfo.prodName}}</view>
+						<view class="price-box">
+							<text class="price">{{productInfo.price}}</text>
+							<text class="default">{{productInfo.marketPrice}}</text>
 						</view>
+						<view class="store-box">
+							<view class="box">
+								<view class="pass">已抢<text class="num">{{selectedSpec.sales}}</text>件</view>
+								<view class="leve">仅剩<text class="num">{{selectedSpec.snum}}</text>件</view>
+							</view>
+						</view>
+
 					</view>
 				</view>
-				<view v-for="(item,index) in specList" :key="index" class="attr-list">
-					<text>{{item.name}}</text>
+				<view class="attr-list">
+					<text>规格：</text>
 					<view class="item-list">
-						<text v-for="(childItem, childIndex) in specChildList" v-if="childItem.pid === item.id" :key="childIndex" class="tit"
-						 :class="{selected: childItem.selected}" @click="selectSpec(childIndex, childItem.pid)">
-							{{childItem.name}}
+						<text v-for="(childItem, childIndex) in specList" :key="childIndex" class="tit" :class="{selected: childItem.id==selectedSpec.id}"
+						 @click="selectSpec(childItem)">
+							{{childItem.sname}}
 						</text>
 					</view>
 				</view>
@@ -157,6 +156,7 @@
 		},
 		data() {
 			return {
+				banners: [],
 				cartCount: '',
 				specClass: 'none',
 				specSelected: [],
@@ -164,9 +164,9 @@
 				member: {},
 				yddMember: uni.getStorageSync("userInfo"),
 				shareShow: false,
-				favorite: false,
+				favorite: false, //是否收藏
 				posterShow: false,
-				url: this.$ctx,
+				ctx: this.$ctx,
 				qrcodePaths: [],
 				id: null,
 				shareList: [],
@@ -178,71 +178,14 @@
 				companyId: '',
 				cheapPurchaseCompanyId: '',
 				classification: "",
-				optionType:"buy",//选择规格后是购买还是收藏
-				specList: [{
-						id: 1,
-						name: '尺寸',
-					},
-					{
-						id: 2,
-						name: '颜色',
-					},
-				],
-				specChildList: [{
-						id: 1,
-						pid: 1,
-						name: 'XS',
-					},
-					{
-						id: 2,
-						pid: 1,
-						name: 'S',
-					},
-					{
-						id: 3,
-						pid: 1,
-						name: 'M',
-					},
-					{
-						id: 4,
-						pid: 1,
-						name: 'L',
-					},
-					{
-						id: 5,
-						pid: 1,
-						name: 'XL',
-					},
-					{
-						id: 6,
-						pid: 1,
-						name: 'XXL',
-					},
-					{
-						id: 7,
-						pid: 2,
-						name: '白色',
-					},
-					{
-						id: 8,
-						pid: 2,
-						name: '珊瑚粉',
-					},
-					{
-						id: 9,
-						pid: 2,
-						name: '草木绿',
-					},
-				]
+				optionType: "buy", //选择规格后是购买还是收藏
+				specList: [],
+				selectedSpec: {},
 			};
 		},
 		onShareAppMessage(res) {
-			console.log("------------------------", this.productInfo.resources.smallBannerImgArr[0])
-			if (res.from === 'button') { // 来自页面内分享按钮
-				console.log(res.target)
-			}
 			return {
-				title: this.yddMember.realName + "邀请你购买" + this.productInfo.resources.name,
+				title: '你是好友的',
 				path: "/pages/product/product?id=" + this.id + "&inviteCode=" + this.yddMember.inviterCode + "&companyId=" + this.companyId +
 					"&cheapPurchaseCompanyId=" + this.cheapPurchaseCompanyId + "&classification=" + this.classification,
 				imageUrl: this.$ctx + this.productInfo.resources.smallBannerImgArr[0],
@@ -251,49 +194,11 @@
 		onLoad(options) {
 			console.log(options)
 			//接收传值,id里面放的是标题，因为测试数据并没写id 
-			this.id=305
+			this.id = 347
 			if (options.id) {
 				this.id = options.id
 			}
 			this.inviteCode = options.inviteCode
-			if (options.companyId) {
-				this.companyId = options.companyId
-				uni.setStorageSync('companyId', this.companyId);
-				console.log("this.companyId", this.companyId);
-			}
-			if (options.cheapPurchaseCompanyId) {
-				this.cheapPurchaseCompanyId = options.cheapPurchaseCompanyId
-				uni.setStorageSync('cheapPurchaseCompanyId', this.cheapPurchaseCompanyId);
-			}
-			if (options.classification) {
-				this.classification = options.classification
-				uni.setStorageSync('classification', this.classification);
-			}
-			if (options.scene) {
-				let scene = decodeURIComponent(options.scene);
-				console.log("-----------scene--------",scene)
-				//&是我们定义的参数链接方式
-				let datas = scene.split("&");
-				if (datas.length > 0) {
-					this.id = datas[0];
-				}
-				if (datas.length > 1) {
-					this.inviteCode = datas[1]
-				}
-				if (datas.length > 2) {
-					this.companyId = options.companyId
-					uni.setStorageSync('companyId', datas[2]);
-				}
-				if (datas.length > 2) {
-					this.cheapPurchaseCompanyId = options.cheapPurchaseCompanyId
-					uni.setStorageSync('cheapPurchaseCompanyId', datas[3]);
-				}
-				if (datas.length > 2) {
-					this.classification = options.classification
-					uni.setStorageSync('classification', datas[4]);
-				}
-
-			}
 			//规格 默认选中第一条
 			/* this.specList.forEach(item=>{
 				for(let cItem of this.specChildList){
@@ -315,38 +220,34 @@
 			loadData() {
 				//过去商品详情
 				let data = {
-					data: JSON.stringify({
-						resourcesId: this.id||305,
-						memberId: uni.getStorageSync("userInfo").id
-					})
+					resourcesId: this.id,
+					// memberId: uni.getStorageSync("userInfo").id
 				}
-				this.$getJson('/api/v2/vue/ydd/index/resoucesInfo.jsp', data, 'POST', res => {
+				this.$getJson('/jsp/api/resources/resoucesInfo.jsp', data, 'POST', res => {
 					console.log('----list------------', res);
 					if (res.data) {
-						this.productInfo.resources = res.data.resources;
-						this.productInfo.goods = res.data.goods;
-						this.member = res.data.member;
-						this.favorite = res.data.isCollection > 0 ? true : false
-						this.desc = '<div style="width:100%">'
-						res.data.resources.imgArr.forEach(item => {
-							this.desc += '<img style="width:100%;display:block;" src="' + this.url + item + '" />'
+						this.productInfo = res.data.goods
+						this.specList = res.data.specs
+						this.selectedSpec = res.data.specs[0]
+						this.banners = this.productInfo.bimgs.split(',')
+						//获取店铺详情
+						this.$getJson('/jsp/api/resources/resoucesInfo.jsp', data, 'POST', res => {
+							
 						})
-						this.desc += '</div>'
 					}
 				});
-
+				//店铺收藏状态
+				this.$getJson('/api/v3/my/store/checkCollect.jsp', {
+					storeId: 202
+				}, 'POST', res => {
+					this.favorite = res.data
+				});
 			},
 			//获取购物车数量
 			getCarts() {
 				if (uni.getStorageSync(`mobile`)) {
 					//获取购物车数量
-					let data = {
-						data: JSON.stringify({
-							memberId: uni.getStorageSync("userInfo").id
-						})
-					}
-					this.$getJson('/api/v2/vue/ydd/cart/getCartNumber.jsp', data, 'POST', res => {
-						console.log('----list------------', res);
+					this.$getJson('/api/v2/vue/ydd/cart/getCartNumber.jsp', {}, 'POST', res => {
 						if (res.data) {
 							this.cartCount = res.data
 						}
@@ -389,32 +290,14 @@
 				}
 			},
 			//选择规格
-			selectSpec(index, pid) {
-				let list = this.specChildList;
-				list.forEach(item => {
-					if (item.pid === pid) {
-						this.$set(item, 'selected', false);
-					}
-				})
-
-				this.$set(list[index], 'selected', true);
-				//存储已选择
-				/**
-				 * 修复选择规格存储错误
-				 * 将这几行代码替换即可
-				 * 选择的规格存放在specSelected中
-				 */
-				this.specSelected = [];
-				list.forEach(item => {
-					if (item.selected === true) {
-						this.specSelected.push(item);
-					}
-				})
+			selectSpec(selectedSpec) {
+				this.selectedSpec = selectedSpec
 			},
 			//生成小程序二维码
 			getQrcode() {
-				console.log('sssssss-------------', this.id + "&" + this.yddMember.inviterCode + "&" + uni.getStorageSync(`companyId`) + "&" + uni.getStorageSync(
-							`cheapPurchaseCompanyId`) + "&" + uni.getStorageSync(`classification`));
+				console.log('sssssss-------------', this.id + "&" + this.yddMember.inviterCode + "&" + uni.getStorageSync(
+					`companyId`) + "&" + uni.getStorageSync(
+					`cheapPurchaseCompanyId`) + "&" + uni.getStorageSync(`classification`));
 				let data = {
 					data: JSON.stringify({
 						page: "pages/product/product",
@@ -478,91 +361,81 @@
 					this.$refs.popup.clickClose(true)
 					return
 				}
-				this.favorite = !this.favorite;
 				let isCollection = 0,
-					message = "";
-				if (this.favorite == true) {
+					message = "取消收藏成功";
+				if (this.favorite == false) {
 					isCollection = 1
 					message = "收藏成功"
-				} else {
-					isCollection = 0
-					message = "取消收藏成功"
 				}
-				let data = {
-					data: JSON.stringify({
-						id: this.id,
-						memberId: uni.getStorageSync("userInfo").id,
-						isCollection: isCollection
+				this.$getJson('/api/v3/my/store/collect.jsp', {
+					storeId: 202,
+					action: isCollection
+				}, 'POST', res => {
+					this.favorite = !this.favorite;
+					uni.showToast({
+						title: message,
+						icon: 'none'
 					})
-				}
-				this.$getJson('/api/v2/vue/findingSomeone/do/doCollectResource.jsp', data, 'POST', res => {
-					console.log('----res------------', res);
-					if (res.data == 1) {
-						uni.showToast({
-							title: message,
-							icon: 'none'
-						})
-					} else {
-						uni.showToast({
-							title: res.message,
-							icon: 'none'
-						})
-					}
 				});
 			},
 			//设置按钮action
-			setOptionType(type){
-				if(true){
-					this.optionType=type
+			setOptionType(type) {
+				if (true) {
+					this.optionType = type
 					this.toggleSpec()
-				}else{
-					if(type=='buy'){
+				} else {
+					if (type == 'buy') {
 						this.buy()
-					}else if(type=='cart'){
+					} else if (type == 'cart') {
 						this.addCart()
 					}
 				}
 			},
 			//完成属性选择
-			propComplete(){
+			propComplete() {
 				this.toggleSpec()
-				if(this.optionType=='buy'){
+				if (this.optionType == 'buy') {
 					this.buy()
-				}else if(this.optionType=='cart'){
+				} else if (this.optionType == 'cart') {
 					this.addCart()
 				}
 			},
 			//购买
 			buy() {
-				if (!uni.getStorageSync(`mobile`)) {
-					this.login()
-					//弹出登录
-					this.$refs.popup.open()
-					//防止点击遮罩关闭
-					this.$refs.popup.clickClose(true)
-					return
+				console.log(this.productInfo)
+				let goodsData = {
+					hot: [],
+					platform: [],
+					coupon: []
 				}
-				let goodsData = [];
-				let resource = {
-					samllCoverImg: this.productInfo.resources.samllCoverImg,
-					name: this.productInfo.resources.name
+
+				if (this.productInfo.type == 1) {
+					goodsData.hot.push({
+						store: {},
+						list: [{
+							cpCart: {
+								goodsCount: 1
+							},
+							goods: this.productInfo
+						}]
+
+					})
+				} else if (this.productInfo.type == 2) {
+					goodsData.platform.push({
+						cpCart: {
+							goodsCount: 1
+						},
+						goods: this.productInfo
+					})
 				}
-				goodsData.push({
-					goods: this.productInfo.goods,
-					resource: resource,
-					number: 1
-				})
-				
+				uni.setStorageSync('goodsData', goodsData)
 				uni.navigateTo({
-					url: `/pages/home/order/createOrder?data=${JSON.stringify({
-						goodsData: goodsData,type:1,
-					inviteCode:this.inviteCode,
-					cheapPurchaseCompanyId:uni.getStorageSync('cheapPurchaseCompanyId')
-					})}`
+					url: '/pages/home/order/createOrder'
 				})
 			},
 			//加入购物车
 			addCart() {
+				console.log('s')
 				if (!uni.getStorageSync(`mobile`)) {
 					this.login()
 					//弹出登录
@@ -573,13 +446,13 @@
 				}
 				//加入购物车
 				let data = {
-					data: JSON.stringify({
-						goodsId: this.productInfo.goods.id,
-						memberId: uni.getStorageSync("userInfo").id,
-						cheapPurchaseCompanyId: uni.getStorageSync('cheapPurchaseCompanyId')
-					})
+					goodsId: this.productInfo.id,
+					specId: this.selectedSpec.id,
+					goodsType: this.productInfo.type
 				}
-				this.$getJson('/api/v2/vue/ydd/cart/addCart.jsp', data, 'POST', res => {
+				this.$getJson('/api/v2/vue/ydd/cart/addCart.jsp', {
+					data: JSON.stringify(data)
+				}, 'POST', res => {
 					console.log('----res------------', res);
 					if (res.data == 1) {
 						uni.showToast({
@@ -596,40 +469,7 @@
 				});
 			},
 			stopPrevent() {},
-			//登录
-			login() {
-				var _this = this
-				if (!this.mobile) {
-					wx.login({
-						success: res => {
-							console.info('res', res)
-							_this.loginCode = res.code
-							_this.$refs.uniPop.show({
-								title: '登录',
-								content: '是否同意获取手机号？',
-								shade: true,
-								shadeClose: true,
-								time: 5,
-								anim: 'fadeIn',
-								isVisible: true,
-								position: 'bottom',
-								loginCode: res.code,
-								isUrl: false,
-							})
-						}
-					})
-				}
-			},
-			//登录回显
-			childClick(e) {
-				this.yddMember = e;
-				console.log("denglu:-----", e)
-				uni.setStorageSync('userInfo', e);
-				this.mobile = e.mobile;
-				this.$refs.popup.close()
-				this.loadData()
-				this.getCarts()
-			},
+
 		}
 
 	}
@@ -647,7 +487,7 @@
 	}
 
 	.carousel {
-		height: 722upx;
+		height: 500upx;
 		position: relative;
 
 		swiper {
@@ -679,13 +519,16 @@
 		padding: 20upx 30upx;
 
 		.title {
-			font-size: $font-lg +4upx;
-			color: $font-color-dark;
+			font-size: 38upx;
+			color: #333;
+			font-weight: bold;
 			height: 50upx;
 			line-height: 50upx;
 		}
-		.price-store{
+
+		.price-store {
 			display: flex;
+
 			.price-box {
 				display: flex;
 				align-items: baseline;
@@ -697,41 +540,47 @@
 				font-family: Arial;
 				flex: 1;
 			}
-			
+
 			.price {
 				font-size: $font-lg + 6upx;
 			}
-			.store-box{
+
+			.store-box {
 				flex: 1;
 				display: flex;
 				text-align: right;
 				align-items: center;
-				flex-direction:row-reverse;
-				.box{
+				flex-direction: row-reverse;
+
+				.box {
 					display: flex;
-					height:30upx;
+					height: 30upx;
 					padding: 0 6upx;
 					line-height: 30upx;
-					border:1upx solid rgba(128,128,128,1);
-					border-radius:16upx;
+					border: 1upx solid rgba(128, 128, 128, 1);
+					border-radius: 16upx;
 					font-size: 17upx;
 					color: #808080;
-					.pass{
+
+					.pass {
 						margin-right: 4upx;
-						.num{
-							color: #333;		
+
+						.num {
+							color: #333;
 						}
 					}
-					.leve{
-						.num{
+
+					.leve {
+						.num {
 							color: #FF474C;
 						}
 					}
 				}
 			}
-			
-			
+
+
 		}
+
 		.m-price {
 			margin: 0 12upx;
 			color: $font-color-light;
@@ -982,17 +831,52 @@
 
 	/* 规格选择弹窗 */
 	.attr-content {
-		padding: 10upx 30upx;
+		padding: 28upx;
+		border-radius: 35upx;
+
+		.store-box {
+			display: flex;
+			text-align: left;
+			justify-content: left;
+			align-items: center;
+			flex-direction: row-reverse;
+			margin-top: 28upx;
+
+			.box {
+				display: flex;
+				height: 30upx;
+				padding: 0 6upx;
+				line-height: 30upx;
+				border: 1upx solid rgba(128, 128, 128, 1);
+				border-radius: 16upx;
+				font-size: 17upx;
+				color: #808080;
+
+				.pass {
+					margin-right: 4upx;
+
+					.num {
+						color: #333;
+					}
+				}
+
+				.leve {
+					.num {
+						color: #FF474C;
+					}
+				}
+			}
+		}
 
 		.a-t {
 			display: flex;
+			align-items: center;
 
 			image {
-				width: 170upx;
-				height: 170upx;
+				width: 250upx;
+				height: 250upx;
 				flex-shrink: 0;
-				margin-top: -40upx;
-				border-radius: 8upx;
+				border-radius: 35upx;
 				;
 			}
 
@@ -1004,11 +888,44 @@
 				color: $font-color-base;
 				line-height: 42upx;
 
-				.price {
-					font-size: $font-lg;
-					color: $uni-color-primary;
-					margin-bottom: 10upx;
+				.name {
+					font-size: 42upx;
+					color: #333;
+					font-weight: bold;
 				}
+
+				.price-box {
+					margin-top: 23upx;
+
+					.price {
+						font-size: 33upx;
+						color: #FF474C;
+						line-height: 1;
+						font-weight: bold;
+						font-family: Arial;
+
+						&:before {
+							content: '￥';
+							font-size: 32upx;
+
+						}
+					}
+
+					.default {
+						font-size: 25upx;
+						display: inline-block;
+						align-items: baseline;
+						color: #808080;
+						text-decoration: line-through;
+
+						&:before {
+							content: '￥';
+							font-size: 22upx;
+							text-decoration: line-through;
+						}
+					}
+				}
+
 
 				.selected-text {
 					margin-right: 10upx;
@@ -1021,12 +938,12 @@
 			flex-direction: column;
 			font-size: $font-base + 2upx;
 			color: $font-color-base;
-			padding-top: 30upx;
+			padding-top: 50upx;
 			padding-left: 10upx;
 		}
 
 		.item-list {
-			padding: 20upx 0 0;
+			padding: 35upx 0 0;
 			display: flex;
 			flex-wrap: wrap;
 
@@ -1037,17 +954,18 @@
 				background: #eee;
 				margin-right: 20upx;
 				margin-bottom: 20upx;
-				border-radius: 100upx;
-				min-width: 60upx;
-				height: 60upx;
+				border-radius: 21upx;
+				min-width: 208upx;
+				height: 54upx;
 				padding: 0 20upx;
-				font-size: $font-base;
-				color: $font-color-dark;
+				font-size: 22upx;
+				color: #808080;
 			}
 
 			.selected {
-				background: #fbebee;
-				color: $uni-color-primary;
+				background: #fff;
+				color: #FF474C;
+				border: 3upx solid #FF474C;
 			}
 		}
 	}
@@ -1102,17 +1020,19 @@
 			bottom: 0;
 			width: 100%;
 			min-height: 40vh;
-			border-radius: 10upx 10upx 0 0;
+			border-radius: 35upx 35upx 0 0;
 			background-color: #fff;
 
 			.btn {
-				height: 66upx;
-				line-height: 66upx;
-				border-radius: 100upx;
-				background: $uni-color-primary;
-				font-size: $font-base + 2upx;
+				width: 700upx;
+				height: 80upx;
+				display: flex;
+				margin: 190upx auto 0 auto;
+				border-radius: 40upx;
 				color: #fff;
-				margin: 30upx auto 20upx;
+				align-items: center;
+				justify-content: center;
+				background-color: #FF474C;
 			}
 		}
 
@@ -1176,20 +1096,21 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			font-size: $font-sm;
-			color: $font-color-base;
+			color: #808080;
+			font-size: 21upx;
 			width: 96upx;
 			height: 80upx;
 
-			.yticon {
-				font-size: 40upx;
-				line-height: 48upx;
-				color: $font-color-light;
+			.icon {
+				display: block;
+				width: 40upx;
+				height: 38upx;
+				margin-bottom: 8upx;
 			}
 
 			&.active,
 			&.active .yticon {
-				color: $uni-color-primary;
+				/* color: $uni-color-primary; */
 			}
 
 			.icon-fenxiang2 {
@@ -1207,7 +1128,6 @@
 			height: 76upx;
 			border-radius: 100px;
 			overflow: hidden;
-			background: #004da0;
 			margin-left: 20upx;
 			position: relative;
 
@@ -1232,11 +1152,13 @@
 				padding: 0;
 				border-radius: 0;
 				background: transparent;
-				&.buy-now-btn{
+
+				&.buy-now-btn {
 					background-color: #FF474C;
 				}
-				&.add-cart-btn{
-					background:linear-gradient(90deg,rgba(255,227,120,1),rgba(255,179,20,1));
+
+				&.add-cart-btn {
+					background: linear-gradient(90deg, rgba(255, 227, 120, 1), rgba(255, 179, 20, 1));
 				}
 			}
 		}
@@ -1404,6 +1326,7 @@
 	}
 
 	.productCare {
+		opacity: .7;
 		width: 100upx;
 		height: 100upx;
 		background: #FF474C;
@@ -1420,10 +1343,11 @@
 
 	.productCare .icon-gouwuche {
 		font-size: 44upx;
-		color: #999;
+		color: #fff;
 	}
 
 	.productCare .number {
+		color: #FB6650;
 		position: absolute;
 		height: 36upx;
 		display: flex;
@@ -1434,8 +1358,7 @@
 		top: 0;
 		left: 60upx;
 		font-size: 24upx;
-		color: #fff;
-		background: #ff0000;
+		background: #F8E489;
 		border-radius: 50px;
 	}
 </style>

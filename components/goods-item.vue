@@ -1,62 +1,103 @@
-<style lang="scss">
-   .goods-item{
-	   width: 260upx;
-	   height: 390upx;
-	   box-sizing: border-box;
-	   margin-right: 15upx;
-	   display: inline-block;
-	   box-shadow:0px 8px 10px 0px rgba(0, 0, 0, 0.05);
-	   border-radius: 20upx;
-	   margin-bottom: 15rpx;
-	   &.no-margion{
-		   margin-right: 0;
-	   }
-	   .img{
-		   border-top-right-radius: 20upx;
-		   border-top-left-radius: 20upx;
-		   height: 280upx;
-		   display: block;
-		   width: 260upx;
-		   background-color: #ddd;
-	   }
-	   .title{
-		   font-size: 25upx;
-		   color: #333;
-		   font-weight: bold;
-		   padding: 18upx 24upx 12upx 24upx;
-		   
-	   }
-	   .bottom{
-		   display: flex;
-		   padding-left: 18upx;
-		   align-items: center;
-		   .price{
-			   font-size: 21upx;
-			   color: #FF474C;
-			   font-weight: bold;
-		   }
-		   .default{
-			   font-size: 15upx;
-			   color: #808080;
-			   text-decoration: line-through;
-			   margin-left: 4upx;
-		   }
-		   .add-icon{
-			   display: block;
-			   width: 32upx;
-			   height: 32upx;
-		   }
-	   }
-   }
+<style lang="scss" scoped>
+	.goods-item {
+		width: 708upx;
+		height: 264upx;
+		margin: 0 auto;
+		box-shadow: 0upx 3upx 20upx 2upx rgba(143, 143, 143, 0.16);
+		border-radius: 10upx;
+		padding: 26upx;
+
+		.in {
+			display: flex;
+		}
+
+		.img {
+			border-radius: 7upx;
+			height: 210upx;
+			display: block;
+			flex-shrink: 0;
+			width: 210upx;
+			background-color: #ddd;
+		}
+
+		.right {
+			flex: 1;
+			width: 0;
+			flex-shrink: 0;
+			height: 210upx;
+			padding-left: 33upx;
+			position: relative;
+
+			.title {
+				font-size: 28upx;
+				color: #141414;
+				font-weight: bold;
+			}
+			.des{
+				font-size: 22upx;
+				color: #5E5E5E;
+				margin-top: 10upx;
+			}
+
+			.bottom {
+				display: flex;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				align-items: center;
+
+				.price {
+					font-size: 42upx;
+					color: #ea6143;
+					line-height: 1;
+					font-family: Arial;
+
+					&:before {
+						content: '￥';
+						font-size: 21upx;
+
+					}
+				}
+
+				.default {
+					font-size: 25upx;
+					display: inline-block;
+					align-items: baseline;
+					color: #a5a5a5;
+					text-decoration: line-through;
+
+					&:before {
+						content: '￥';
+						font-size: 25upx;
+						text-decoration: line-through;
+					}
+				}
+
+				.add-icon {
+					display: block;
+					width: 32upx;
+					height: 32upx;
+				}
+			}
+		}
+
+	}
 </style>
 <template>
-	<view :class="['goods-item',noMargin&&'no-margion']">
-		<image class="img" src=""></image>
-		<view class="title clamp">麻辣小龙虾发哈哈书法课和饭卡饭卡</view>
-		<view class="bottom">
-			<view class="price">¥59.00</view>
-			<view class="default">¥99.00</view>
-			<image class="add-icon"></image>
+	<view class="goods-item" @click="navTo(`/pages/home/detail/goods/goods?id=${goods.id}`)">
+		<view class="in"> 
+			<image class="img" :src="ctx+goods.firstImg"></image>
+			<div class="right">
+				<view class="title clamp">{{goods.proName}}</view>
+				<view class="des">
+					{{goods.subheading}}
+				</view>
+				<view class="bottom">
+					<view class="price">{{goods.price}}</view>
+					<view class="default">{{goods.marketPrice}}</view>
+					<image class="add-icon"></image>
+				</view>
+			</div>
 		</view>
 	</view>
 </template>
@@ -65,16 +106,20 @@
 	export default {
 		data() {
 			return {
-				
+				ctx:this.$ctx	
 			};
 		},
-		props:{
-			noMargin:{
-				type:Boolean,
-				default:false
+		props: {
+			goods: {
+				type: Object
 			}
+		},
+		methods:{
+			navTo(url) {
+				uni.navigateTo({
+					url
+				})
+			},
 		}
 	}
 </script>
-
-

@@ -1,0 +1,1 @@
+<view class="industry"><picker mode="selector" range="{{data}}" range-key="name" value="value" data-event-opts="{{[['change',[['handleChange',['$event']]]]]}}" bindchange="__e"><slot></slot></picker></view>

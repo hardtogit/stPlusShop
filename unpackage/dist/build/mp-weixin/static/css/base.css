@@ -1,0 +1,109 @@
+@charset "utf-8";
+/*--手机端去掉点击时默认边框--*/
+*:focus {outline: none;}
+* { -webkit-tap-highlight-color: transparent; -webkit-appearance: none;  border:0; } 
+.mt20{ margin-top: 20upx;}
+.c-999{color: #999;}
+.c-0ca3e4{ color: #0ca3e4;}
+.c-1AAD19{ color: #1AAD19;}
+/*仿照头部*/
+.customHead{ height: 100upx; width: 100%; position: fixed; top: 0; left: 0; z-index: 50; background: #fff; padding: 0 6upx; padding-left: 60upx;}
+.customHead .name{ line-height: 100upx;font-size: 34upx; color: #000; margin-left: 24upx; font-weight: bold !important;}
+.customHead .rightLabel{ position: absolute; padding: 0 40upx; height:60upx; line-height: 60upx; background: #8cd8ff; color: #fff; border-radius: 30px; right: 24upx; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.customHead .rightLabel .label{ font-size: 26upx;}
+.customHead .rightLabel .iconfont{ font-size: 30upx; margin-right: 10upx;}
+.customHead .rightLabel .badge{position: absolute; top: 0; right: -5upx; height: 30upx; line-height: 30upx; padding: 0 10rpx; border-radius: 30px; border-bottom-left-radius: 0; background: #549ff2; font-size: 24upx; color: #fff;}
+.customHead .leftReturn{position: absolute; left: 0; top: 50%; color:#000; font-size: 72upx; -webkit-transform: translateY(-50%);transform: translateY(-50%);}
+
+/*公共样式*/
+.indexItem:after,.formListAfter:after,.memberDel:after,.indexTop .labelAmend:after,.homePageBottom .arrow:after,.shopItem .handle .visual:after,.payMethod .list:after,.LabelAddress:after,.confirmAddress:after,.businessMoreList:after,.businessCardIco .icoBtn:after{font-family: "iconfont" !important; font-size: 16px;font-style: normal;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+.buttonFixed{position: fixed; bottom: 0; left: 0;width: 100%; z-index: 100; width: 100%; background: #fff;}
+.buttonBigWidth{width:90%; margin:2% 5%; background: #549ef3; color: #fff; border-radius: 5px; height: 90upx; line-height: 90upx; text-align: center; font-size: 34upx;}
+.buttonBigWidth:active{background: #549ff2;}
+
+.ellipsis{
+	text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
+}
+/*表单*/
+.formList{width: 100%; display: block; background: #fff; overflow: hidden;}
+.formListCon{width: 100%; display: block; position: relative; overflow: hidden; padding: 24upx 20upx; border-bottom: 1px solid #f5f5f5;}
+.formListCon:last-child{ border: none;}
+.formListCon .name{ float: left; font-size: 28upx; height: 54upx !important; line-height: 56upx !important; color: #333;}
+.formListCon .name.nameBlock{width: 100%;}
+.formListCon .right{ flex: 1; display: block; float: right; text-align: right;}
+.formListCon .inInput,.formListCon .inCon{width: 100%; height: 54upx !important; line-height: 56upx !important; overflow: hidden; font-size: 30upx; color: #888;}
+.formListCon .placeholder{ color: #ccc;font-size: 28upx;}
+.formListCon .inCon{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.formListCon textarea.inInput{ height: 200upx !important;}
+.formListCon .right.rightBlock{ width: 100%; display: block; margin-top: 10upx;}
+.formListCon .right.rightBlock textarea.inInput{ text-align: left;}
+.formListCon .right.rightBlock .inCon{ text-align: left; height: auto !important;white-space: inherit;}
+.formListCon .formRadio{ display: flex; flex-direction: row;align-items:center; justify-content: flex-end;}
+.formListCon .formRadioList{ margin-left:30upx; font-size: 31upx; color: #666;}
+uni-radio .uni-radio-input{width: 36upx; height: 36upx; float: right;}
+uni-radio .uni-radio-input.uni-radio-input-checked:before{font-size: 14px;}
+.formRadioList .radioIco{ vertical-align: middle; display: inline-block; margin-right: 6upx;}
+.formRadioList .radioName{ vertical-align: middle;display: inline-block;font-size: 31upx; }
+uni-radio .uni-radio-input-checked{ background: #549ff2!important; border: 1px solid #549ff2!important;}
+uni-checkbox .uni-checkbox-input{width: 38upx; height: 38upx;}
+uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked:before{ font-size: 38upx;}
+.formListCon .upPicture .sunsin_picture_list{ padding: 0 !important;}
+.formListCon .sunsin_picture_item{width: 156upx !important; height: 156upx !important;}
+.formRadioTwo  .formRadioList{width: 50%;display: inline-block;float: left;margin: 10upx 0;text-align: left; font-size: 30upx;}
+.formRadioTwo  .formRadioList .radioName{font-size: 28upx; color: #444;}
+.formList .formListAfter {padding-right:66upx; }
+.formListAfter:after{content: '\e6ff';position: absolute; right: 10upx; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #ccc; font-size:60upx;}
+.formListCon .inConSmall,.formRadioList .labelTip{ font-size: 26upx !important; color: #999 !important;}
+.formRadioList .labelTip{ margin-left: 20upx;}
+.formListCon .rightLeft{ width: 100%; text-align: left; float: left;}
+.formListPhoto .photo{ width: 120upx; height: 120upx; border-radius: 100%; overflow: hidden; float: right;}
+.formListPhoto .photo image{width: 100%; height: 100%;}
+.formListPhoto.formListCon .name{ height: 120upx !important; line-height: 120upx !important;}
+.upOneImg{ width: 180upx; height: 180upx; border-radius: 5px; overflow: hidden; margin-top: 25upx;}
+.upOneImg image{width: 100%; height: 100%;}
+uni-radio-group uni-label.formRadioListText { padding-right: 0;}
+.formRadioListText uni-radio .uni-radio-input{ margin-right: 0;}
+.upMoreImg{ width: 158upx; height: 158upx; float: left; position: relative; margin: 20upx 20upx 0 0;}
+.upMoreImg .photo{width: 100%; height: 100%; border-radius: 5px; overflow: hidden;}
+.upMoreImg .photo image{width: 100%; height: 100%;}
+.upMoreImg .dodel{position: absolute; right: -10upx; top:  -15upx; width: 80upx; height: 80upx;}
+.upMoreImg .dodel image{ width: 40upx; height: 40upx; float: right;}
+.upMoreImgCon{ margin-right:-20upx;}
+/*弹出层*/
+.uni-mask{ top:0 !important; bottom: 0 !important;}
+/* .uni-popup{width: 80%;} */
+.tipPopupCon{width: 100%;}
+.tipTitle{text-align: center;font-weight: 700;font-size: 32upx; color: #333; margin-bottom: 20upx;}
+.tipContent{padding:20upx;font-size:28upx;color: #666; text-align: center;}
+.tipGroup{ width: 100%; display: flex; align-items: center;}
+.tipGroupBtn{width: 50%; text-align: center; padding-top: 30upx; color: #000;}
+
+/*文本编辑器*/
+.EditorHandle{width: 100%; display: block; overflow: hidden; border: 1px solid #f5f5f5; margin-top: 20upx;}
+.EditorHandle .EditorText,.EditorHandle .EditorAdd,.EditorHandle .EditorImage{ width: 33.3%; float: left; display: flex; flex-direction: row; align-items: center; justify-content: center; padding:30upx 0;}
+.EditorHandle image{width: 70upx; height: 70upx; }
+.EditorContent,.EditorTextarea,.EditorImages{width: 100%; display: block; overflow: hidden;}
+.EditorTextarea,.EditorImages{border: 1px solid #f5f5f5; margin-top: 20upx; position: relative;}
+.EditorTextarea{padding: 20upx 30upx; }
+.EditorTextarea .textarea{ height:240upx; line-height:45upx; font-size: 28upx; color: #666;width: 100%;}
+.EditorTextarea .textareaDel{ float: right; font-size: 26upx; color: #549ef3; padding-left: 30upx; margin-top: 10upx;}
+.EditorImages .photo{width: 100%; height: 340upx; overflow: hidden;}
+.EditorImages .photo image{width: 100%;}
+.EditorImages .photoLayer{position: absolute; bottom: 0; left: 0; width: 100%; z-index: 20; background: rgba(0,0,0,0.6);}
+.EditorImages .photoLayer .EditorLabel{ float: right;font-size: 26upx; color: #fff; padding: 14upx 30upx;}
+
+
+
+.uni-switch-wrapper{ margin-left: 20upx;}
+uni-switch .uni-switch-input{ height:46upx; margin-top: -10upx; width: 84upx;}
+uni-switch .uni-switch-input:after, uni-switch .uni-switch-input:before{ height:42upx;}
+uni-switch .uni-switch-input:after{ height: 42upx; width: 42upx;}
+uni-switch .uni-switch-input:before{width: 80upx;}
+
+
+
+
+@media (min-width:375px) {
+.uni-radio-wrapper,uni-radio{ float: right;}
+.upMoreImg{ width: 156upx; height: 156upx;}
+}

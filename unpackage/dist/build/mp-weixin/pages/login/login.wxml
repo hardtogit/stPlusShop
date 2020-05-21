@@ -1,0 +1,1 @@
+<view><uni-popup class="userPop vue-ref" vue-id="1" type="center" data-ref="popup" bind:__l="__l" vue-slots="{{['default']}}"><view><uni-pop class="vue-ref" bind:changes="__e" vue-id="{{('2')+','+('1')}}" data-ref="uniPop" data-event-opts="{{[['^changes',[['childClick']]]]}}" bind:__l="__l"></uni-pop></view></uni-popup></view>

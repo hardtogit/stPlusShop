@@ -5,16 +5,29 @@
 /* 边框颜色 */
 /* 图片加载中颜色 */
 /* 行为相关颜色 */
+.create-order {
+  padding: 25rpx;
+}
 page {
   background: #f8f8f8;
   padding-bottom: 100rpx;
 }
 .address-section {
   padding: 30rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  height: 180rpx;
   background: #fff;
   position: relative;
 }
 .address-section .order-content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -74,13 +87,10 @@ page {
     width: 100%;
     height: 5rpx;
 }
-.goods-section .nameLeft {
-  margin-left: 0 !important;
-}
 .goods-section {
-  margin-top: 16rpx;
+  margin-top: 28rpx;
   background: #fff;
-  padding-bottom: 1px;
+  padding: 0 35rpx;
 }
 .goods-section .g-header {
     display: -webkit-box;
@@ -90,8 +100,16 @@ page {
     -webkit-align-items: center;
             align-items: center;
     height: 84rpx;
-    padding: 0 30rpx;
     position: relative;
+    border-bottom: 1rpx solid #eee;
+}
+.goods-section .g-header .label {
+      font-size: 31rpx;
+      color: #000;
+}
+.goods-section .g-header .name {
+      font-size: 31rpx;
+      color: #a6a6a6;
 }
 .goods-section .logo {
     display: block;
@@ -105,11 +123,14 @@ page {
     margin-left: 24rpx;
 }
 .goods-section .g-item {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    margin: 20rpx 30rpx;
+    margin: 30rpx 0;
     position: relative;
+    border-bottom: 1rpx solid #eee;
+}
+.goods-section .g-item .top {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
 }
 .goods-section .g-item image {
       -webkit-flex-shrink: 0;
@@ -175,51 +196,58 @@ page {
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  padding: 10rpx 30rpx 10rpx 40rpx;
-  line-height: 70rpx;
+  padding: 10rpx 0;
+  line-height: 50rpx;
   position: relative;
 }
+.yt-list-cell.receve {
+    margin-top: 40rpx;
+}
 .yt-list-cell.receve .clamp {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+              flex: 1;
 }
 .yt-list-cell.receve .content {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-}
-.yt-list-cell.receve .content .radio {
       -webkit-box-flex: 1;
       -webkit-flex: 1;
               flex: 1;
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-              align-items: center;
-      font-size: 24rpx;
-      color: #808080;
+}
+.yt-list-cell.receve .content .radio {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+                flex: 1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+                align-items: center;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+                justify-content: flex-end;
+        font-size: 24rpx;
+        color: #808080;
 }
 .yt-list-cell.receve .content .radio .circle {
-        width: 25rpx;
-        height: 25rpx;
-        border-radius: 50%;
-        border: 1rpx solid #FF474D;
-        margin-right: 6rpx;
+          width: 25rpx;
+          height: 25rpx;
+          border-radius: 50%;
+          border: 1rpx solid #FF474D;
+          margin-right: 6rpx;
 }
 .yt-list-cell.receve .content .radio.active .circle {
-        background-color: #FF474D;
+          background-color: #FF474D;
 }
 .yt-list-cell.cell-hover {
     background: #fafafa;
 }
 .yt-list-cell.b-b:after {
     left: 30rpx;
+    border: none;
 }
 .yt-list-cell .cell-icon {
     height: 32rpx;
@@ -256,7 +284,7 @@ page {
 }
 .yt-list-cell .cell-tip {
     font-size: 26rpx;
-    color: #FF474C;
+    color: #808080;
 }
 .yt-list-cell .cell-tip.disabled {
       color: #909399;
@@ -352,7 +380,8 @@ page {
 .item-right .title {
     padding-right: 60rpx;
 }
-.item-right .title, .item-right .price {
+.item-right .title,
+  .item-right .price {
     font-size: 30rpx;
     color: #303133;
     height: 40rpx;
