@@ -176,7 +176,7 @@
 		{
 			"path": "pages/home/classify/platform/platform",
 			"style": {
-				"navigationBarTitleText": "聚划算"
+				"navigationBarTitleText": "巨划算"
 			}
 		},
 		{
@@ -251,7 +251,14 @@
 				"navigationBarTitleText": "搜索商品"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/home/dynamic/detail",
+            "style" : {
+				"navigationBarTitleText": "动态详情"
+			} 
+        }
+        
+    ],
 	"subPackages": [{
 		"root": "pagesA",
 		"pages": [{
@@ -315,7 +322,7 @@
 				}
 			}, {
 				"path": "user/apply/apply",
-				"style": {}
+				"style": {"navigationBarTitleText": "申请加入商圈"}
 			}, {
 				"path": "user/info/info",
 				"style": {}
@@ -360,8 +367,69 @@
 				"style": {
 					"navigationBarTitleText": "申请售后"
 				}
+			}, {
+				"path": "businessCard/businessCard",
+				"style": {
+					"navigationBarTitleText": "名片"
+				}
+			},
+			{
+				"path": "businessCard/cardDetail",
+				"style": {
+					"navigationBarTitleText": "名片"
+				}
+			},
+			{
+				"path": "businessCard/businessCardAmend",
+				"style": {
+					"navigationBarTitleText": "名片模版"
+				}
+			},
+			{
+				"path": "businessCard/businessCardList",
+				"style": {
+					"navigationBarTitleText": "名片列表"
+				}
+			},
+			{ 
+				"path": "store/store",
+				"style": {
+					"navigationBarTitleText": "我的店铺"
+				}
 			}
-		]
+			,
+			{ 
+				"path": "personal/personal",
+				"style": {
+					"navigationBarTitleText": "个人信息"
+				}
+			},{
+            "path" : "store/order/order",
+            "style" : {"navigationBarTitleText": "订单管理"}
+        }
+		    ,{
+                    "path" : "user/dynamic/list",
+                    "style" : {"navigationBarTitleText": "店铺动态"}
+                },
+				{
+				        "path" : "user/dynamic/edit",
+				        "style" : {"navigationBarTitleText": "店铺动态"}
+				    }
+                ,{
+                    "path" : "storeInfo/storeInfo",
+                    "style" : {"navigationBarTitleText": "店铺信息"}
+                }
+                ,{
+                    "path" : "backSale/backSale",
+                     "style" : {"navigationBarTitleText": "售后"}
+                }
+                ,{
+                    "path" : "user/shopList/editShop",
+                    "style" : {
+						"navigationBarTitleText":"编辑商品"
+					}
+                }
+            ]
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -1,0 +1,1 @@
+<view class="dynamic-detail"><view class="title">{{''+entity.title+''}}</view><view class="time">{{''+entity.addTimeStr+''}}</view><rich-text class="rich" nodes="{{entity.detail}}"></rich-text></view>

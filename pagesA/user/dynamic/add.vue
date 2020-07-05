@@ -38,7 +38,7 @@
 			</view>
 			<view class="body">
 				<view class="title">内容详情:</view>
-				<article-edit ref="detail"></article-edit>
+				<uni-editor ref="detail"></uni-editor>
 			</view>
 			
 			<view class="bottomFixed">
@@ -52,14 +52,25 @@
 
 <script>
 	import articleEdit from '@/components/article-edit.vue'
+	import {dealRich,unDealRich} from '@/common/common'
+	import {uniEditor} from '@/components/uni-editor/uni-editor.vue'
 	export default { 
 		components:{
-			articleEdit
+			articleEdit,
+			uniEditor
 		},
 		data() {
 			return {
-				title:""
+				entity:{},
+				title:"",
+				detail:"",
+				libraryId:"",
+				options:{}
 			};
+		},
+		onLoad(options){
+			this.options=options
+			// this.getData()
 		},
 		methods:{
 			changeType(type){
@@ -68,20 +79,42 @@
 			handleIndustryChange(industryEntity){
 				this.industryEntity=industryEntity
 			},
+			getData() {
+				//获取巨划算
+				this.$getJson('/api/v2/vue/sqPlus/library/detail.jsp', {
+					data: JSON.stringify({
+						libraryId: this.options.id||180,
+						// mobile: uni.getStorageSync('mobile')
+					})
+				}, 'POST', res => {
+					console.log(res)
+					
+					this.entity={...res.data.cjCompanyTextLibrary,detail:dealRich(res.data.cjCompanyTextLibrary.detail)}
+					this.title=this.entity.title
+					this.libraryId=this.entity.id
+					this.$refs.detail.editorCtx.setContents({html:this.entity.detail})
+				}) 
+			},
 			submit(){
-				// /api/v2/vue/sqPlus/company/addApply.jsp
-			
+			this.$refs.detail.editorCtx.getContents({success:({html})=>{
 				this.$getJson(
-					'/jsp/admin/shop/dtGl/do/doAdd.jsp', {
-						storeId:202,
-						title:this.title,
-						detail:JSON.stringify(this.$refs.detail.dataSource)
+					'/api/v2/vue/sqPlus/library/doAddOrEditLibrary.jsp', {
+						data:JSON.stringify({
+							libraryId: this.libraryId,
+							companyId: this.companyId||202,											
+							title:this.title,
+							detail:html
+						})
 					},
 					'POST',
 					res => {
-						console.log('----------------', res);
+						uni.navigateBack({
+							
+						})
 					}
 				);
+			}})
+				
 			} 
 		}
 	}

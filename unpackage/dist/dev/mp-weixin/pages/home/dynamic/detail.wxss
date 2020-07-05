@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* 页面左右间距 */
+/* 文字尺寸 */
+/*文字颜色*/
+/* 边框颜色 */
+/* 图片加载中颜色 */
+/* 行为相关颜色 */
+.dynamic-detail {
+  padding: 30rpx;
+}
+.dynamic-detail .title {
+  font-size: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #121212;
+  line-height: 42px;
+}
+.dynamic-detail .time {
+  font-size: 22rpx;
+  color: #8A8A8A;
+}
+.dynamic-detail .rich {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #121212;
+  line-height: 38rpx;
+}
+.dynamic-detail ._img {
+  width: 100%;
+  display: block;
+}
+

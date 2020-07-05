@@ -12,10 +12,10 @@ Vue.prototype.$qqmapsdk = new QQMapWX({
             key: 'PVIBZ-WA2RF-7TIJB-J5FNN-LZSEQ-WXBRV'
         });
 Vue.prototype.$upload = upload;
-Vue.prototype.$ctx = 'http://gezen.51youduoduo.com/ydd1/'
+Vue.prototype.$ctx = 'https://api.51youduoduo.com/ydd1/'
 Vue.prototype.$getJson = common.urlRequest;
 
-
+ 
 /**
  *  因工具函数属于公司资产, 所以直接在Vue实例挂载几个常用的函数
  *  所有测试用数据均存放于根目录json.js

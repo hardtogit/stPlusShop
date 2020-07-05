@@ -169,7 +169,7 @@
 				<view class="content">
 					<view style="margin-bottom: 14upx;" v-for="(item,index) in goodsItems" :key="index">
 						<goods-item :goods='item' />
-					</view>
+					</view> 
 
 				</view>
 			</view>

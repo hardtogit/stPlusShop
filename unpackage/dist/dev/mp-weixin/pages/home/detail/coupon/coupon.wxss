@@ -19,164 +19,185 @@ page {
   padding: 46rpx 38rpx;
 }
 .card.one .title {
-    font-size: 42rpx;
-    color: #000;
+  font-size: 42rpx;
+  color: #000;
 }
 .card.one .img {
-    width: 100%;
-    height: 350rpx;
-    border-radius: 7rpx;
-    background-color: #ddd;
-    margin-top: 30rpx;
+  width: 100%;
+  height: 350rpx;
+  border-radius: 7rpx;
+  background-color: #ddd;
+  margin-top: 30rpx;
 }
 .card.two .header {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .card.two .header .store-img {
-      display: block;
-      width: 120rpx;
-      height: 120rpx;
-      border-radius: 7rpx;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 7rpx;
 }
 .card.two .header > .right {
-      padding-left: 35rpx;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
+  padding-left: 35rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .card.two .header > .right .store-title {
-        font-size: 33rpx;
-        color: #1d1d1d;
+  font-size: 33rpx;
+  color: #1d1d1d;
 }
 .card.two .header > .right .address {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        margin-top: 22rpx;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-                align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 22rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 .card.two .header > .right .address .left image {
-          display: block;
-          width: 24rpx;
-          height: 32rpx;
-          position: relative;
-          top: -10rpx;
+  display: block;
+  width: 24rpx;
+  height: 32rpx;
+  position: relative;
+  top: -10rpx;
 }
 .card.two .header > .right .address .center {
-          -webkit-box-flex: 1;
-          -webkit-flex: 1;
-                  flex: 1;
-          padding: 0 24rpx 0 12rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 0 24rpx 0 12rpx;
 }
 .card.two .header > .right .address .center .top {
-            font-size: 25rpx;
-            color: #000;
-            font-weight: 400;
+  font-size: 25rpx;
+  color: #000;
+  font-weight: 400;
 }
 .card.two .header > .right .address .center .sub {
-            font-size: 21rpx;
-            color: #7E7E7E;
+  font-size: 21rpx;
+  color: #7E7E7E;
 }
 .card.two .header > .right .address .right {
-          padding-left: 24rpx;
-          border-left: 1px dashed #999;
+  padding-left: 24rpx;
+  border-left: 1px dashed #999;
 }
 .card.two .header > .right .address .right image {
-            width: 42rpx;
-            height: 42rpx;
+  width: 42rpx;
+  height: 42rpx;
 }
 .card.item {
-    padding: 30rpx;
+  padding: 30rpx;
 }
 .card.item .inner {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .card.item .inner .img {
-        display: block;
-        width: 204rpx;
-        height: 176rpx;
+  display: block;
+  width: 204rpx;
+  height: 176rpx;
 }
 .card.item .inner .right {
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-                flex: 1;
-        padding-left: 20rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding-left: 20rpx;
 }
 .card.item .inner .right .title {
-          font-size: 32rpx;
-          color: #141414;
+  font-size: 32rpx;
+  color: #141414;
 }
 .card.item .inner .right .sub {
-          font-size: 22rpx;
-          color: #6D6D6D;
+  font-size: 22rpx;
+  color: #6D6D6D;
 }
 .card.item .inner .right .price {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-align: baseline;
-          -webkit-align-items: baseline;
-                  align-items: baseline;
-          color: #F0351C;
-          margin-right: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+  color: #F0351C;
+  margin-right: 10rpx;
 }
 .card.item .inner .right .price .unit {
-            font-size: 25rpx;
-            margin-right: 4rpx;
+  font-size: 25rpx;
+  margin-right: 4rpx;
 }
 .card.item .inner .right .price .num {
-            font-size: 42rpx;
+  font-size: 42rpx;
 }
 .card.item .inner .right .default {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-align: baseline;
-          -webkit-align-items: baseline;
-                  align-items: baseline;
-          position: relative;
-          top: 8rpx;
-          color: #A5A5A5;
-          font-size: 25rpx;
-          text-decoration: line-through;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+  position: relative;
+  top: 8rpx;
+  color: #A5A5A5;
+  font-size: 25rpx;
+  text-decoration: line-through;
 }
 .card.item .inner .right .btns {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-pack: end;
-          -webkit-justify-content: flex-end;
-                  justify-content: flex-end;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
 }
 .card.item .inner .right .btns .btn {
-            width: 147rpx;
-            height: 44rpx;
-            border-radius: 22rpx;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-                    align-items: center;
-            -webkit-box-pack: center;
-            -webkit-justify-content: center;
-                    justify-content: center;
-            font-size: 21rpx;
-            color: #fff;
+  width: 147rpx;
+  height: 44rpx;
+  border-radius: 22rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  font-size: 21rpx;
+  color: #fff;
 }
 .card.item .inner .right .btns .btn.cart {
-              background-color: #FFBA21;
-              margin-right: 10rpx;
+  background-color: #FFBA21;
+  margin-right: 10rpx;
 }
 .card.item .inner .right .btns .btn.buy {
-              background-color: #FF474C;
-              margin-right: 20rpx;
+  background-color: #FF474C;
+  margin-right: 20rpx;
+}
+.three .title {
+  font-size: 38rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #313131;
+}
+.three .sub-title {
+  margin-top: 30rpx;
+  font-size: 33rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #727272;
+}
+.three .text {
+  line-height: 38rpx;
+  margin-top: 12rpx;
+  font-size: 31rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #101010;
 }
 .bottom {
   height: 110rpx;
@@ -192,80 +213,80 @@ page {
   box-shadow: 0px 2px 19px 1px rgba(97, 97, 97, 0.13);
 }
 .bottom .left {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-            align-items: center;
-    padding-left: 20rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding-left: 20rpx;
 }
 .bottom .left .price {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-align: baseline;
-      -webkit-align-items: baseline;
-              align-items: baseline;
-      color: #F0351C;
-      margin-right: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+  color: #F0351C;
+  margin-right: 10rpx;
 }
 .bottom .left .price .unit {
-        font-size: 25rpx;
-        margin-right: 4rpx;
+  font-size: 25rpx;
+  margin-right: 4rpx;
 }
 .bottom .left .price .num {
-        font-size: 56rpx;
+  font-size: 56rpx;
 }
 .bottom .left .default {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-align: baseline;
-      -webkit-align-items: baseline;
-              align-items: baseline;
-      position: relative;
-      top: 8rpx;
-      color: #A5A5A5;
-      font-size: 25rpx;
-      text-decoration: line-through;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+  position: relative;
+  top: 8rpx;
+  color: #A5A5A5;
+  font-size: 25rpx;
+  text-decoration: line-through;
 }
 .bottom .right {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-            flex: 1;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-            align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 .bottom .right .btn {
-      width: 194rpx;
-      height: 60rpx;
-      border-radius: 30rpx;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-              align-items: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-              justify-content: center;
-      font-size: 28rpx;
-      color: #fff;
+  width: 194rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  font-size: 28rpx;
+  color: #fff;
 }
 .bottom .right .btn.cart {
-        background-color: #FFBA21;
-        margin-right: 10rpx;
+  background-color: #FFBA21;
+  margin-right: 10rpx;
 }
 .bottom .right .btn.buy {
-        background-color: #FF474C;
-        margin-right: 20rpx;
+  background-color: #FF474C;
+  margin-right: 20rpx;
 }
 

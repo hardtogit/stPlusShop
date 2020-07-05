@@ -26,6 +26,8 @@
 					.num{
 						font-size: 69upx;
 						font-weight: bold;
+						height: 100upx;
+						padding-left: 20upx;
 					}
 				}
 			}
@@ -85,7 +87,7 @@
 				<view class="left">提现金额</view>
 				<view class="right">
 					<view class="unit">¥</view>
-					<view class="num">77.99</view>					
+					<input type="number" class="num"></input>					
 				</view>
 			</view>
 			<view class="choice">

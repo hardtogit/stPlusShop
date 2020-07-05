@@ -11,53 +11,34 @@
 		<!--订单列表-->
 		<swiper :current="tabCurrentIndex" class="swiper-box" duration="300" @change="changeTab">
 			<swiper-item class="tab-content" v-for="(tabItem,tabIndex) in navList" :key="tabIndex">
-				<scroll-view class="list-scroll-content" scroll-y @scrolltolower="loadData">
+				<scroll-view class="list-scroll-content" scroll-y @scrolltolower="loadData" :show-scrollbar="false">
 					<!-- 空白页 -->
 					<!-- <empty v-if="tabItem.loaded === true && tabItem.orderList.length === 0"></empty> -->
 
 					<!-- 订单列表 -->
-					<view v-for="(item,index) in orderList" :key="index" class="order-item" @click="goDetail(`/pagesA/user/order/detail/order?id=${item.order.id}&orderNo=${item.order.sn}`)">
-						<view class="i-top b-b">订单:
-							<text class="time" @tap="copySn(item.sn)">{{item.sn}}</text>
-							<text class="state" :style="{color: item.stateTipColor}">{{item.order.statusStr}}</text>
-							<text v-if="item.status==='40'" class="del-btn yticon icon-iconfontshanchu1" @click="deleteOrder(item.id,index)"></text>
+					<view v-for="(item,index) in orderList" :key="index" class="order-item" >
+						<view class="store-name">
+							{{item.companyName}}
 						</view>
-						<view class="goods-box-single" v-for="(goodsItem, goodsIndex) in item.products" :key="goodsIndex">
-							<image class="goods-img" :src="url+goodsItem.goodsImg" mode="aspectFill"></image>
+						<view class="flex">
+							<view class="left">
+								<image :src="url+item.goodsImg"></image>
+							</view>
 							<view class="right">
-								<view class="top flex">
-
-									<text class="title clamp">{{goodsItem.goodsName}}</text>
-
-
-									<view class="price price-box-top">{{goodsItem.goodsPriceShow}} </view>
-
-								</view>
-								<view class="bottom">
-									<view class="time">
-									下单时间：{{item.order.addTimeStr}}
-									</view>
-									<view class="num">
-										x {{item.order.goodsCountLong}}
-									</view>
-								</view>
-								<!-- <text class="attr-box">{{goodsItem.goodsPayPriceShow}}  x {{goodsItem.goodsCountLong}}</text> -->
-
-
+								<view class="title">{{item.couponName}}</view>
+								<view class="dis">{{item.subHeading}}</view>
+								<view class="price">{{item.price/100}}</view>
 							</view>
 						</view>
-				
-						<view class="action-b" v-if="item.order.status == '0'">
-							<view style="display: inline-block;">
-								<button class="action-btn recom" @click="pay(item)">立即支付</button>
+						<view class="bottom">
+							<view class="left">
+								截止日期：{{item.endTimeStr}}
 							</view>
-							
-						</view>
-						<view class="action-b" v-if="item.order.status == '1'">
-							<view style="display: inline-block;">
-								<button class="action-btn recom" @click="buyBack(item)">申请售后</button>
+							<view class="right">
+								<view class="btn" @tap.stop="openCodePop(item)">
+									去使用
+								</view>
 							</view>
-							
 						</view>
 
 					</view>
@@ -67,17 +48,34 @@
 				</scroll-view>
 			</swiper-item>
 		</swiper>
+		<!-- 弹窗 -->
+		<uni-popup ref="codePop" type="center" :show=true>
+			<view class="pop-content">
+				<view class="title">
+					{{currentCoupon.couponName}}
+				</view>
+				<view class="time">
+					有效期至：：{{currentCoupon.endTimeStr}}
+				</view>
+				<image class="code" :src="url+currentCoupon.qrcodePath">
+
+				</image>
+				<view class="code-num">券码：{{currentCoupon.code}}</view>
+			</view>
+		</uni-popup>
 	</view>
 </template>
 
 <script>
 	import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
+	import uniPopup from '@/components/uni-popup/uni-popup';
 	import empty from "@/components/empty";
 	import Json from '@/Json';
 	export default {
 		components: {
 			uniLoadMore,
-			empty
+			empty,
+			uniPopup,
 		},
 		data() {
 			return {
@@ -101,6 +99,7 @@
 				loadingType: '', //数据加载状态
 				url: this.$ctx,
 				isCheapPurchase: 0,
+				currentCoupon: {}
 			};
 		},
 		onPageScroll(e) {
@@ -125,20 +124,25 @@
 			this.tabCurrentIndex = +options.index || 0;
 			this.isCheapPurchase = +options.isCheapPurchase;
 			this.loadData();
+
 		},
 		methods: {
-			goDetail(url){
+			goDetail(url) {
 				uni.navigateTo({
 					url
 				})
-				
+
 			},
-			buyBack(item){
+			buyBack(item) {
 				uni.navigateTo({
-					url:`/pagesA/user/backSale/backSale?id=${item.order.id}&orderNo=${item.order.sn}`
+					url: `/pagesA/user/backSale/backSale?id=${item.order.id}&orderNo=${item.order.sn}`
 				})
 			},
-		
+			//打开二维码
+			openCodePop(currentCoupon) {
+				this.currentCoupon = currentCoupon
+				this.$refs.codePop.open()
+			},
 			//获取订单列表
 			loadData(e) {
 				// this.orderList = [];
@@ -279,7 +283,7 @@
 <style lang="scss">
 	page,
 	.content {
-		background: $page-color-base;
+		background: #fff;
 		height: 100%;
 	}
 
@@ -329,202 +333,76 @@
 		height: auto;
 	}
 
-	.order-item {
-		display: flex;
-		flex-direction: column;
-		padding-left: 30upx;
-		background: #fff;
-		margin-top: 16upx;
+	.tab-content {
+		padding: 0 40upx;
 
-		.i-top {
-			display: flex;
-			align-items: center;
-			height: 80upx;
-			padding-right: 30upx;
-			font-size: $font-base;
-			color: $font-color-dark;
-			position: relative;
+		.order-item {
+			border-bottom: 1upx solid #CCCCCC;
+			padding-bottom: 20upx;
 
-			.time {
-				flex: 1;
+			.store-name {
+				font-size: 28upx;
+				padding: 24upx 0;
+				font-weight: 600;
 			}
 
-			.state {
-				color: $base-color;
-			}
-
-			.del-btn {
-				padding: 10upx 0 10upx 36upx;
-				font-size: $font-lg;
-				color: $font-color-light;
-				position: relative;
-
-				&:after {
-					content: '';
-					width: 0;
-					height: 30upx;
-					border-left: 1px solid $border-color-dark;
-					position: absolute;
-					left: 20upx;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-			}
-		}
-
-		/* 多条商品 */
-		.goods-box {
-			height: 160upx;
-			padding: 20upx 0;
-			white-space: nowrap;
-
-			.goods-item {
-				width: 100upx;
-				height: 100upx;
-				display: inline-block;
-				margin-right: 24upx;
-			}
-
-			.goods-img {
-				display: block;
-				width: 100%;
-				border-radius: 7upx;
-				height: 100%;
-			}
-		}
-
-		/* 单条商品 */
-		.goods-box-single {
-			display: flex;
-			padding: 20upx 0;
-
-			.goods-img {
-				display: block;
-				width: 120upx;
-				height: 120upx;
-			}
-
-			.right {
-				flex: 1;
+			.flex {
 				display: flex;
-				flex-direction: column;
-				padding: 0 30upx 0 24upx;
-				position: relative;
-				overflow: hidden;
 
-				.top {
-					display: flex;
+				.left {
+					width: 100upx;
+					height: 100upx;
+
+					image {
+						display: block;
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+				.right {
+					padding-left: 15upx;
 
 					.title {
-						width: 355upx;
-						padding-left: 14upx;
 						font-size: 26upx;
-						color: #141414;
 					}
 
-					.price {
-						font-size: 20upx;
-						flex: 1;
-						text-align: right;
-						color: #000;
-
-						&:before {
-							content: '￥';
-							font-size: 12upx;
-							margin: 0 2upx 0 8upx;
-						}
+					.dis {
+						font-size: 24upx;
 					}
 				}
+			}
 
-				.bottom {
-					position: absolute;
-					bottom: 0;
-					width: 100%;
+			.bottom {
+				display: flex;
+
+				.left {
+					flex: 2;
+					font-size: 24upx;
+					color: #6D6D6D;
+				}
+
+				.right {
+					flex: 1;
 					display: flex;
+					justify-content: flex-end;
 
-					.time {
-						width: 355upx;
-						padding-left: 14upx;
-
+					.btn {
+						width: 104upx;
+						height: 42upx;
+						border: 1upx solid rgba(255, 71, 76, 1);
+						border-radius: 7upx;
+						display: flex;
+						align-items: center;
+						justify-content: center;
 						font-size: 22upx;
-						color: #6D6D6D;
-					}
-
-					.num {
-						font-size: 17upx;
-						color: #9A9A9A;
-						flex: 1;
-						text-align: right;
+						color: #FF474C;
 					}
 				}
-
-				.attr-box {
-					font-size: $font-sm + 2upx;
-					color: $font-color-light;
-					padding: 10upx 12upx;
-				}
-
-
 			}
-		}
-
-		.price-box-top {
-			// margin-top: 52upx;
-		}
-
-		.price-box {
-			display: flex;
-			justify-content: flex-end;
-			align-items: baseline;
-			padding: 20upx 30upx;
-			font-size: $font-sm + 2upx;
-			color: $font-color-light;
-
-			.num {
-				margin: 0 8upx;
-				color: $font-color-dark;
-			}
-
-			.price {
-				font-size: $font-lg;
-				color: $font-color-dark;
-
-				&:before {
-					content: '￥';
-					font-size: $font-sm;
-					margin: 0 2upx 0 8upx;
-				}
-			}
-		}
-
-		.action-box {
-			display: flex;
-			justify-content: flex-end;
-			height: 100upx;
-			position: relative;
-			padding-right: 30upx;
-		}
-		.action-b{
-			text-align: right;
-			padding: 0  28upx 28upx 28upx;
-		}
-
-		.action-btn {
-			width:130upx;
-			height:42upx;
-			border: none;
-			background-color: #fff;
-			border:1upx solid rgba(255,71,76,1);
-			border-radius:7upx;
-			font-size:22upx;
-			font-weight:400;
-			color:rgba(255,71,76,1);
-			padding: 0;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 		}
 	}
+
 
 
 	/* load-more */
@@ -657,5 +535,45 @@
 		100% {
 			opacity: .2
 		}
+	}
+
+	.pop-content.pop-content {
+		width: 644upx;
+		height: 820upx;
+		background: rgba(255, 255, 255, 1);
+		border-radius: 10upx;
+		padding: 50upx;
+
+		.title {
+			font-size: 42upx;
+
+			text-align: center;
+		}
+
+		.time {
+			font-size: 33upx;
+			color: #898989;
+			text-align: center;
+			margin-top: 30upx;
+		}
+
+		.code {
+			display: block;
+			width: 420upx;
+			height: 420upx;
+			margin: 50upx auto 0 auto;
+		}
+
+		.code-num {
+			text-align: center;
+			font-size: 33upx;
+			margin-top: 40upx;
+		}
+
+	}
+	::-webkit-scrollbar{
+	width: 0;
+	height: 0;
+	color: transparent;
 	}
 </style>

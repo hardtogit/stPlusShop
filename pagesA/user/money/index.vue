@@ -1,45 +1,53 @@
 <style lang="scss">
-	.money{
-		.header-box{
+	.money {
+		.header-box {
 			width: 700upx;
 			margin: 20upx auto;
 			padding: 70upx 0;
-			box-shadow:0px 2px 19px 1px rgba(97,97,97,0.13);
-			border-radius:9px;
+			box-shadow: 0px 2px 19px 1px rgba(97, 97, 97, 0.13);
+			border-radius: 9px;
 			overflow: hidden;
-			.title{
+
+			.title {
 				font-size: 25upx;
 				color: #808080;
 				text-align: center;
 			}
-			.detail{
+
+			.detail {
 				text-align: center;
 				margin-top: 20upx;
 				position: relative;
-				.price-box{
+
+				.price-box {
 					display: inline-block;
-					.inner{
+
+					.inner {
 						display: flex;
 						align-items: baseline;
-						.unit{
+
+						.unit {
 							font-size: 42upx;
 						}
-						.num{
+
+						.num {
 							font-size: 69upx;
 							font-weight: bold;
 						}
 					}
 				}
-				.more{
+
+				.more {
 					position: absolute;
 					right: 40upx;
 					top: 20upx;
 					font-size: 25upx;
 					color: #FF474C;
 				}
-				
+
 			}
-			.btn{
+
+			.btn {
 				width: 600upx;
 				height: 80upx;
 				display: flex;
@@ -50,37 +58,45 @@
 				justify-content: center;
 				background-color: #FF474C;
 			}
-			.tip{
+
+			.tip {
 				font-size: 25upx;
 				color: #808080;
 				width: 600upx;
 				margin: 0 auto;
 				text-align: justify;
-				&.one{
+
+				&.one {
 					margin-top: 50upx;
 				}
-				&.two{
+
+				&.two {
 					margin-top: 30upx;
 				}
 			}
 		}
-		.cell-box{
-			box-shadow:0px 2px 19px 1px rgba(97,97,97,0.13);
+
+		.cell-box {
+			box-shadow: 0px 2px 19px 1px rgba(97, 97, 97, 0.13);
 			margin-top: 20upx;
 		}
-		.cell{
+
+		.cell {
 			height: 100upx;
 			display: flex;
 			font-size: 25upx;
 			align-items: center;
 			padding: 20upx;
-			&.border{
+
+			&.border {
 				border-bottom: 1upx solid #DCDCDC;
 			}
-			.left{
+
+			.left {
 				flex: 1;
 			}
-			.right{
+
+			.right {
 				flex: 1;
 				text-align: right;
 			}
@@ -97,14 +113,14 @@
 				<view class="price-box">
 					<view class="inner">
 						<view class="unit">¥</view>
-						<view class="num">778.00</view>
+						<view class="num">{{balance}}</view>
 					</view>
 				</view>
 				<view class="more">
 					明细
-				</view>				
+				</view>
 			</view>
-			<view class="btn">
+			<view class="btn" @click="push('/pagesA/user/money/withdraw')">
 				提现
 			</view>
 			<view class="tip one">
@@ -115,13 +131,13 @@
 			</view>
 		</view>
 		<view class="cell-box">
-			<view class="cell border">
+			<view class="cell border" @click="push(`/pagesA/user/money/wait?num=${waitingIncome}`)">
 				<view class="left">待结算（元）</view>
-				<view class="right">0.00</view>
+				<view class="right">{{waitingIncome}}</view>
 			</view>
-			<view class="cell">
+			<view class="cell" @click="push(`/pagesA/user/money/already?num=${grossIncome}`)">
 				<view class="left">已结算（元）</view>
-				<view class="right">284.78</view>
+				<view class="right">{{grossIncome}}</view>
 			</view>
 		</view>
 		<view class="cell-box">
@@ -130,9 +146,46 @@
 				<view class="right">已绑定</view>
 			</view>
 		</view>
-		
+
 	</view>
 </template>
 <script>
-	
+	export default {
+		data() {
+			return {
+				balance:'',
+				grossIncome:'',
+				waitingIncome:''
+			}
+		},
+		onLoad(){
+			// this.balance='wee'
+			this.getData()
+		},
+		methods: {
+			getData() {
+				const $this=this
+				this.$getJson(
+					'/api/v2/vue/sqPlus/companyMoneyLog/getSumMoney.jsp', {
+						data: JSON.stringify({
+							companyId: $this.companyId||202
+						})
+					},
+					'POST',
+					res => {
+						$this.balance = res.data.balance?(res.data.balance/100).toFixed(2):'0.00'
+						$this.grossIncome = res.data.grossIncome? (res.data.grossIncome/100).toFixed(2):'0.00'
+						$this.waitingIncome = res.data.waitingIncome? (res.data.waitingIncome/100).toFixed(2):'0.00'
+						console.log($this.balance)
+					}
+				); 
+			},
+			push(url){
+				uni.navigateTo({
+					url
+				})
+			}
+
+		}
+	}
 </script>

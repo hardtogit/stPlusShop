@@ -3,7 +3,7 @@
 		<picker mode="selector" :range="data" range-key="name" @change="handleChange" value="value">
 			<slot></slot>
 		</picker>
-		<view @click="add">添加</view>
+		<view class="add" @click="add">添加</view>
 		<!-- 弹窗 -->
 		<uni-popup ref="specPop" type="center" :show=true>
 			<view class="specContainer">
@@ -73,7 +73,13 @@
 
 <style lang="scss">
 	.industry {
-		display: inline-block;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 		width: 100%;
+		.add{
+			color: #FF474D;
+			font-size: 26upx;
+		}
 	}
 </style>

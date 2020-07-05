@@ -20,6 +20,7 @@
 
 			<!-- xclose -->
 			<view v-if="opts.xclose" class="unipop__xclose" @tap="close"></view>
+			
 		</view>
 	</view>
 	</view>
@@ -58,6 +59,12 @@
 				isUrl: true,
 			};
 		},
+		props: {
+			wxUserInfo: {
+				type: Object,
+				value: {} //上传接口地址
+			},
+		},
 		methods: {
 			show(args) {
 				this.loginCode = args.loginCode
@@ -79,7 +86,7 @@
 				// 解密方式
 				var iv = e.detail.iv;
 				if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
-					console.log('他取消掉了');
+					console.log('他取消掉了',this.wxUserInfo);
 				} else {
 					let _this = this
 					_this.$getJson('/api/v2/vue/stPlusShop/common/getMobileAndOpenId.jsp', {
@@ -98,14 +105,14 @@
 						}
 						_this.$getJson('/api/v2/vue/sqPlus/index/login.jsp', {data:JSON.stringify(
 							{
+								avatarUrl:_this.wxUserInfo.avatarUrl,
+								nickName:_this.wxUserInfo.nickName,
 								mobile:res.data.mobile,
 								openid:res.data.wxUserInfoByPage.openid,
 								code:_this.loginCode
 							})}, 'POST',(data)=>{
 								uni.setStorageSync('SESSION',data.data)
 							})
-
-
 					});
 				}
 			},

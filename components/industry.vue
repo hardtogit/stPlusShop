@@ -17,11 +17,12 @@
 		data() {
 			return {
 				data:[],
-				value:0
+				value:0,
+				storeId:''
 			};
 		},
 		mounted(){
-			this.$getJson('/jsp/api/resources/ajaxGetIndustry.jsp',{data:JSON.stringify({'storeId':1})},'POST',res=>{
+			this.$getJson('/jsp/api/resources/ajaxGetIndustry.jsp',{},'POST',res=>{
 				this.data=res.data.industry
 			}) 
 		},

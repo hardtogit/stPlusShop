@@ -1,0 +1,11 @@
+
+page {
+	background: #fff;
+}
+.businessCardHandle .handleBtn {
+	background-color: #549df2;
+}
+.businessCardIco .icoBtn {
+	background-color: #8cd8ff;
+}
+

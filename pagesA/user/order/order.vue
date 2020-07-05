@@ -17,7 +17,7 @@
 
 					<!-- 订单列表 -->
 					<view v-for="(item,index) in orderList" :key="index" class="order-item" @click="goDetail(`/pagesA/user/order/detail/order?id=${item.order.id}&orderNo=${item.order.sn}`)">
-						<view class="i-top b-b">订单:
+						<view class="i-top b-b">{{item.store.name}}
 							<text class="time" @tap="copySn(item.sn)">{{item.sn}}</text>
 							<text class="state" :style="{color: item.stateTipColor}">{{item.order.statusStr}}</text>
 							<text v-if="item.status==='40'" class="del-btn yticon icon-iconfontshanchu1" @click="deleteOrder(item.id,index)"></text>
@@ -45,25 +45,19 @@
 
 
 							</view>
-						</view>
-				
+						</view>				
 						<view class="action-b" v-if="item.order.status == '0'">
 							<view style="display: inline-block;">
-								<button class="action-btn recom" @click="pay(item)">立即支付</button>
-							</view>
-							
+								<button class="action-btn recom" @tap.stop="pay(item)">立即支付</button>
+							</view>							
 						</view>
 						<view class="action-b" v-if="item.order.status == '1'">
 							<view style="display: inline-block;">
-								<button class="action-btn recom" @click="buyBack(item)">申请售后</button>
+								<button class="action-btn recom"  @tap.stop="buyBack(item)">申请售后</button>
 							</view>
-							
 						</view>
-
 					</view>
-
 					<uni-load-more :status="loadingType"></uni-load-more>
-
 				</scroll-view>
 			</swiper-item>
 		</swiper>

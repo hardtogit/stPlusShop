@@ -227,6 +227,7 @@
 					})
 				}
 				this.total = Number((total / 100).toFixed(2));
+				console.log(this.total,'ssssss')
 			},
 			getDefaultAddr() {
 				let data = {
@@ -434,14 +435,32 @@
 					lng: this.addressData.lng,
 					orders: JSON.stringify(orders)
 				}
-				console.log(params)
+				console.log($this,'aaaaaa')
+				// return
+				// const $this=this
+				
 				this.$getJson('/api/v3/order/add.jsp', params, 'POST', function(res) {
 					console.log(res)
 					if (res.success) {
-						uni.navigateTo({
-							url: '/pages/money/pay?money=' + $this.total + '&sn=' + res.data.paysn
-						});
+						if(res.data.erros&&res.data.erros.length){
+							uni.showToast({
+								icon:'none',
+								title: res.data.erros[0].message
+							});
+							return
+						}
+						if(parseFloat($this.total)==0){
+							uni.navigateTo({
+								url: '/pages/money/paySuccess'
+							});
+						}else{
+							uni.navigateTo({
+								url: '/pages/money/pay?money=' + $this.total + '&sn=' + res.data.paysn
+							});
+						}
+					
 					} else {
+					
 						uni.showToast({
 							title: res.message
 						});

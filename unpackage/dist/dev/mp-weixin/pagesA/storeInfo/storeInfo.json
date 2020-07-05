@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "店铺信息",
+  "usingComponents": {
+    "uni-editor": "/components/uni-editor/uni-editor",
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "mpvue-picker": "/components/mpvue-picker/mpvuePicker",
+    "upload-images": "/components/upload-images",
+    "industry": "/components/industry",
+    "uni-pop": "/components/uni-popup/uni-popup"
+  }
+}

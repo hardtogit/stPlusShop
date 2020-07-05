@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "申请加入商圈",
   "usingComponents": {
     "upload-images": "/components/upload-images",
     "industry": "/components/industry"

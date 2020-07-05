@@ -2,112 +2,197 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c2b95c4-4273-4e51-942f-2b77e6ad58ae" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/city.data-3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/qf-alert.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseAudio.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseImg.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate0.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate1.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate10.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate11.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate2.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate3.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate4.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate5.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate6.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate7.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate8.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseTemplate9.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/components/wxParseVideo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/libs/html2json.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/libs/htmlparser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/libs/wxDiscode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/wxParse.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uParse/src/wxParse.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uni-icon/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uni-icon/uni-icon.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uni-rate/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/uni-rate/uni-rate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/yq-avatar/yq-avatar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/member/member.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/member/memberDetails.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/money/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/shopList/addShop.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/shopList/shopDetails.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/user/shopList/shopList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/qqmap-wx-jssdk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/qqmap-wx-jssdk.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/uploadImg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pagesA/businessCard/businessCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pagesA/businessCard/businessCardAmend.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pagesA/businessCard/businessCardList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pagesA/businessCard/cardDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pagesA/personal/personal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/uni-popup/uni-popup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/uni-popup/uni-popup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/upload-images.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/upload-images.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/coupon-bar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/coupon-bar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/goods-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/goods-item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/industry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/industry.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/uni-number-box.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/uni-number-box.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/uniPop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/uniPop.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/cart/cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cart/cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/classify/coupon/coupon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/classify/coupon/coupon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/classify/hot/hot.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/classify/hot/hot.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/classify/platform/platform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/classify/platform/platform.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/detail/coupon/coupon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/detail/coupon/coupon.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/detail/goods/goods.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/detail/goods/goods.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/dynamic/dynamic.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/dynamic/dynamic.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/order/createOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/order/createOrder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/search/hot/hot.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/search/hot/hot.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/money/paySuccess.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/money/paySuccess.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/user/user.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/user/user.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/address/addressManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/address/addressManage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/user/apply/apply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/user/apply/apply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/user/backSale/backSale.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/user/backSale/backSale.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/user/dynamic/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/user/dynamic/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/user/order/coupon.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/user/order/coupon.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/user/order/order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/user/order/order.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/user/shopList/addShop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/user/shopList/addShop.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/user/shopList/shopList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/user/shopList/shopList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagesA/wxcomponents/ec-canvas/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/pagesA/wxcomponents/ec-canvas/echarts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/main.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/main.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/common/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/coupon-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/coupon-bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/coupon-bar.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/coupon-bar.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/coupon-bar.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/coupon-bar.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/goods-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/goods-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/goods-item.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/goods-item.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/goods-item.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/goods-item.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/industry.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/industry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/uni-number-box.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/uni-number-box.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/uni-number-box.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/uni-number-box.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/uniPop.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/components/uniPop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/cart/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/cart/cart.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/cart/cart.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/coupon/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/coupon/coupon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/hot/hot.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/platform/platform.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/platform/platform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/platform/platform.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/classify/platform/platform.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/coupon/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/coupon/coupon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/coupon/coupon.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/coupon/coupon.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/coupon/coupon.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/coupon/coupon.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/goods/goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/goods/goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/goods/goods.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/goods/goods.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/goods/goods.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/detail/goods/goods.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/dynamic/dynamic.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/dynamic/dynamic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/dynamic/dynamic.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/dynamic/dynamic.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/dynamic/dynamic.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/dynamic/dynamic.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/home.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/home.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/home.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/home.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/order/createOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/order/createOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/search/hot/hot.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/search/hot/hot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/search/hot/hot.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/search/hot/hot.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/search/hot/hot.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/home/search/hot/hot.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/login/login.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/login/login.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/money/paySuccess.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/money/paySuccess.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/money/paySuccess.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/money/paySuccess.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pages/user/user.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/address/addressManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/address/addressManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/apply/apply.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/backSale/backSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/backSale/backSale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/backSale/backSale.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/backSale/backSale.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/dynamic/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/dynamic/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/dynamic/add.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/dynamic/add.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/dynamic/add.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/dynamic/add.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/coupon.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/order.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/order/order.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/addShop.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/addShop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/addShop.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/addShop.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/addShop.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/addShop.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/shopList.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/user/shopList/shopList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/wxcomponents/ec-canvas/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/pagesA/wxcomponents/ec-canvas/echarts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/build/mp-weixin/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/runtime.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/common/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/detail/detail.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/detail/detail.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/industry.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/industry.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/uniPop.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/uniPop.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/cart/cart.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/cart/cart.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/classify/coupon/coupon.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/classify/coupon/coupon.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/classify/hot/hot.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/classify/hot/hot.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/detail/coupon/coupon.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/detail/coupon/coupon.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/detail/goods/goods.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/detail/goods/goods.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/dynamic/dynamic.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/dynamic/dynamic.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/home.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/home.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/order/order.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/order/order.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/order/createOrder.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/order/createOrder.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/search/hot/hot.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/search/hot/hot.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/login.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/login/login.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/money/money.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/money/money.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/user/user.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/user/user.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/address/addressManage.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/address/addressManage.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/apply/apply.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/apply/apply.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/dynamic/add.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/dynamic/add.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/order/coupon.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/order/coupon.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/order/order.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/order/order.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/shopList/addShop.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/shopList/addShop.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/shopList/shopList.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pagesA/user/shopList/shopList.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/main.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/runtime.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-item.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-item.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/article-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/article-edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-bar.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/coupon-bar.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/empty.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/empty.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-item.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-item.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-item.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-item.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-type.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/goods-type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/industry.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/industry.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/mix-list-cell.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/mix-list-cell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/mpvue-picker/mpvuePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/mpvue-picker/mpvuePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/mpvue-picker/mpvuePicker.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/mpvue-picker/mpvuePicker.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/share.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/share.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-load-more/uni-load-more.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-load-more/uni-load-more.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-load-more/uni-load-more.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-load-more/uni-load-more.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-number-box.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-number-box.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-number-box.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-number-box.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-number-box.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-number-box.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-popup/uni-popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-popup/uni-popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-popup/uni-popup.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-popup/uni-popup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-popup/uni-popup.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uni-popup/uni-popup.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uniPop.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uniPop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uniPop.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/uniPop.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/address/address.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/address/address.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/address/addressManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/address/addressManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/upload-images.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/upload-images.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/cart/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/cart/cart.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/cart/cart.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/collection/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/collection/collection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/detail/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/detail/detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/classify.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/classify.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/coupon/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/coupon/coupon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/hot/hot.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/platform/platform.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/platform/platform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/platform/platform.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/classify/platform/platform.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/coupon/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/coupon/coupon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/coupon/coupon.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/coupon/coupon.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/coupon/coupon.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/coupon/coupon.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/goods/goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/goods/goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/goods/goods.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/goods/goods.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/goods/goods.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/detail/goods/goods.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/dynamic/dynamic.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/dynamic/dynamic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/dynamic/dynamic.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/dynamic/dynamic.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/dynamic/dynamic.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/dynamic/dynamic.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/home.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/home.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/home.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/home.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/order/createOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/order/createOrder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/order/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/search/hot/hot.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/search/hot/hot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/search/platform/platform.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/search/platform/platform.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/index/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/invite/invite.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/invite/invite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/login/login.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/login/login.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/money.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/money.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/pay.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/pay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/paySuccess.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/paySuccess.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/paySuccess.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/money/paySuccess.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/notice/notice.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/notice/notice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/order/createOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/order/createOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/order/order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/product/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/product/list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/product/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/product/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/public/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/public/login.js" afterDir="false" />
@@ -118,32 +203,43 @@
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/user/user.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/user/user.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/user/user.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/user/user.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/userinfo/userinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/userinfo/userinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/address/address.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/address/address.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/address/addressManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/address/addressManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/analyze/staff.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/analyze/staff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/apply/apply.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/backSale/backSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/backSale/backSale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/backSale/backSale.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/backSale/backSale.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/dynamic/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/dynamic/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/dynamic/add.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/dynamic/add.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/dynamic/add.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/dynamic/add.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/info/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/member/member.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/member/member.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/already.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/already.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/record.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/record.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/wait.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/wait.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/withdraw.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/money/withdraw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/coupon.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/detail/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/detail/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/order.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/order/order.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/addShop.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/addShop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/addShop.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/addShop.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/addShop.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/addShop.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopList.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopList.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopList.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopList.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/user/shopList/shopList.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/wxcomponents/ec-canvas/echarts.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pagesA/wxcomponents/ec-canvas/echarts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/home/转发 (1)@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/bgtwo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/代付款@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/售后@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/商圈 (1)@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/已付款@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/已取消 (2)@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/已取消@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/已完成 (1)@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/已完成@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/未使用 (1)@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/椭圆 799.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/椭圆 799.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x(9).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/矢量智能对象@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/icon/user/组 106 拷贝 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/img/bgtwo.24887d8d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/css/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -157,15 +253,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="addShop.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5055">
-              <caret line="339" selection-start-line="339" selection-end-line="339" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -184,20 +271,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1842">
-              <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+            <state relative-caret-position="1425">
+              <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue">
+      <file leaf-file-name="cardDetail.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pagesA/businessCard/cardDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="705">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="businessCard.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pagesA/businessCard/businessCard.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8115">
+              <caret line="541" column="64" selection-start-line="541" selection-start-column="62" selection-end-line="541" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3015">
+              <caret line="201" column="52" selection-start-line="201" selection-start-column="52" selection-end-line="201" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personal.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pagesA/personal/personal.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -222,21 +336,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
-              <caret line="153" column="18" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>user</find>
+      <find>转发</find>
+      <find>URLSearchParams</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/common</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -255,12 +365,17 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/node_modules/charenc/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/crypt/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/md5/package.json" />
+    </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="24" />
-    <option name="width" value="1440" />
-    <option name="height" value="822" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="967" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -268,6 +383,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="WxProject" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,14 +395,18 @@
             <path>
               <item name="stPlusShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="stPlusShop" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="pagesA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stPlusShop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stPlusShop" type="462c0819:PsiDirectoryNode" />
+              <item name="pagesA" type="462c0819:PsiDirectoryNode" />
+              <item name="personal" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="WxProject" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -302,11 +423,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pagesA" />
       <recent name="$PROJECT_DIR$/pages/user/money" />
       <recent name="$PROJECT_DIR$/pages" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/common" />
-      <recent name="$PROJECT_DIR$/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pages/user" />
@@ -339,25 +460,28 @@
       <workItem from="1587477709430" duration="1645000" />
       <workItem from="1587630076574" duration="302000" />
       <workItem from="1587647812247" duration="3226000" />
+      <workItem from="1590647185077" duration="2376000" />
+      <workItem from="1590979810903" duration="9249000" />
+      <workItem from="1591706226101" duration="4000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18512000" />
+    <option name="totallyTimeSpent" value="30141000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24894515" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3292011" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23151515" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23179488" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -373,6 +497,46 @@
       <list>
         <option value="$USER_HOME$/WebstormProjects/toolchain/admin/node_modules/umi-plugin-dva/src/fixtures/getModel/models/models/a.jsx" />
         <option value="$USER_HOME$/WebstormProjects/toolchain/admin/node_modules/umi-plugin-dva/src/fixtures/getModel/models/models/a.js" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/write-easy/utils/rem/index.js" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Purchase/Address/Info/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Purchase/Address/Line/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Purchase/Address/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsContent/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsContent/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/Process/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/Process/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsHead/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsHead/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsInfo/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsInfo/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/FAQ/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/FAQ/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsIntro/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/GoodsIntro/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Form/FootBtn/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Form/FootBtn/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Form/Label/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Form/Switch/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Form/Input/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/ImgLoad/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Icon/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Icon/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Skeleton/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Skeleton/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Header/helper.js" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Toast/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Toast/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Empty/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Empty/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Scene/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/BottomBar.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/index.js" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/BottomBar.js" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Goods/BottomBar.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Stepper/index.d.ts" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Stepper/index.jsx" />
+        <option value="$USER_HOME$/WebstormProjects/weapp-health-baas/node_modules/@doctorwork/react-easy/components/Form/index.js" />
       </list>
     </option>
   </component>
@@ -380,20 +544,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5055">
-          <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -403,190 +553,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+        <state relative-caret-position="1425">
+          <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue">
+    <entry file="file://$PROJECT_DIR$/pagesA/businessCard/cardDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/uploadImg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5055">
-          <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/uploadImg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5085">
-          <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5055">
-          <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4140">
-          <caret line="276" column="9" selection-start-line="276" selection-start-column="9" selection-end-line="276" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5055">
-          <caret line="339" selection-start-line="339" selection-end-line="339" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="153" column="18" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="705">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -606,10 +581,227 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pagesA/businessCard/businessCard.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8115">
+          <caret line="541" column="64" selection-start-line="541" selection-start-column="62" selection-end-line="541" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue" />
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue" />
+    <entry file="file://$PROJECT_DIR$/utils/uploadImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue" />
     <entry file="file://$PROJECT_DIR$/pages.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1842">
+        <state relative-caret-position="2625">
           <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue" />
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue" />
+    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue" />
+    <entry file="file://$PROJECT_DIR$/utils/uploadImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue" />
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue" />
+    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue" />
+    <entry file="file://$PROJECT_DIR$/utils/uploadImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue" />
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue" />
+    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue" />
+    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue" />
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue" />
+    <entry file="file://$PROJECT_DIR$/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4140">
+          <caret line="276" column="9" selection-start-line="276" selection-start-column="9" selection-end-line="276" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/shopList/addShop.vue" />
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/cmd-progress/cmd-progress.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/user/member/member.vue" />
+    <entry file="file://$PROJECT_DIR$/pages/user/money/index.vue" />
+    <entry file="file://$PROJECT_DIR$/utils/uploadImg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pagesA/businessCard/cardDetail.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pagesA/businessCard/businessCard.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8115">
+          <caret line="541" column="64" selection-start-line="541" selection-start-column="62" selection-end-line="541" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3015">
+          <caret line="201" column="52" selection-start-line="201" selection-start-column="52" selection-end-line="201" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pagesA/personal/personal.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
         </state>
       </provider>
     </entry>

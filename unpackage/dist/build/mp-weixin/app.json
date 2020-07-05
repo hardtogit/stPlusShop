@@ -28,7 +28,8 @@
     "pages/home/dynamic/dynamic",
     "pages/user/user",
     "pages/home/search/platform/platform",
-    "pages/home/search/hot/hot"
+    "pages/home/search/hot/hot",
+    "pages/home/dynamic/detail"
   ],
   "subPackages": [
     {
@@ -52,7 +53,12 @@
         "address/address",
         "address/addressManage",
         "user/order/detail/order",
-        "user/backSale/backSale"
+        "user/backSale/backSale",
+        "businessCard/businessCard",
+        "store/store",
+        "user/dynamic/list",
+        "user/dynamic/edit",
+        "storeInfo/storeInfo"
       ]
     }
   ],

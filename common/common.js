@@ -5,7 +5,7 @@
 import { contactPhone } from '@/common/util.js';
 // #endif  
 // #ifdef MP-WEIXIN
-const apiUrl = 'http://gezen.51youduoduo.com/ydd1';
+const apiUrl = 'https://api.51youduoduo.com/ydd1';
 // const apiUrl = 'http://192.168.4.4:8080';
  let timer;
 // #endif
@@ -53,7 +53,7 @@ const urlRequest = async (url, param, way, callBack,json) => {
 					 uni.navigateTo({
 					 	url:'/pages/login/login'
 					 })
-				 },2000)
+				 },500)
 				
 			 }
 			callBack(res.data);
@@ -268,7 +268,20 @@ const isDigits = (value) =>{
 	return /^\d+$/.test(value);
 }
 
+//处理富文本
+export const dealRich=(str)=>{
+	const reg=new RegExp('/src=\"\/(ydd1\/)?upload/g')
+	const regex = new RegExp('<img', 'gi');
+	const result=str.replace(/src=\"\/(ydd1\/)?upload/gi,"src=\"http://gezen.51youduoduo.com/ydd1/upload").replace(regex, '<img style="max-width: 100%"')
+	return result 
+}
 
+export const unDealRich=(str)=>{
+	const reg=new RegExp('/http://gezen.51youduoduo.com/g')
+	const result=str.replace(/http:\/\/gezen.51youduoduo.com/g,'')
+	return result 
+	
+}
 // 赋值操作
 export default {
 	apiUrl:apiUrl,

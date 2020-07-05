@@ -1,0 +1,773 @@
+/*首页*/
+.mainContent{position: relative; top: 100upx;width: 100%; display:block; overflow: hidden;}
+.mainBottom{margin-bottom: 140upx;width: 100%; display:inline-block; overflow: hidden;}
+.indexTop{text-align: center; width: 100%; display:block; overflow: hidden; position: relative; }
+.indexTopBG{ width: 100%; display: block;}
+.indexTopCon{ position: absolute; top: 0; left: 0; width: 100%;padding: 20upx 0;}
+.indexTop .photo{width: 140upx; height: 140upx; border-radius: 100%; overflow: hidden; display: inline-block;box-shadow: 0px 0px 10px #eee;}
+.indexTop .photo image{width: 100%; height: 100%;}
+.indexTop .title{font-size: 32upx; color: #333;}
+.indexTop .label{ position: relative; display: inline-block; max-width: 80%; margin:0 10%; text-align: center; padding-right: 130upx;}
+.indexTop .labelCon{font-size: 26upx; color: #888;}
+.indexTop .labelAmend{font-size:26upx; color: #004DA0;  position: absolute; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);right: 0;}
+.indexTop .labelAmend:after{content: '\e6ff';position: absolute; right:-36upx;top: 55%;-webkit-transform: translateY(-50%);transform: translateY(-50%); font-size:40upx; color: #004DA0;}
+.indexTop .tip{font-size: 24upx; color: #999;}
+.indexList{ background: #fff; width: 100%; display:block; overflow: hidden; margin-top: 20upx;}
+.indexItem{ padding:0 30upx; position: relative; height:100upx; line-height: 100upx;}
+.indexItem:before{ content: ''; position: absolute; bottom: 0; left: 30upx; right: 0; border-bottom: 1px solid #f5f5f5;}
+.indexItem:last-child:before{ display: none;}
+.indexItem .leftIco{font-size: 40upx; position: absolute; left:30upx; top: 51%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.indexItem .name{ margin-left:64upx; font-size: 30upx;line-height: 100upx;}
+.indexItem:after{content: '\e6ff'; position: absolute; right:14upx;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); font-size: 60upx; color: #ccc; }
+/*开通页面*/
+.openTop{ width: 100%; display: block;}
+.openInfo{ width: 100%; display: block; margin-top: 20upx; overflow: hidden; background: #fff; padding: 25upx 30upx 20upx;}
+.openInfoItem{ margin: 14upx 0; position: relative;width: 100%; display: block; overflow: hidden;   }
+.openInfoItem .leftCon{font-size:30upx; color: #333;}
+.openInfoItem .rightCon{position: absolute; right:0;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); font-size:30upx; color: #5d57c3; }
+.openList{background: #fff; width: 100%; display: block; overflow: hidden; margin-top: 20upx;}
+.openListItem{ padding:0 30upx; position: relative; width:100%; display: block; overflow: hidden; }
+.openListItem .rightMoney{position: absolute; right:30upx;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); font-size:30upx; color: #de9b44;}
+.openListItem .leftName{font-size:30upx; color: #333; margin-left: 30upx;line-height: 90upx;}
+.openListItem:before{content: ''; position: absolute; left: 30upx;top: 47%;-webkit-transform: translateY(-50%);transform: translateY(-50%); height: 40upx;  border-left:3px solid #45d07d;}
+.openListItem.active{ background: #549ff2;}
+.openListItem.active:before{ border-color: #fff;}
+.openListItem.active .rightMoney,.openListItem.active .leftName{ color: #fff;}
+/*企业信息*/
+.industryList{ width: 100%; display: block; overflow: hidden; margin-top: 10upx;}
+.industryItem{ border: 1px solid #f5f5f5; border-radius: 50px; vertical-align: top; overflow: hidden; color: #888; display: inline-block; font-size: 28upx; padding: 2upx 26upx 0; margin-right: 20upx; margin-top: 20upx;}
+.industryItem.active{ background: #014ea0; color: #fff; border: 1px solid #014ea0;}
+/*企业成员管理*/
+.memberList,.memberItem{width: 100%; display: block; overflow: hidden;}
+.memberItem{background: #fff; padding: 30upx; position: relative; margin-top: 20upx; display: flex; flex-direction: row; align-items: center;}
+.memberItem .photo{width: 150upx; height: 150upx; overflow: hidden; border-radius: 100%; margin-right: 30upx;}
+.memberItem .photo image{width: 100%; height: 100%;}
+.memberItem .name{font-size: 32upx; color: #333;}
+.memberItem .label,.memberItem .phone{font-size: 26upx; color: #999;}
+.memberItem .label{ margin: 4upx 0;}
+.memberDel{ position: absolute; top: 30upx; right: 30upx; font-size: 26upx; color: #999; border: 1px solid #f5f5f5; padding: 2upx 20upx 0; border-radius: 4px; padding-left:50upx;}
+.memberDel:after{ content: '\e612';position: absolute; left:14upx;font-size: 32upx;  top:48%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+/*企业成员管理*/
+.enterpriseListTop{ position: relative; width: 100%; display: block; overflow: hidden; background: #fff;}
+.enterpriseListTop .content{ position: absolute; top: 40upx; left: 0; width: 100%; text-align: center;}
+.enterpriseListTopBg{ width: 100%;}
+.enterpriseListTop .photo{width: 150upx; height: 150upx; border-radius: 100%; overflow: hidden; display: inline-block; box-shadow: 0px 0px 5px #ccc;}
+.enterpriseListTop .photo image{width: 100%; height: 100%;}
+.enterpriseListTop .title{font-size: 34upx; color: #fff; margin: 4upx 0;}
+.enterpriseListTop .label{font-size: 24upx; color: #fff;}
+.enterpriseList,.enterpriseListItem{width: 100%; display: block; overflow: hidden;}
+.enterpriseListItem{ background: #fff; margin-bottom: 20upx; display: flex; flex-direction: row; align-items: center; padding: 30upx;}
+.enterpriseListItem .photo{width: 120upx; height: 120upx;overflow: hidden; margin-right: 30upx;display: flex; flex-direction: row; align-items: center;}
+.enterpriseListItem .photo image{width: 100%;}
+.enterpriseListItem .name{font-size: 32upx; margin: 6upx 0;}
+.enterpriseListItem .label{font-size: 26upx; color: #999;}
+
+/*官网展示*/
+.officialWebsiteBanner{ width: 100%; display:block; overflow: hidden;}
+.officialWebsiteBanner image{ width: 100%; display: block;}
+.officialCon{ padding: 0 5% 5%; width: 100%; display: block;overflow: hidden;}
+.officialInfo{ display: flex; flex-direction: row; align-items: center; margin-top: 30upx;}
+.officialInfo .logo{width: 120upx; height: 120upx; overflow: hidden; border-radius: 5px; margin-right: 30upx;}
+.officialInfo .logo image{ width: 100%;}
+.officialInfo .name{ color: #303233; font-size: 36upx;}
+.officialTitle{ border: 1px solid #5fc0f8; color: #5fc0f8;font-size: 29upx; border-radius: 50px; margin-top:50upx; overflow: hidden; position: relative; height: 54upx; line-height: 54upx; padding: 0 20upx; padding-left: 60upx; display: inline-block;}
+.officialTitle .leftIco{ width: 34upx; height: 34upx; position: absolute; left:16upx; top:50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.officialTitle .leftIco image{width: 100%; height: 100%;}
+.officialImages image{width: 100%;}
+.officialContent,.officialContact .labelItem{font-size: 28upx; color: #666666;}
+.partnerList,.officialContact{ width: 100%; display: block; overflow: hidden;}
+.partnerItem{ width: 33.3%; padding: 0 2%; float: left; display: flex; flex-direction: row; align-items: center; margin-top: 16upx;}
+.partnerItem image{ width: 100%;}
+/*动态管理*/
+.libraryList{ padding: 0 25upx 25upx;}
+.libraryItem { width: 100%; display: block; background: #fff; overflow: hidden; margin-top: 25upx; padding:0  30upx; border-radius: 5px;}
+.libraryItemTop{width: 100%; display:flex; align-items: center; position: relative;}
+.libraryItem .title{ position: relative; margin-top: 30upx;font-size: 30upx; color: #333; line-height: 1.6;}
+.libraryItem .label{width: 100%; display:block; overflow: hidden;margin:10upx 0;}
+.libraryItem .label .labelCon{font-size: 26upx; color: #999; display: inline-block; vertical-align: middle;}
+.libraryItem .label .labelCon .iconfont{ margin-right: 6upx; color: #ccc; font-size: 34upx;}
+.libraryItem .handle{width: 100%; display:flex; align-items: center; justify-content: flex-end; overflow: hidden;border-top: 1px solid #f5f5f5;}
+.libraryItem .handle .handleCon{ width: 33.3%; text-align: center; padding: 6upx 0;} 
+.libraryItem .handle .handleCon .iconfont{font-size: 38upx; color: #999; margin-right: 10upx; vertical-align: middle;}
+.libraryItem .handle .handleCon .name{ font-size: 26upx; color: #666;vertical-align: middle;}
+.libraryItem .leftIco{ width: 60upx; height: 60upx; min-width: 60upx; margin-right: 30upx;}
+.libraryItem .leftIco image{width: 100%;display: block;}
+.libraryItem .rightCon{ width: 100%; position: relative;}
+.libraryItem .shareRight{ position: absolute; right: 0; z-index: 20; top: 50%; width: 40upx; height: 40upx; background: none; -webkit-transform: translateY(-50%);transform: translateY(-50%); padding: 0!important;}
+.libraryItem .shareRight image{width: 100%; display: block; height: 100% !important;}
+.libraryItem .shareRight:after{ display: none;}
+/*分享到*/
+.shareLayer .uni-popup{ padding: 30upx 0 0 !important; width: 100% !important;}
+.tipShare{ display: block; overflow: hidden; width: 100%;}
+.tipShareItem{ width: 33.3%; float: left; text-align: center;}
+.tipShareItem .image{ width:140upx; height: 140upx; display: inline-block;}
+.tipShareItem .image image{ width: 100%; height: 100%; display: block;}
+.tipShareItem .text{font-size: 28upx; color: #666; margin-top: -40upx; position: relative;z-index: 10;}
+.tipShareBtn{border-top: 1px solid #f5f5f5; margin-top: 40upx; padding: 20upx 0; font-size: 30upx;} 
+/*个人名片*/
+.businessCardOne,.businessCardTwo,.businessCardThree,.businessCardFore,.businessCardFive{ width:92%; display: block; margin:4%; overflow: hidden; background: #000;box-shadow: 0px 0px 20px #ccc; position: relative; height: 400upx;}
+.businessCardOne .cardName{position: absolute; left: 40upx; top: 40upx; width: 60%;}
+.businessCardOne .cardName image{width: 200upx;}
+.businessCardOne .cardName .comName{ font-size: 24upx; color: #fff; line-height: 1.2;overflow: hidden;white-space: nowrap;}
+.businessCardOne .cardCard{position: absolute; right: 40upx; top: 40upx; height: 110upx; width: 110upx; overflow: hidden; border-radius: 8px;display: flex; align-items: center; flex-direction: row;}
+.businessCardOne .cardCard image{wdith:100%;}
+.businessCardOne .bottomLeft{position: absolute; left: 40upx; bottom: 40upx; width: 30%;}
+.businessCardOne .bottomLeft .name{font-size: 46upx; color: #fff; line-height: 1.3; font-weight: bold;overflow: hidden; white-space: nowrap;}
+.businessCardOne .bottomLeft .job{font-size: 24upx; color: #fff;line-height: 1.2;overflow: hidden;font-weight: bold; white-space: nowrap;}
+.businessCardOne .bottomRight{position: absolute; right:40upx; bottom: 40upx; width: 55%;}
+.businessCardOne .bottomRight .labelCon,.businessCardTwo .bottomRight .labelCon{ color: #fff; line-height: 1.4; font-size: 24upx; text-align: right;overflow: hidden;white-space: nowrap; }
+.businessCardOne .bottomRight .labelCon text{ display: inline-block; width: 26upx;text-align: center;}
+.businessCardTwo{ background: #fff; padding: 25upx;}
+.businessCardTwoBg{ background:#c8d2d2; width: 100%; height: 100%; position: relative;}
+.businessCardTwo .cardCard{ display: block; position: absolute; left: 30upx; top: 30upx; height: 110upx; width: 110upx; overflow: hidden;background: #fff; display: flex; align-items: center; flex-direction: row;}
+.businessCardTwo .cardCard image{wdith:100%;}
+.businessCardTwo .cardName{display: block; }
+.businessCardTwo .cardName{position: absolute; left: 156upx; top: 30upx; width: 60%;white-space: nowrap;}
+.businessCardTwo .cardName image{width:89upx; display: inline-block; vertical-align: bottom; margin-right: 10upx;}
+.businessCardTwo .cardName .comName{ font-size: 26upx; color: #2a3332; line-height: 1.2;overflow: hidden;display: inline-block; vertical-align: bottom;white-space: nowrap;}
+.businessCardTwo .bottomLeft{ display: block; position: absolute; right: 40upx; bottom: 25upx;}
+.businessCardTwo .bottomLeft .name{width: 40upx; text-align: center; line-height: 1.05;font-size: 46upx; font-weight: bold;}
+.businessCardTwo .bottomLeft .job{ position: absolute; left: -35upx; width: 30upx; top: 0; height: 136upx; line-height: 1;font-size: 24upx;  overflow: hidden;font-weight: bold;}
+.businessCardTwo .bottomRight{display: block;position: absolute; left:40upx; bottom:30upx; width:60%;}
+.businessCardTwo .bottomRight .labelCon{ text-align: left; color: #2a3332; overflow: hidden;font-size: 24upx;white-space: nowrap; }
+.businessCardTwo .bottomRight .labelCon text{ display: inline-block; width: 26upx; text-align: center;}
+.businessCardThree,.businessCardFore,.businessCardFive{background: #fff;}
+.businessCardThree .cardCard{ display: block; position: absolute; right: 40upx; top: 40upx; height: 110upx; width: 110upx; overflow: hidden; border: 1px solid #fff; border-radius: 8px; background: #fff; display: flex; align-items: center; flex-direction: row;}
+.businessCardThree .cardCard image{wdith:100%;}
+.businessCardThree .bottomRight{display: block;position: absolute; left:40upx; bottom:20upx; width:80%;}
+.businessCardThree .bottomRight .labelCon{ text-align: left; color: #565656; padding-left:46upx;font-size: 24upx;  position: relative; margin-top: 4upx; overflow: hidden;white-space: nowrap;}
+.businessCardThree .bottomRight .labelCon image{width: 34upx;position: absolute !important; left: 0; top:46%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardThree .cardName{position: absolute; left:40upx; top:40upx; width:60%;}
+.businessCardThree .cardName .perName{font-weight: bold;  color: #244798; font-size: 40upx;white-space: nowrap;overflow: hidden;}
+.businessCardThree .cardName .job{font-size:28upx; color: #040000; font-weight: normal; margin-left: 10upx; line-height: 1.3; white-space: nowrap; overflow: hidden;}
+.businessCardThree .comName{ font-size: 28upx; color: #040000; line-height: 1.3;white-space: nowrap;  }
+.businessCardThree .leftBg{ position: absolute !important; left: 0; bottom: 0; width: 50%;}
+.businessCardThree .RightBg{position: absolute !important; right: 0; bottom: 0; width: 65%;}
+.businessCardFore .cardCard,.businessCardFive .cardCard{ display: block; position: absolute;right:40upx; top: 50upx; height: 110upx; width: 110upx; overflow: hidden; border: 1px solid #fff; border-radius: 8px; background: #fff; display: flex; align-items: center; flex-direction: row;}
+.businessCardFore .cardCard image,.businessCardFive .cardCard image{wdith:100%;}
+.businessCardFore .cardCard{top: 40upx;}
+.businessCardFore .comName{ background: #cbd5dd; padding: 0 40upx; border-top-right-radius: 50px;white-space: nowrap;  border-bottom-right-radius: 50px; position: absolute; line-height: 50upx; height: 50upx; left: 0; top:100upx; color: #040000; font-size:26upx; max-width: 70%; overflow: hidden;}
+.businessCardFore .bottomRight{position: absolute; left:40upx; bottom: 40upx;right:40upx;}
+.businessCardFore .bottomRight .labelCon{ color: #565656; line-height: 1.8; font-size: 24upx; text-align: left;overflow: hidden; }
+.businessCardFore .bottomRight .labelCon image{ vertical-align: middle; width: 28upx; margin-right:16upx;}
+.businessCardFore .bottomLeft,.businessCardFive .bottomLeft{position: absolute; left: 40upx; bottom: 50upx; width: 30%;}
+.businessCardFore .bottomLeft .name,.businessCardFive .bottomLeft .name{font-size: 44upx; color: #242424; line-height: 1.3;margin-right: 20upx;  }
+.businessCardFore .bottomLeft .job,.businessCardFive .bottomLeft .job{font-size: 24upx; color: #242424;line-height: 1.2; }
+.businessCardFore .bottomLeft{ bottom: initial; top: 30upx; left: 40upx; display: flex; align-items: flex-end;}
+.businessCardFore .bottomLeft{width: 70%;}
+
+.businessCardFore .bottomBg,.businessCardFive .bottomBg{ position: absolute; bottom: 0; height: 20upx; background: #313131; left: 0; right: 0;}
+.businessCardFive .bottomBg{background: url('https://web.51youduoduo.com/images/bg-08.jpg') left bottom no-repeat;background-size:contain; height: 30upx;}	
+.businessCardFive .bottomRight{position: absolute; right:40upx; bottom: 50upx; left: 40upx;}
+.businessCardFive .bottomRight .labelCon{ color: #565656; line-height: 1.8; font-size: 24upx;overflow: hidden; margin-top:4upx;white-space: nowrap; text-align: left; width: 48%; float: left;  }
+.businessCardFive .bottomRight .labelCon image{ vertical-align: middle; width: 28upx; margin-right:16upx;}
+.businessCardFive .bottomRight .labelCon:nth-child(2n){ margin-left: 4%;}
+/* .businessCardFive .bottomRight:before{ content: ''; position: absolute; left: 49%; top:10upx; bottom:10upx; border-left: 1px solid #d76313;} */
+.businessCardFive .comName{ color: #d76313; font-size: 30upx;position: absolute; left: 40upx; top:50upx; width: 66%; white-space: nowrap;overflow: hidden; }
+.businessCardFive .bottomLeft{ bottom: initial; top:120upx}
+.businessCardList{ padding:0 10% 3%; width:100%; display:block ; overflow: hidden; position: relative;}
+.businessCardList:before{ content: ''; position: absolute; bottom: 0; left: 0; height: 400upx; width: 100%;background: url('https://web.51youduoduo.com/bg-09.jpg') left bottom repeat-x;background-size:contain; }
+.businessCardItem{ width: 100%; display: block; overflow: hidden; padding:16upx 0; position: relative;}
+.businessCardItem .name{font-weight: bold; font-size:28upx; color: #040000; float: left; line-height: 1.4;}
+.businessCardItem .content{ width: 70%; overflow: hidden; font-size:28upx; float: left; line-height: 1.4;}
+.businessCardItem .rightIco{position: absolute; right: 0; width: 40upx; height: 40upx; top:46%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardItem .rightIco image{ width: 100%;}
+.businessCardUp{ text-align: center;width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden;}
+.businessCardUp .expandAll{ font-size: 32upx; font-weight: bold; color: #000; padding: 30upx 0 ;}
+.businessCardUp .packUp{font-size: 32upx;color: #808080;padding: 30upx 0 ;}
+.businessCardUp .iconfont{font-size: 50upx; color: #999; margin-left: 20upx;}
+.businessCardHandle{width:100%; display: block; overflow: hidden; padding: 0 2%; text-align: center;}
+.businessCardHandle .handleBtn{width: 40%; margin:5%; background: #000; line-height: 80upx; color: #fff; display: inline-block; vertical-align: middle;  border-radius: 50px; text-align: center; font-size:30upx;}
+.businessCardHandleTwo .handleBtn{background: #2a3332;}
+.businessCardHandleThree .handleBtn{background: #549ef3;}
+.businessCardIco{width:100%; padding: 0 40upx 30upx; display: block; overflow: hidden; }
+
+.businessCardIco .icoBtn{ width: 100%; padding: 20upx 0; font-size: 28upx; color: #000; display: flex; align-items: center; border-bottom: 1px solid #f1f1f1;position: relative;}
+.businessCardIco .icoBtn image{width:70upx; height: 70upx; margin-right: 20upx;}
+.businessCardIco .icoBtn:after{ content: '\e6ff';position: absolute; right:-10upx;font-size:60upx; color: #ccc;  top:48%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+
+.selectBg{position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center; background: rgba(0,0,0,0.8); color: #549ef3; font-size: 80upx !important;z-index: 20;}
+.businessCardRecord{ position: relative;}
+.RecordHandle{position: absolute; bottom: 0; left: 4%; width:92%; background: rgba(0,0,0,0.9); height: 80upx;}
+.RecordHandle .RecordBtn{color: #fff; float: right; font-size: 26upx; width: 50%; text-align: center; line-height: 80upx;}
+/*个人主页*/
+.homePageContent{ position: fixed; top: 0; left: 0; right: 0; height: 100%; overflow: auto; padding-top:5%;  padding-bottom: 150upx;}
+.homePageTop{ text-align: center; width: 100%; display: block; overflow: hidden;padding: 3% 0;display: flex; align-items: center; justify-content: center; position: relative;}
+.homePageTop .homePageHeadBG{ width: 200upx; height: 200upx; background: rgba(255,255,255,0.3); border-radius: 100%; overflow: hidden;animation:mymove 3s infinite; -webkit-animation:mymove 3s infinite; /*Safari and Chrome*/animation-direction:alternate;/*轮流反向播放动画。*/animation-timing-function: ease-in-out; /*动画的速度曲线*/ /* Safari 和 Chrome */-webkit-animation:mymove 3s infinite; -webkit-animation-direction:alternate;/*轮流反向播放动画。*/-webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/}
+.homePageTop .homePageHead{width: 180upx; height: 180upx;  border-radius: 100%; overflow: hidden; margin-left: -90upx; border: 1px solid rgba(255,255,255,0.6-); position: absolute; left: 50%; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.homePageTop .homePageHead image{width: 100%; height: 100%;}
+.homePageTitle{ text-align: center; font-size: 38upx; color: #fff; text-align: center;}
+.homePageLabel{font-size: 26upx; color: #fff; text-align: center;}
+.homePageLabel text{ margin-left: 20upx;}
+.homePageList{ width: 100%; display: block; overflow: hidden; padding:5%;}
+.homePageItem{ width:46%; height:310upx; margin:2%; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; border-radius: 8px; float: left; text-align: center;}
+.homePageItem .iconfont{font-size: 80upx;color: #fff; display: block;}
+.homePageItem .name{font-size: 30upx; color: #fff; width: 100%;}
+.homePageOne{animation:bounceInLeft 1s; -webkit-animation:bounceInLeft 1s; -webkit-animation-delay:1s;  /**延迟动画**/animation-delay:1s;animation-fill-mode:forwards }
+.homePageTwo{animation:bounceInRight 1s; -webkit-animation:bounceInRight 1s;animation-fill-mode:forwards}
+.homePageThree{animation:bounceInTop 1s; -webkit-animation:bounceInTop 1s;animation-fill-mode:forwards}
+.homePageFore{animation:bounceInRightTop 1s; -webkit-animation:bounceInRightTop 1s; -webkit-animation-delay:1s;  /**延迟动画**/animation-delay:1s;animation-fill-mode:forwards}
+.homePageOpacity{opacity: 0;}
+.whiteTopBG,.whiteBottomBG{ position: fixed; top: 0; z-index: 20; height:0; background: rgba(255,255,255,0.1); left: 0; width: 100%;animation:mymoveHeight 0.8s; -webkit-animation:mymoveHeight 0.8s;}
+.whiteBottomBG{ bottom: 0; top:initial;}
+.homePageBottom{position: fixed; bottom: 0; left: 0; z-index: 20; background: rgba(0,0,0,0.6); height: 100upx; width: 100%;}
+.homePageBottom .phone,.homePageBottom .address,.homePageBottom .arrowLine{width: 33.3%; float: left; height: 100upx; display: flex; align-items: center; color: #fff; justify-content: center; font-size:50upx;}
+.homePageBottom .arrowBg{ border: 1px solid #fff; width: 86upx; height: 86upx; overflow: hidden; border-radius: 100%; padding:6upx; background: none;}
+.homePageBottom .arrowBg image{width: 100%; height: 100%;}
+.homePageBottom .arrow{ background: #fff; overflow: hidden; border-radius: 100%; width: 100%;  height: 100%; position: relative;display: flex; line-height:62upx;  justify-content: center;}
+.homePageBottom .arrow:after{content: '\e700';animation: heart .5s ease-in-out .5s infinite alternate; color: #666; font-size: 60upx;}
+.homePageBottom .arrow.active:after{content: '\e701';}
+.homePageLayer{position: fixed; top:100upx; bottom:100upx; background: rgba(0,0,0,.2); width: 100%; padding: 3% 5%; overflow:auto; color: #fff;}
+.homePageLayerList{ position: relative; width: 100%; display: block; overflow: hidden; padding: 30upx 0;padding-left:60upx; padding-right: 140upx; }
+.homePageLayerList .layerLeft{ font-size: 46upx; position: absolute; left: 0; top:46%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.homePageLayerList .layerContent{font-size: 30upx; line-height: 1.3;}
+.homePageLayerList .layerBtn{position: absolute; right: 0; top:46%;-webkit-transform: translateY(-50%);transform: translateY(-50%); border-radius: 4px; border: 1px solid #f5f5f5; padding: 0 26upx; font-size: 26upx;} 
+.homePageLayerList:before{content:''; position: absolute; left: 60upx; right: 0; border-bottom: 1px solid rgba(255,255,255,0.2); bottom: 0;}
+.homePageLayerList.last:before{ display: none;}
+.homePageLayerCon{ margin-top: 8%; }
+.homePageT{font-size: 34upx; font-weight: bold;}
+.homePageC{font-size: 28upx;}
+.contactLayer .uni-popup{ padding:5%  0 8% !important;}
+.contactLayerTop{width: 100%; display: block; text-align: center; overflow: hidden;}
+.contactLayerTop .photo{width: 130upx; height: 130upx; overflow: hidden; border-radius: 100%; display: inline-block;}
+.contactLayerTop .photo image{width: 100%; height: 100%;}
+.contactLayerTop .name{font-size: 34upx; color: #333;}
+.contactLayerCon{ text-align: left; position: relative;padding: 0 4%; }
+.contactLayerCon .title{font-size: 28upx; color: #999;}
+.contactLayerCon .label{ font-size: 30up;scolor: #333;}
+.contactLayerCon .icoRight{ position: absolute; right: 5%; top:46%;-webkit-transform: translateY(-50%);transform: translateY(-50%); border: 1px solid #23c768; color: #23c768; width: 80upx; height: 80upx; border-radius: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 50upx !important;}
+.contactLayerClose{ position: absolute; left: 50%; margin-left: -40upx; top: -100upx; width: 80upx; height: 80upx;}
+.contactLayerClose image{ width: 100%; height: 100%;}
+.radioLayer{position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 1000;}
+.radioLayerCon{ width: 120px; margin: 20% auto 0; position: relative;}
+.radioLayerCon .photo{width: 100px; height: 100px; margin: 10px; position: absolute; top: 0; left: 0; border-radius: 100%; overflow: hidden;}
+.radioLayerCon .photo image{width: 100%; height: 100%;}
+
+/*企业人员详情*/
+.memberDTop{width: 100%; display:flex; flex-direction: row; align-items: center; padding: 30upx 40upx; background: #fff;}
+.memberDTop .photo{width: 100upx; height: 100upx; overflow: hidden; border-radius: 100%; margin-right: 30upx; box-shadow: 0px 0px 5px #ddd;}
+.memberDTop .photo image{width: 100%; height: 100%;}
+.memberDTop .name{ font-weight: bold; font-size: 34upx; font-weight: bold; margin-right: 30upx;}
+.memberDTop .job{font-size: 28upx;}
+.memberDCon{ padding: 15upx 0;}
+.memberDCon .labelItem{ padding: 15upx 0; position: relative;}
+.memberDCon .memberDPhone{position: absolute; right: 0; top:50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #fff; background: #549EF3; border-radius: 100%; width: 60upx; height: 60upx; display: flex; flex-direction: row;align-items: center;justify-content: center; font-size: 36upx;}
+/*产品*/
+.projectList{width: 100%; display: block;padding: 0 30upx;}
+.projectItem{ margin-top: 30upx;width: 100%; display: block;position: relative;}
+.projectItem .photo{ width:100%; border-radius:10px; overflow: hidden; height: 300upx; box-shadow: 0px 0px 15px #B2B2B2; position: relative;z-index: 10;}
+.projectItem .photo image{width: 100%;}
+.projectItem .content{ background: #fff; border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; height: 110upx; background: #fff; display: flex; flex-direction: row; align-items: center; padding: 0 20upx ; width:86%; margin:0 7%; margin-top: -40upx; position: relative;z-index: 20;}
+.projectItem .shadow{border-top-right-radius: 100px; box-shadow: 0px 0px 15px #DDD; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; height: 110upx;width:86%; position: absolute; bottom: 0; left: 0; padding: 0 20upx ; margin: 0 7%;}
+.projectItem .photoHead{width: 40upx; height: 40upx; overflow: hidden; display: inline-block; border-radius: 100%; overflow: hidden;}
+.projectItem .photoHead image{width: 100%; height: 100%;}
+.projectItem .name{font-size:24upx; color: #666; line-height:24upx; height: 24upx; overflow: hidden;}
+.projectItem .leftCon{ width:20%; min-width:20%; text-align: center; margin-right: 10upx}
+.projectItem .rightCon{ position: relative;width: 75%; padding: 0 30upx 0 40upx; line-height: 40upx;}
+.projectItem .rightCon .leftIco,.projectItem .rightCon .RightIco{ width: 24upx; position: absolute;}
+.projectItem .rightCon .leftIco{top: -5upx; left: 0;}
+.projectItem .rightCon .RightIco{bottom: -10upx; right: 0;;}
+.projectItem .rightCon .leftIco image,.projectItem .rightCon .RightIco image{ width: 100%;}
+.projectItem .contentCon{ font-size:28upx; max-height: 74upx;line-height: 40upx; overflow: hidden;}
+/*商品列表*/
+.shopList,.shopItem{width: 100%; display: block; overflow: hidden;}
+.shopItem{background: #fff; padding: 0 30upx; margin-top: 20upx; position: relative;}
+.shopItem .title{ padding:30upx 0; font-size: 32upx; color: #333; line-height: 1.3; width: 75%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.shopItem .state{position: absolute; right: 30upx; top: 30upx;line-height: 1.3; font-size: 26upx; color: #999;}
+.shopItem .state.red{ color: #ff0000;}
+.shopItem .state.green{ color: #00be04;}
+.shopItem .handle{width: 100%; display: block; overflow: hidden; border-top: 1px solid #f5f5f5; padding:15upx 0;}
+.shopItem .handle .handleBtn{border: 1px solid #f5f5f5; border-radius: 3px; float: right; margin-left: 30upx; height: 60upx; line-height: 58upx; padding: 0 30upx; color: #999; font-size: 27upx;}
+.shopItem .handle .visual{ float: left; position: relative; padding-left:46upx; line-height: 60upx; font-size: 27upx; color: #999;}
+.shopItem .handle .visual:after{content: '\e66a'; position: absolute; left: 0; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); font-size:30upx; color: #ccc; }
+.shopItem .handle .visual.active{ color: #549ef3;}
+.shopItem .handle .visual.active:after{content: '\e601'; color: #549ef3;}
+
+/*添加商品*/
+.payMethod{ width: 100%; display: block; overflow: hidden; background: #fff;}
+.orderDTitle{height: 100upx; line-height: 100upx; padding: 0 24upx; background: #fff; font-size: 34upx; border-bottom: 1px solid #f5f5f5; position: relative;}
+.contactWay .formRadioList{ width: 100%; display: flex; flex-direction: row;align-items:center;  position: relative; padding: 24upx;}
+.contactWay .formRadioList:before{ content: ''; position: absolute; bottom: 0; left: 24upx; right:24upx; border-bottom: 1px solid #f5f5f5;}
+.contactWay .formRadioList .radioIco{ position: absolute; top: 50%; right: 24upx;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.contactWay .formRadioList .leftIco{ margin-right: 20upx;}
+.contactWay .formRadioList .radioName{ font-size: 31upx; color: #333;}
+/*标签设置*/
+.labelSetTitle{ font-size: 36upx; font-weight: bold; color: #3e3a39; padding: 24upx;}
+.labelSetContent{ background: #fcfcfc; margin: 0 24upx; border-radius: 5px; overflow: hidden; padding: 12upx;}
+.labelSetContent .title{ padding: 12upx; font-size: 30upx; color: #333; display: flex; flex-direction: row; align-items: center;}
+.labelSetContent .titleIco{ width: 36upx; height: 36upx; margin-right: 24upx;}
+.labelSetContent .titleIco image{width: 100%; height: 100%;}
+.labelSetContent .labelList{ width: 100%; display: block;; overflow: hidden;}
+.labelSetContent .labelList .label{ border: 1px solid #eee; padding: 4upx 30upx 2upx; border-radius: 30px; color: #666; font-size: 26upx; display: inline-block; float: left; margin: 12upx 10upx 12upx 12upx;}
+.labelSetContent .labelList .label.active{ border: 1px solid #004da0; color: #fff; background: #004da0;}
+/*报名成功*/
+.enrollSuccend{ width: 100%; display: block; background: #fff; text-align: center; padding-bottom: 40upx;}
+.enrollSuccend .photo{width: 400upx; height: 400upx; display: inline-block;}
+.enrollSuccend .photo image{width: 100%; height: 100%;}
+.enrollSuccend .title{ font-size: 36upx; color: #333; margin-bottom: 40upx;}
+.enrollSuccend .label{ font-size: 28upx; color: #999;}
+.enrollSuccend .label .name{ vertical-align: middle; margin-right: 16upx;}
+.enrollSuccend .label .money{ vertical-align: middle; font-size: 36upx; color: #FF3333;}
+.payMethod{ width: 100%; display: block; overflow: hidden; background: #fff;}
+.payMethod .list{display: flex; flex-direction: row; align-items:center; padding:18upx 24upx; position: relative;}
+.payMethod .list:before{ content: ''; position: absolute;  bottom: 0; left: 24upx; right: 24upx;border-bottom: 1px solid #f5f5f5; }
+.payMethod .list:after{ content: '\e6ff';position: absolute; right: 18upx; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #ccc; font-size:60upx;}
+.payMethod .list:last-child:before{ display: none;}
+.payMethod .list .name{ font-size: 30upx;}
+.payMethod .list .leftIco{ font-size:40upx; margin-right: 24upx;}
+/*订单支付成功*/
+.succendTop{ width: 100%; display: block; text-align: center;}
+.succendTop .photo{width: 160upx; height: 160upx; display: inline-block; margin: 15% 0 0;}
+.succendTop .photo image{width: 100%; height: 100%;}
+.succendTop .title{font-size: 34upx; color: #333; margin: 3% 0;}
+.succendTop .label{ font-size: 26upx; color: #666; margin-bottom: 8%;}
+.succendTop .labelTwo{ margin-top: -5%;}
+.succendTop .labelTwo .money{ font-size: 36upx; color: #FF3333;}
+.succendTip{ width: 80%; display: block; margin: 10% 10% 0;}
+.succendTip .title{ font-size: 28upx; color: #666; margin-bottom: 10upx;}
+.succendTip .title .iconfont{ margin-right: 10upx;}
+.succendTip .content,.succendTip .phone{ font-size: 24upx; color: #999;}
+.radioBtn{ background: #004da0; color: #fff; line-height: 80upx; font-size: 30upx; width: 80%; margin: 4% 10%; border-radius: 50upx; text-align: center;}
+.radioBtn:after{ display: none;}
+.lightBlue{ background: #8cd8ff;}
+.paysuccendList{ width: 100%; margin:10upx 0; display: flex; flex-direction: row; align-items: center; justify-content: center;}
+.paysuccendList .label{  font-size:28upx;margin: 0 20upx;}
+.paysuccendList .iconfont{ font-size: 34upx; color: #999;}
+.paysuccendList .name{ font-size:28upx; color: #FF3333;}
+.paysuccendHandle { padding: 0 5%; width: 100%; display: inline-block; margin-bottom: -5%;}
+.paysuccendHandle .radioBtn {width: 40%; margin: 4% 5%; float: left;}
+/*动态详情*/
+.dynamicDetails{width: 100%; display: block;overflow: hidden;}
+.dynamicDetails .title{font-size: 36upx; line-height: 1.6; color: #000; padding:40upx 40upx 0; font-weight: 400;}
+.dynamicDetails .label{ display: flex; align-items: center; justify-content: center; padding:20upx 40upx;}
+.dynamicDetails .label .time{font-size: 24upx; color: #999;}
+.dynamicDetails .label .doDel{font-size: 24upx; color: #094ca0; text-decoration: underline; margin-left: 20upx;}
+.dynamicDetails .content{padding: 0 40upx; color: #616366; font-size: 28upx;}
+.dynamicDetails .content image{width: 100%;}
+
+.loading-text{ font-size: 26upx;text-align: center;width: 100%; display: block;padding: 20upx 0;color: #999;}
+.mainNull{ background: #fff; position: fixed; text-align: center; top: 0 ;left: 0; width: 100%; height: 100%; justify-content: center; display: flex; align-items: center; }
+.mainNull .iconfont{ color: #ccc; font-size: 160upx; margin-top: -100upx;}
+.mainNull .mainNullTip{font-size: 28upx; color: #999;}
+
+.smilebox{
+			position: relative;width: 160upx;height: 160upx; float: left;margin-right: 18upx;border-radius: 10upx;overflow: hidden;
+}
+.smilebox text{
+	display: inline-block;
+	background-color:#fff;
+	width: 35upx;
+	height: 35upx;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 32upx;
+	position: absolute;
+	font-size: 38upx;
+	font-weight: 900;
+	right: 5upx;
+	top: 10upx;
+}
+/*确认订单*/
+.confirmAddress{ position: relative; padding: 24upx; background-color: #fff; }
+.confirmAddress .title{ display: flex; flex-direction: row; align-items: center; font-size: 32upx; color: #333;}
+.confirmAddress .title .phone{ margin-left: 40upx; font-size: 32upx;}
+.confirmAddress .title .label{ background: #ccc; color: #fff; font-size: 24upx; height: 40upx; line-height: 40upx; padding: 0 20upx; border-radius: 30upx; margin-left: 40upx;}
+.confirmAddress .content{ font-size: 24upx; color: #999;}
+.confirmAddress:after{ content: '\e6ff'; font-size:50upx; color: #ccc; position: absolute; right: 20upx;top:50%; -webkit-transform: translateY(-50%) !important;transform: translateY(-50%) !important; }
+.footHandle{ position: absolute; bottom: 0; left: 0;width: 100%; box-shadow: 0px 0px 5px #eee; background: #fff;}
+.footHandle .footBtn{ width: 35%; float: right; color: #fff; background: #549ef3; border-radius: 0; height: 100upx; line-height: 100upx; border: none; font-size: 32upx;}
+.footHandle .footBtn:after{ display: none;}
+.footHandle .left{ width: 60%; float: left; line-height: 100upx; padding-left: 24upx;}
+.footHandle .left uni-checkbox .uni-checkbox-input{width: 42upx; height: 42upx;} 
+.footHandle .left uni-checkbox{ vertical-align: middle; margin-right: 10upx;}
+.footHandle .left uni-text{ vertical-align: middle; font-size: 30upx; color: #999;}
+.footHandle .leftMoney{ font-size: 30upx; color: #666;}
+.footHandle .leftMoney .money{ font-size: 36upx; color: #FF3333; margin-left: 10upx;}
+.footHandle .leftMoney .name{ vertical-align: middle;}
+.footHandle .money{ font-size: 36upx !important; color: #FF3333 !important;}
+/*订单详情*/
+.orderDetails{ margin-bottom: 100upx; width: 100%; display: inline-block;}
+.orderDLabel{ width: 100%; display: block;background: #fff;}
+.orderDTitle{height: 90upx; line-height: 90upx; padding: 0 24upx; background: #fff; font-size: 34upx; border-bottom: 1px solid #f5f5f5; position: relative;}
+.orderShopList{ display: flex; flex-direction: row; padding: 24upx; position: relative; }
+.orderShopList:after{content: '';  position: absolute; bottom: 0; left: 24upx; right: 24upx; border-bottom: 1px solid #f5f5f5;}
+.orderShopList:last-child:after{ display: none;}
+.orderShopList .shopPhoto{ width:150upx; height:150upx; margin-right: 24upx; display: block;}
+.orderShopList .shopPhoto .shopPhotoImg{width: 100%; height: 100%;}
+.orderShopList .shopRight{-webkit-box-flex: 1; -webkit-flex: 1;-ms-flex: 1;flex: 1;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;    overflow: hidden;}
+.orderShopList .title{ font-size: 30upx; color: #333;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; display: block;}
+.orderShopList .info{font-size: 26upx; color: #999; margin-top: 6upx; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.orderShopList .money{display: flex; flex-direction: row; align-items: flex-end;  margin-top: 6upx;font-size: 26upx; color: #FF3333; height: 40upx; line-height: 40upx;}
+.orderShopList .moneyCon{font-size: 32upx;vertical-align: middle; }
+.orderShopList .moneyIco{  margin-right: 4upx;}
+.orderShopList .number{position: absolute; bottom:16upx; right:24upx; font-size: 26upx; color: #999;}
+.orderShopList .moneyDel{ color: #ccc; position: relative; margin-left: 20upx;}
+.orderShopList .moneyDel:before{ content: ''; position: absolute; top: 50%; left: 0; right: 0; border-bottom: 1px solid #ccc;}
+.orderBottom{width: 100%;display: flex; flex-direction: row; padding:18upx 24upx;border-top: 1px solid #f5f5f5;}
+.orderBottom .left{width: 40%;display: flex; flex-direction: row; line-height: 60upx; color: #888; font-size: 26upx; }
+.orderBottom .right{ width: 60%;}
+.orderBottom .right .buttonSmall{ float: right;}
+.friendShopList .title{ margin-bottom: 46upx;}
+/*地址管理*/
+.addressList{ background: #fff; margin-bottom: 20upx; display: block; overflow: hidden; padding: 24upx 24upx 0;}
+.addressList .title{ font-size:32upx; display: flex; flex-direction: row; align-items: center; margin-bottom: 10upx;}
+.addressList .title .phone{ margin-left: 30upx;}
+.addressList .content{ font-size: 26upx; color: #999;}
+.addressList .handle{ display: flex; flex-direction: row; align-items: center; border-top: 1px solid #f5f5f5; margin-top: 16upx; padding:16upx 0;} 
+.addressList .handle .left{width: 40%; font-size: 26upx; position: relative;display: flex; flex-direction: row; align-items: center; }
+.addressList .handle .leftRadio{-webkit-appearance: none;appearance: none;margin-right: 10px; outline: 0;border: 1px solid #d1d1d1;background-color: #fff; border-radius: 50%; width: 32upx;height: 32upx; position: relative;}
+.addressList .handle .leftRadio.active{background: #004da0!important;border: 1px solid #004da0!important;}
+.addressList .handle .leftRadio.active:before{    font: normal normal normal 14px/1 uni; content: '\EA08'; font-size: 32upx; color: #fff; position: absolute; top: 50%;left: 50%; transform: translate(-50%,-48%) scale(.73);-webkit-transform: translate(-50%,-48%) scale(.73);}
+.addressList .handle .leftText{ font-size: 26upx; color: #666;}
+.addressList .handle .right{ width: 60%;display: flex; flex-direction: row; align-items: center; justify-content: flex-end;}
+.addressList .handle .rightList{ font-size: 26upx; color: #666; margin-left: 30upx;}
+.addressList .handle .rightList{ font-size: 26upx; color: #666; margin-left: 30upx;}
+.addressList .handle .rightList .iconfont{ font-size: 34upx; margin-right: 10upx; color: #ccc;}
+.uni-tab-bar.mainBottom{ height: 92%;}
+
+.formListCon .inInputTextShow{height: 200upx !important; text-align: left !important;}
+
+
+/*新增名片 2019-10-12*/
+.businessCardSix,.businessCardSeven,.businessCardEight,.businessCardNine,.businessCardTen,.businessCardEleven,.businessCardTwelve,.businessCardThirteen,.businessCardFourteen,.businessCardFifteen{ width:92%; display: block; align-items: center; margin:4%; overflow: hidden; background: #fff; box-shadow: 0px 0px 20px #ccc; position: relative; height: 400upx; padding: 30upx; padding-top: 70upx;}
+.businessCardSix{ padding-top: 40upx;}
+.businessCardSix .leftCon{ text-align: center;}
+.businessCardSix .rightCon{ width: 100%; padding-left: 20upx; position: relative; float: left;}
+.businessCardSix .cardCard,.businessCardSeven .cardCard,.businessCardEight .cardCard{width: 110upx; height: 110upx; border-radius: 8upx; overflow: hidden; display: inline-block;}
+.businessCardSix .cardCard image,.businessCardSeven .cardCard image,.businessCardEight .cardCard image{width: 100%;}
+.businessCardSix .cardCard{position: absolute; right: 40upx; top: 60upx;}
+.businessCardSix .comName{ font-size: 24upx; color: #282828; line-height: 1.5;}
+.businessCardSix .labelCon{ text-align: left; color: #565656; padding-left:60upx;font-size: 24upx;  position: relative; margin-top: 10upx; min-height: 34upx;  padding-top: 0;}
+.businessCardSix .labelCon image{width: 34upx;position: absolute !important; left: 0;top:0;}
+.businessCardSix .labelCon .name{font-size: 36upx;  color: #000; display: inline-block;margin-right: 20upx;}
+.businessCardSix .labelCon .job{font-size: 24upx; color: #000; display: inline-block;}
+.businessCardSix .limeBg{width: 34upx; background: #1babac; height:200upx; position: absolute; left:20upx; top: 0; margin-top: -18%; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;}
+.businessCardSix .labelCon.firstimg{ margin-bottom: 30upx; line-height: 1.6;}
+.businessCardSix .labelCon.firstimg image{ top: 50upx;}
+
+
+
+.businessCardSevenBg{position: absolute; right: 0; top: 0; width: 100%;}
+.businessCardSeven .cardCard{position: absolute; left: 40upx; top: 60upx; z-index: 5;}
+.businessCardSeven .bottomLeft,.businessCardEight .bottomLeft{position: absolute; left: 40upx; bottom: 40upx; width: 30%;}
+.businessCardSeven .bottomLeft .name,.businessCardEight .bottomLeft .name{font-size: 46upx; color: #2a3332; line-height: 1.3; font-weight: bold;overflow: hidden; white-space: nowrap;}
+.businessCardSeven .bottomLeft .job,.businessCardEight .bottomLeft .job{font-size: 24upx; color: #000;line-height: 1.2;overflow: hidden;font-weight: bold; white-space: nowrap;}
+.businessCardSeven .bottomRight,.businessCardEight .bottomRight{position: absolute;right: 19px;bottom: 19px;width: 55%;}
+.businessCardSeven .bottomRight .labelCon,.businessCardEight .bottomRight .labelCon{ color: #000; line-height: 1.46; font-size: 24upx;overflow: hidden;white-space: nowrap; }
+.businessCardSeven .bottomRight .labelCon text,.businessCardEight .bottomRight .labelCon text{ display: inline-block; width: 26upx;text-align: center;}
+.businessCardHandleSeven .handleBtn{background: #018cd7;}
+.businessCardHandleSix .handleBtn{background: #1babac;}
+.businessCardHandleEight .handleBtn{background: #006879;}
+.businessCardEight{padding-top: 40upx;}
+.businessCardEightBg{position: absolute; left: 0; bottom: 0; width: 100%;}
+.eightTop{ width: 100%; display: block; text-align: center; }
+.eightTop .labelCon{ color: #808080; font-size: 30upx; font-weight: bold !important;}
+.businessCardEight .cardCard{width: 100upx; height: 100upx ;}
+.businessCardEight .bottomLeft{bottom: 50upx;}
+.businessCardEight .bottomLeft .name{ color: #fff;}
+.businessCardEight .bottomLeft .job{color: #fff;}
+.businessCardEight .bottomRight{ bottom: 10upx;}
+.businessCardEight .bottomRight .labelCon{ color: #fff;}
+.businessCardNine{ padding-top: 30upx;}
+.businessCardNine .nineTop{width: 100%; display: block; position: relative;}
+.businessCardNine .cardCard{width: 110upx; height: 110upx; border-radius: 0; overflow: hidden;}
+.businessCardNine .cardCard image{width: 100%;}
+.businessCardNine .nineTop .labelCon{font-size:34upx; color: #004c6f;white-space: nowrap;overflow: hidden; padding-left: 40upx; position: absolute; bottom: 0; left: 130upx; padding-left: 35upx; line-height: initial; font-weight: bold !important;}
+.businessCardNine .nineTop .labelCon:before{ content: ''; position: absolute; bottom:10upx; left: 0; width: 20upx; height: 20upx; background: #004c6f;} 
+.businessCardNine .nineBottom{ display: block; overflow: hidden; padding: 12upx 0; border-top: 1px solid #999; border-bottom: 1px solid #999; margin-top: 30upx; position: relative;}
+
+.businessCardNine .bottomRight,.businessCardTen .bottomRight,.businessCardEleven .bottomRight{width:60%; display: inline-block; float: left;}
+.businessCardNine .bottomRight .labelCon,.businessCardTen .bottomRight .labelCon,.businessCardEleven .bottomRight .labelCon{ text-align: left; color: #565656; padding-left:46upx;font-size: 24upx;  position: relative; margin-top: 4upx; line-height: 1.5; }
+.businessCardNine .bottomRight .labelCon image,.businessCardTen .bottomRight .labelCon image,.businessCardEleven .bottomRight .labelCon image{width: 30upx;position: absolute !important; left: 0; top:5upx;}
+.businessCardNine .bottomLeft{width:33%; display: inline-block; float: left; text-align: center; position: absolute !important; right: 0; top:46%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardNine .bottomLeft .name{font-weight: bold !important; color: #004c6f; font-size: 32upx;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.businessCardNine .bottomLeft .job{font-size:26upx; color: #004c6f; line-height: initial;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.businessCardNine .nineBottom:before{content: ''; position: absolute; left:64%; top: 26upx; bottom: 20upx; border-right: 1px solid #999;}
+.businessCardTen { padding-top: 80upx;}
+.businessCardTen .cardCard{width: 110upx; height: 110upx; border-radius: 0; overflow: hidden; position: absolute; left: 40upx; bottom: 50upx;}
+.businessCardTen .cardCard image{width: 100%;}
+.businessCardTen .bottomRight{ position: absolute; bottom: 30upx; right: 30upx;}
+.businessCardTen .bottomLeft .name{font-size: 34upx; font-weight: bold;line-height: initial;}
+.businessCardTen .bottomLeft .job{position: relative;}
+.businessCardTen .bottomLeft .job .con{background: #fff; font-size: 26upx; position: relative;z-index: 2; display: inline-block; padding-right: 20upx; min-width: 100upx;}
+.businessCardTen .bottomLeft .job .line{ width: 100%; height:6upx; background: #99b9d6; position: absolute; top: 8upx; left: 0;}
+.businessCardTen .bottomLeft .job .line:before{ content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 85%; background: #3373ae;}
+.businessCardTen .bottomLeft .name .comName{font-weight: normal; margin-left: 20upx; font-size: 26upx;}
+.businessCardTen:before{ content: ''; position: absolute; left: 40upx; top: 0; background: #3373ae; width: 40upx; height: 70upx;}
+.businessCardElevenBg{position: absolute; top: 0; left: 0;width: 100%; height: 100%;}
+.businessCardEleven .comName{ left: 40upx; font-size: 30upx; color: #fff; position: absolute; top: 40upx; z-index: 4;}
+.businessCardEleven .cardCard{width: 110upx; height: 110upx; border-radius: 0; overflow: hidden;position: absolute; right: 40upx; top: 60upx; }
+.businessCardEleven .cardCard image{ width: 100%;}
+.businessCardEleven .bottomRight{position: absolute; bottom: 20upx; left: 40upx; width: 80%;}
+.businessCardEleven .bottomRight .labelCon{ color: #fff;}
+.businessCardEleven .bottomLeft{position: absolute; top: 100upx; left: 40upx; color: #fff; display: flex;align-items: flex-end;}
+.businessCardEleven .bottomLeft .name{font-weight: bold; font-size: 34upx; color: #fff;}
+.businessCardEleven .bottomLeft .job{font-size: 26upx; margin-left: 30upx;}
+.businessCardTwelve .businessCardElevenBg{ position: absolute;width:100%; right: 0; top: 0; height: 100%;}
+.businessCardTwelve .comName{position: absolute; left: 170upx;font-weight: bold;  top: 115upx; width: 46%;white-space: nowrap;overflow: hidden;}
+.businessCardTwelve .cardCard{width: 110upx; height: 110upx; border-radius: 0; overflow: hidden;position: absolute; left: 40upx; top: 50upx;}
+.businessCardTwelve .cardCard image{width: 100%;}
+.businessCardTwelve .bottomRight,.businessCardThirteen .bottomRight{position: absolute; bottom: 30upx; right: 145upx; width:80%;}
+.businessCardTwelve .bottomRight .labelCon,.businessCardThirteen .bottomRight .labelCon{ text-align: right; color: #2f4959; padding-right:55upx;font-size: 24upx;  position: relative; margin-top: 4upx; overflow: hidden;white-space: nowrap; min-height: 1.8; }
+.businessCardTwelve .bottomRight .labelCon image,.businessCardThirteen .bottomRight .labelCon image{width: 45upx;position: absolute !important; right: 0; top:50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardTwelve  .bottomRight { left: 30upx; width:auto}
+.businessCardTwelve .bottomLeft{position: absolute; top: 60upx; right: 28upx; color: #fff;width:15%;}
+.businessCardTwelve .bottomLeft .name{font-weight: bold; font-size: 34upx; color: #fff;}
+.businessCardTwelve .bottomLeft .job{font-size: 26upx;white-space: nowrap;overflow: hidden;}
+.businessCardTwelve .labelAddress,.businessCardThirteen .labelAddress{color: #2f4959; font-size: 24upx;white-space: nowrap;overflow: hidden;}
+.businessCardThirteen:before{ content:'';position: absolute; bottom: 0; top:0; left: 0; width: 170upx; background: #d4c389;}
+.businessCardThirteen .cardCard{width: 110upx; height: 110upx; border-radius: 5px; overflow: hidden;position: absolute; left:30upx; top: 50upx;}
+.businessCardThirteen .cardCard image{width: 100%;}
+.businessCardThirteen .bottomRight{ right: 30upx; bottom: 30upx; width: 50%;}
+.businessCardThirteen .bottomRight .labelCon image{width: 34upx;}
+.businessCardThirteen .labelAddress{ color: #242424;}
+.businessCardThirteen .comName{ position: absolute; top: 50upx; left: 210upx; font-weight: bold; font-size: 30upx;}
+.businessCardThirteen .bottomLeft{ position: absolute; top:100upx; left: 210upx; right: 0; }
+.businessCardThirteen .bottomLeft .name{font-weight: bold; font-size: 34upx; color: #000; display: inline-block; vertical-align: middle;} 
+.businessCardThirteen .bottomLeft .job{font-size: 26upx; color: #000; display: inline-block ; max-width: 200upx;vertical-align: middle; text-overflow: ellipsis;white-space: nowrap;overflow: hidden; margin-left: 15upx;}
+.businessCardThirteen .bottomLeftCon{ padding-right: 20upx; background: #fff; position: relative; z-index: 5; display: inline-block;}
+.businessCardThirteen .bottomLeft:before{ content: ''; position: absolute; left: 10upx; width: 100%; height:10upx; background:#d4c389 ; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardFourteen .bottomLeft{position: absolute; right: 40upx; top: 30upx; display: flex; align-items: center; justify-content: flex-end;}
+.businessCardFourteen .bottomLeft .cardCard{width: 100upx; height: 100upx; border-radius:5px; overflow: hidden; margin-right:30upx;}
+.businessCardFourteen .bottomLeft .cardCard image{ width: 100%;}
+.businessCardFourteen .bottomLeft .name{font-weight: bold; font-size: 34upx; color: #000;}
+.businessCardFourteen .bottomLeft .job{font-size: 26upx; color: #000; display: inline-block ; max-width: 200upx;vertical-align: middle; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.businessCardFourteen .FourteenName{ position: absolute; top: 160upx; left: 40upx; right: 40upx;}
+.businessCardFourteen .FourteenName .comName{position: absolute; top:48%; left: 20upx; color: #fff; font-size: 24upx !important; -webkit-transform: translateY(-50%);transform: translateY(-50%); width: 51%; overflow: hidden;white-space: nowrap;overflow: hidden; }
+.businessCardFourteen .FourteenName image{ display: block; width: 100%;}
+.businessCardFourteen .bottomRight{padding:10upx 0; position: absolute; bottom:10upx; left: 40upx; right: 40upx;}
+.businessCardFourteen .bottomRight .labelCon{ text-align: left; color: #2f4959; padding-left:40upx;font-size: 24upx;line-height:1.4;  position: relative; margin-top: 0;}
+.businessCardFourteen .bottomRight .labelCon image{width: 34upx;position: absolute !important; left: 0; top:0;}
+.businessCardFourteen .bottomRight .labelCon:nth-child(2n){ margin-right: 0;}
+
+.businessCardFifteen .bottomLeft{ position: absolute; right: 0; top: 60upx; width: 30%;}
+.businessCardFifteen .bottomLeft .triangle{ width:30upx;position: absolute !important; right: 0; top:35%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardFifteen .bottomLeft .triangle image{width: 100%;}
+.businessCardFifteen .bottomLeft .bottomLeftCon{ margin-right:40upx; text-align: right;}
+.businessCardFifteen .bottomLeft .name{font-size: 38upx; line-height: initial; }
+.businessCardFifteen .bottomLeft .job{font-size: 26upx; color: #1d4976;white-space: nowrap;overflow: hidden;}
+
+.businessCardFifteen .comName{position: absolute; left: 160upx; font-size: 26upx; top: 95upx; width: 45%;white-space: nowrap;overflow: hidden;}
+.businessCardFifteen .cardCard{width: 100upx; height: 100upx; border-radius: 0; overflow: hidden;position: absolute; left: 40upx; top: 35upx;}
+.businessCardFifteen .cardCard image{width: 100%;}
+.businessCardFifteen .bottomRight{position: absolute; bottom: 50upx; padding-top: 15upx; left: 40upx;right: 40upx; border-top:1px solid #509cd5 ;}
+.businessCardFifteen .bottomRight .labelCon{ text-align: left; color: #2f4959; padding-left:45upx;font-size: 24upx;  position: relative; overflow: hidden;white-space: nowrap;}
+.businessCardFifteen .bottomRight .labelCon image{width: 36upx;position: absolute !important; left: 0; top:50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardFifteenBg{position: absolute; bottom: 0; left: 0; width: 100%;}
+
+
+
+
+@keyframes heart{from{transform:translate(0,0)}to{transform:translate(0,5px)}}
+
+/*呼吸*/
+@-webkit-keyframes mymove{0%{transform: scale(1); }25%{transform: scale(1.05);}50%{transform: scale(1);}75%{transform: scale(1.05);}}
+/*呼吸*/
+@-webkit-keyframes mymoveHeight{0%{height: 50%;}100%{height: 0%;}}
+/*左下方移出*/
+@-webkit-keyframes bounceInLeft {
+	from {
+        opacity: 0;
+		-webkit-transform: translate(-160px,160px); /* Safari */
+        transform: stranslate(-160px,160px); /* 标准语法 */
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translate(0,0); /* Safari */
+        transform: stranslate(0,0); /* 标准语法 */
+    }
+}
+/*右下方移出*/
+@-webkit-keyframes bounceInRight {
+	from {
+        opacity: 0;
+		-webkit-transform: translate(160px,160px); /* Safari */
+        transform: stranslate(160px,160px); /* 标准语法 */
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translate(0,0); /* Safari */
+        transform: stranslate(0,0); /* 标准语法 */
+    }
+}
+/*左上方移出*/
+@-webkit-keyframes bounceInTop {
+	from {
+        opacity: 0;
+		-webkit-transform: translate(-160px,-160px); /* Safari */
+        transform: stranslate(-160px,-160px); /* 标准语法 */
+    }
+    to {
+        opacity:1;
+        -webkit-transform: translate(0,0); /* Safari */
+        transform: stranslate(0,0); /* 标准语法 */
+    }
+}
+/*右上方移出*/
+@-webkit-keyframes bounceInRightTop{
+	from {opacity: 0;-webkit-transform: translate(160px,-160px); /* Safari */ transform: stranslate(160px,-160px); /* 标准语法 */}
+    to {opacity:1; -webkit-transform: translate(0,0); /* Safari */transform: stranslate(0,0); /* 标准语法 */}
+}
+
+@media (min-width:375px) {
+.businessCardTwo .bottomLeft .job{height: 142upx; }
+}
+
+
+
+/* 2019-11-05 */
+.businessCardTwelve .labelAddress{display: block;white-space: normal;overflow: inherit;}
+.businessCardTwelve .labelCon{margin-top: 0px !important;}
+.businessCardTwelve .iconBg{width: 45upx;height: 45upx;top:0 !important;-webkit-transform: translateY(0%) !important;-ms-transform: translateY(0%) !important;transform: translateY(0%) !important;}
+.businessCardFive .cardCard{left:40upx;right: initial;}
+.businessCardFive .comName{left:initial;right:40upx;text-align:right;}
+.businessCardFive .bottomLeft{left:initial;right:40upx;text-align:right;}
+.businessCardFive .bottomRight .labelCon{width: 100%;display: block;white-space:normal;line-height: 28upx;margin: 5upx 0;position: relative;padding-left:36upx;}
+.businessCardFive .bottomRight .labelCon:nth-child(2n){margin-left: 0%;}
+.businessCardFive .bottomRight .labelCon image{width:28upx;height:28upx;display:inline-block;position: absolute;left:0;top: 0;}
+.businessCardFive .bottomRight .labelCon text{display: block;overflow: hidden;white-space:normal;line-height: 28upx;}
+.businessCardTen .bottomRight .labelCon{padding-left:0 !important;padding-right:36upx;text-align: right;overflow: inherit;white-space: normal;line-height: 15px;margin: 5upx 0;}
+.businessCardTen .bottomRight .labelCon image{left:initial;right:0;top:0 !important;-webkit-transform: translateY(0%) !important;-ms-transform: translateY(0%) !important;transform: translateY(0%) !important;}
+.businessCardNine .nineBottom:before{bottom:100upx;}
+.businessCardNine .bottomRight{width: 100%;}
+.businessCardNine .nineBottom .labelCon{display: block;padding-right: 40%;line-height:30upx;margin: 10upx 0;}
+.businessCardNine .nineBottom .labelCon:last-child{padding-right: 0;width: 100%;display: block;white-space: normal;overflow: inherit;}
+.businessCardNine .bottomLeft{top:30%}
+.businessCardNine .nineBottom .labelCon image{top:0 !important;-webkit-transform: translateY(0%) !important;-ms-transform: translateY(0%) !important;transform: translateY(0%) !important;}
+.businessCardFive .bottomRight:before{bottom:30upx;}
+.businessCardSix .labelCon{line-height: 1.3;}
+.businessCardSix .rightCon .labelCon:last-child{white-space: normal;overflow: inherit;line-height: 17px;}
+.businessCardSix .rightCon .labelCon:last-child image{top:0 !important;-webkit-transform: translateY(0%) !important;-ms-transform: translateY(0%) !important;transform: translateY(0%) !important;}
+.businessCardSeven .bottomRight .labelCon:last-child{white-space: normal;overflow: inherit;}
+.businessCardThree .bottomRight .labelCon:last-child{white-space: normal;overflow: inherit;line-height: 17px;}
+.businessCardThree .bottomRight .labelCon:last-child image{top:0 !important;-webkit-transform: translateY(0%) !important;-ms-transform: translateY(0%) !important;transform: translateY(0%) !important;}
+.businessCardFore .bottomRight .labelCon:last-child{white-space: normal;overflow: inherit;line-height: 14px;}
+.businessCardFore .bottomRight .labelCon:last-child image{vertical-align: top;display: inline-block;}
+.businessCardEight .eightTop{position: relative;display: block;overflow: hidden;}
+.businessCardEight .eightTop .eightTopLeft{width: 70%;display: inline-block;float: left;}
+.businessCardEight .eightTop .eightTopRight{display: inline-block;left:inherit;right:40upx;bottom:inherit;top:50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.businessCardEight .cardCard{display: block;overflow: hidden;}
+.businessCardEight .eightTop .labelCon{display: block;text-align: left;}
+.businessCardEight .bottomLeft .name{color: #006879;}
+.businessCardEight .bottomLeft .job{color: #006879;}
+.businessCardEight .bottomRight{width: 90%;left:5%;right:5%;}
+/* .businessCardEight .bottomRight .labelCon:last-child{white-space: normal;overflow: inherit;position: relative;padding-left: 26upx;}*//* .businessCardEight .bottomRight .labelCon text{width: 40upx;text-align: right;padding-right:10upx;}*/.businessCardEight .bottomRight .labelCon:last-child text{position: absolute;left:0;top:0;width: 26upx;height: 26upx;}
+.businessCardEight .bottomRight .labelCon{line-height: 14px;}
+.businessCardThirteen .bottomRight .labelCon:last-child{margin-top:10upx;}
+.businessCardThirteen .bottomRight .labelCon:last-child .labelAddress{display: block;white-space: normal;overflow: inherit;line-height: 17px;}
+.businessCardThirteen .bottomRight .labelCon:last-child .iconBg{top:0 !important;-webkit-transform: translateY(0%) !important;-ms-transform: translateY(0%) !important;transform: translateY(0%) !important;}
+.businessCardThirteen .bottomRight{width: 65%;}
+.businessCardFifteen .bottomRight .labelCon:last-child{white-space: normal;overflow: inherit;line-height: 17px;}
+.businessCardFifteen .bottomRight .labelCon{line-height: 1.4;}
+.businessCardFifteen .bottomRight .labelCon:last-child .iconBg{top:0 !important;-webkit-transform: translateY(0%) !important;-ms-transform: translateY(0%) !important;transform: translateY(0%) !important;}
+.businessCardOne .topLeft{}
+.businessCardOne .topLeft .name{font-size: 46upx;color: #fff;line-height: 1.3;font-weight: bold;overflow: hidden;white-space: nowrap;}
+.businessCardOne .topLeft .job{font-size: 24upx;color: #fff;line-height: 1.2;overflow: hidden;font-weight: bold;white-space: nowrap;}
+.businessCardOne .cardName .comName{font-size:18upx;}
+.businessCardOne .bottomRight{width: auto;left:40upx;}
+.businessCardOne .bottomRight .labelCon{text-align: left;padding-left: 44upx;line-height:1.5;margin: 5upx 0;position: relative;}
+.businessCardOne .bottomRight .labelCon:last-child{white-space: normal;overflow: inherit;}
+.businessCardOne .bottomRight .labelCon text{position:absolute;left:0;top:0;}
+.businessCardOne .bottomRight{bottom: 20upx;}
+.businessCardTwo .bottomLeft{bottom: inherit;top:12px;}
+.businessCardTwo .cardName{top:80upx;}
+.businessCardTwo .bottomRight{width: auto;right:40upx;}
+.businessCardTwo .bottomRight .labelCon:last-child{white-space: normal;overflow: inherit;}
+.businessCardTwo .bottomRight .labelCon{text-align: left;padding-left: 44upx;line-height:1.5;position: relative;}
+.businessCardTwo .bottomRight .labelCon text,.businessCardEight .bottomRight .labelCon text,.businessCardSeven .bottomRight .labelCon text{position:absolute;left:0;top:0;}
+.businessCardTwo .bottomRight{bottom: 20upx;}
+.businessCardTwo .bottomRight .labelCon,.businessCardEight .bottomRight .labelCon,.businessCardSeven .bottomRight .labelCon{text-align: left;padding-left: 44upx;line-height:1.5;margin: 5upx 0;position: relative;}
+.businessCardSeven .bottomRight .labelCon:first-child{padding-left: 0;}
+.businessCardTwo .colon,.businessCardOne .colon,.businessCardEight .colon,.businessCardSeven .colon{ left: 20upx !important;}
+
+.businessCardEight .bottomLeft{ top: 40upx; right:30upx; left:initial;}
+.businessCardEight .bottomLeft .job{text-align: center;}
+
+
+/*弹出层*/
+.sharelayer{position: fixed; top: 0; left: 0; width: 100%; bottom: 0; z-index:900}
+.sharelayer .layerBg{ background: rgba(0, 0, 0, 0.6);width: 100%; height: 100%}
+.sharelayer .layerCon{ position: fixed; bottom:0; left: 0; width: 100%; background: #fff;border-top-left-radius: 10px; border-top-right-radius: 10px;}
+.layerShare{width: 100%; display: block; overflow: hidden;}
+.layerShareCon{ width: 50%; float: left; text-align: center; padding: 7% 0; border: none;line-height:initial; background: none;}
+.layerShareCon:after{ display: none;}
+.layerShareCon image{ width: 100upx; display: inline-block; margin-bottom:10upx}
+.layerShareCon .name{font-size: 26upx; color: #999}
+.layerShareBtn{width: 100%; display: block; background: #fff; border-top: 1px solid #f5f5f5; line-height: initial;padding: 28upx 0; font-size: 32upx; color: #666}
+.layerShareBtn::after{ display: none}
+.layerPoster{position: fixed; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); left: 6%; width: 88%; background: #fff; border-radius:10px;overflow: hidden;}
+.posterTop{position: relative; width: 100%; display: block;overflow: hidden;}
+.posterTop image{ display: block; width: 100%;}
+.posterTop .content{ display: flex; align-items: center; position: absolute; top: 0; left: 0; bottom: 0; width: 100%; padding: 0 40upx;}
+.posterTop .content .headImg{ width: 100upx; height: 100upx; border-radius: 100%; overflow: hidden; border: 1px solid #fff; margin-right: 30upx;}
+.posterTop .content .title{ color: #fff; font-size: 32upx;}
+.posterBottom{ padding:60upx 40upx; display: flex; align-items: center;}
+.posterBottom .leftCon{width: 65%;}
+.posterBottom .rightCon{ width:30%; margin-left:5%;}
+.posterBottom .rightCon image{ width: 100%;}
+.posterBottom .leftCon .title{font-size: 30upx; line-height: 1.5; margin-bottom: 20upx;}
+.posterBottom .leftCon .label{font-size: 26upx; color: #999;}
+.posterTop .posterClose{position: absolute; right: 30upx; top:30upx; width: 35upx; z-index: 10;}
+
+.businessMore{position: absolute;right: 30upx; top: 30upx; z-index: 50;}
+.businessMoreBtn{width: 50upx; height:50upx; float: right;position: relative;z-index: 20;}
+.businessMoreBtn image{width: 100%; height: 100%;} 
+.businessMoreList{position: absolute; right: 0; top: 0; width: 160upx; background: rgba(0,0,0,0.7); margin-top: 75upx; border-radius: 5px;}
+.businessMoreList .item{ font-size: 24upx; color: #fff; text-align: center; padding: 10upx 0; border-bottom: 1px solid rgba(255,255,255,0.1);}
+.businessMoreList .item:last-child{border: none;}
+.businessMoreList:after{content: '\e779'; color:  rgba(0,0,0,0.7); font-size:60upx; position: absolute; top:-60upx; right: 0;}
+.businessMoreWhite .businessMoreList{background: #fff;}
+.businessMoreWhite .businessMoreList .item{color: #333;border-bottom: 1px solid rgba(0,0,0,0.1);}
+.businessMoreWhite .businessMoreList:after{color:#fff;}
+
+
+/*新增名片16 2019-12-03*/
+.businessCardSixteen{ width:92%; display: block; align-items: center; margin:6% 4% 4%; overflow: hidden; background: #fff; box-shadow: 0px 0px 10px #ccc; position: relative; height: 400upx; padding: 30upx; padding-top: 70upx;}
+.businessCardSixteen .cardCard{ display: block; position: absolute; right: 40upx; top: 40upx; height: 110upx; width: 110upx; overflow: hidden; border: 1px solid #fff; border-radius: 8px; background: #fff; display: flex; align-items: center; flex-direction: row;}
+.businessCardSixteen .cardCard image{wdith:100%;}
+.businessCardSixteen .cardName{position: absolute; left:40upx; top:40upx; width:60%;}
+.businessCardSixteen .cardName .perName{ color: #242424; font-size: 40upx;white-space: nowrap;overflow: hidden;}
+.businessCardSixteen .cardName .job{font-size:24upx; color: #250100; font-weight: normal; margin-left: 10upx; line-height: 1.3; white-space: nowrap; overflow: hidden;}
+.businessCardSixteen .comName{ font-size: 24upx; color: #242424; line-height: 1.3;white-space: nowrap;  }
+.businessCardSixteen .lineBg{position: absolute; top: 150upx; left: 40upx; right: 40upx;}
+.businessCardSixteen .lineBg image{width: 100%;}
+
+
+.businessCardSixteen .bottomRight{position: absolute; left:40upx; bottom: 25upx;right:40upx;}
+.businessCardSixteen .bottomRight:before{  content: ''; position: absolute; top: -5upx; left: 0; width: 40upx; height: 150upx; border: 1px solid #2b3e78; border-radius: 20px;}
+
+.businessCardSixteen .bottomRight .labelCon{ color: #565656; line-height: 1.5; position: relative; font-size: 24upx; text-align: left;overflow: hidden; padding-left: 60upx; }
+.businessCardSixteen .bottomRight .labelCon image{width: 24upx; position: absolute; top: 6upx; left: 10upx;}
+
+
+/*资金管理*/
+.sqFuntTop{width: 100%; display: block; overflow: hidden; position: relative;}
+.sqFuntTopBg{ width: 100%; display: block; position: absolute; top: 0; left: 0; }
+.sqFuntTopBg image{width: 100%;}
+.sqFuntTopC{position: relative; z-index: 5; width: 94%; margin:4% 3% 0;}
+.sqFuntTopCBg{width: 100%;}
+.sqFuntTopCon{ position: absolute; top:48%; left: 0; width: 100%; -webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.sqFuntTopMoney{ width: 100%; text-align: center; margin-bottom: -100upx;}
+.sqFuntTopMoneyBg{ width: 320upx; height:320upx; display: inline-block;}
+.sqFuntTopMoney .tip{position: absolute; top:70upx; left: 0; width: 100%; font-size: 24upx; color: #666;}
+.sqFuntTopMoney .money{position: absolute; top:110upx; left: 0;font-weight: bold; width: 100%; font-size: 58upx; color: #000; font-family: Arial;  }
+.sqFuntTopMoney .money .moneyB{font-size: 30upx;}
+.sqFuntTopList{ display: flex;align-items: center;justify-content: center; text-align: center;}
+.sqFuntTopListItem{ width: 40%; min-width: 40%;}
+.sqFuntTopListItem .money {font-size: 36upx; color: #000; font-family: Arial; }
+.sqFuntTopListItem .money .moneyB{font-size: 24upx;}
+.sqFuntTopListItem .name{font-size: 24upx; color: #666;}
+.sqFuntTopBtn{background-color: #4f92f2; margin-top: 30upx; background-image: linear-gradient(120deg, #794ce6 , #4f92f2); width: 45%; border-radius: 50px; color: #fff; font-size: 30upx; text-align: center; }
+.sqFuntTopBtn:after{ display: none;}
+.sqFuntCenter{ width: 100%; display: block; overflow: hidden; box-shadow: 0px 0px 10px #e5e5e5; padding:20upx 30upx; position: relative; }
+.sqFuntCenter .rightItem{ font-size:26upx; font-weight: bold;  color: #2a63fa; position: absolute; top:50%; right: 30upx;-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.sqFuntCenter .leftItem{ font-size:26upx; font-weight: bold; border: 1px solid #2a63fa; color: #2a63fa; border-radius: 50px; padding: 4upx 60upx 4upx 30upx; position: relative; display: inline-block; float: left; }
+.sqFuntCenter .leftItem:after{font-family: "iconfont" !important; font-size: 16px;font-style: normal;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;content: '\e650'; position: absolute; right: 16upx; top: 50%; font-size:34upx; color: #2a63fa; -webkit-transform: translateY(-50%);transform: translateY(-50%); }
+.sqFuntList{width: 100%; display: block; padding: 0 30upx; overflow: hidden;}
+.sqFuntItem{ padding: 25upx 0; position: relative; width: 100%; border-bottom: 1px solid #f5f5f5; display: block;}
+.sqFuntItem .title{font-size: 30upx; font-weight: bold; color: #333;} 
+.sqFuntItem .number{margin: 12upx 0 10upx;}
+.sqFuntItem .number,.sqFuntItem .time{ font-size: 26upx; color: #b2b2b2; font-family: Arial; }
+.sqFuntItem .money{ position: absolute; right: 0; color: #333; top: 25upx; font-size: 34upx; font-weight: bold; font-family: Arial; }
+.sqFuntItem .money.textColor{color: #d34a07;}
+.sqFuntItem .state{position: absolute; right: 0; bottom: 25upx; color: #666; font-size: 26upx;}

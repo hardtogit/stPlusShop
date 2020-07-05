@@ -30,10 +30,12 @@
 						</view>
 
 						<view class="image-wrapper">
-							<image v-if="item.cpCart.goodsType!==3"  :src="url+item.goods.firstImg" :class="[item.loaded]" mode="aspectFill" lazy-load></image>
-							<image v-if="item.cpCart.goodsType===3" :src="url+item.goods.imgPath" :class="[item.loaded]" mode="aspectFill" lazy-load></image>
+							<image v-if="item.cpCart.goodsType!==3" :src="url+item.goods.firstImg" :class="[item.loaded]" mode="aspectFill"
+							 lazy-load></image>
+							<image v-if="item.cpCart.goodsType===3" :src="url+item.goods.imgPath" :class="[item.loaded]" mode="aspectFill"
+							 lazy-load></image>
 						</view>
-						<view class="item-right">
+						<view class="item-right" @click="goDetail(item)">
 							<text class="clamp title">{{item.cpCart.goodsType===3?item.goods.name:item.goods.prodName}}</text>
 							<text class="attr">{{item.cpCart.goodsType===3?item.goods.instro:item.spec.sname}}</text>
 							<text class="price" v-if="item.goods.sellState == 10">¥{{item.cpCart.goodsType===3?item.goods.value:item.goods.priceShow}}</text>
@@ -128,26 +130,14 @@
 
 				this.calcTotal(); //计算总价+
 			},
-			login() {
-				var _this = this
-				if (!this.mobile) {
-					wx.login({
-						success: res => {
-							console.info('res', res)
-							_this.loginCode = res.code
-							_this.$refs.uniPop.show({
-								title: '登录',
-								content: '是否同意获取手机号？',
-								shade: true,
-								shadeClose: true,
-								time: 5,
-								anim: 'fadeIn',
-								isVisible: true,
-								position: 'bottom',
-								loginCode: res.code,
-								isUrl: true,
-							})
-						}
+			goDetail(goods) {
+                if(goods.cpCart.goodsType===3){
+					uni.navigateTo({
+						url: `/pages/home/detail/coupon/coupon?id=${goods.goods.id}`
+					})
+				}else{
+					uni.navigateTo({
+						url: `/pages/home/detail/goods/goods?id=${goods.goods.id}`
 					})
 				}
 			},
@@ -155,6 +145,7 @@
 			check(storeCartIndex, cartIndex) {
 				// if(this.storeIndex == storeCartIndex){
 				this.storeCartList[storeCartIndex].list[cartIndex].checked = !this.storeCartList[storeCartIndex].list[cartIndex].checked
+
 				// }else{
 				// 	this.storeCartList[this.storeIndex].list.map(item=>{
 				// 		item.checked = false;
@@ -243,9 +234,9 @@
 					store.list.map((goods) => {
 						count++
 						if (goods.checked === true) {
-							if(goods.cpCart.goodsType==3){
+							if (goods.cpCart.goodsType == 3) {
 								total += goods.goods.value * goods.cpCart.goodsCount;
-							}else{
+							} else {
 								total += goods.goods.priceShow * goods.cpCart.goodsCount;
 								console.log("7777777777777777777", total)
 							}
@@ -256,15 +247,16 @@
 					this.empty = true;
 				}
 				this.total = Number(total.toFixed(2));
+				this.$forceUpdate()
 			},
 			//创建订单
 			createOrder() {
-				let goodsData={
-					hot : [],
-					platform : [],
-					coupon : []
+				let goodsData = {
+					hot: [],
+					platform: [],
+					coupon: []
 				}
-	
+
 				this.storeCartList.forEach((store) => {
 					let hotList = [];
 					let platformList = [];
@@ -275,7 +267,7 @@
 								hotList.push(goods)
 							} else if (goods.cpCart.goodsType == 2) {
 								platformList.push(goods)
-							}else if(goods.cpCart.goodsType==3){
+							} else if (goods.cpCart.goodsType == 3) {
 								couponList.push(goods)
 							}
 						}
@@ -283,24 +275,24 @@
 					if (hotList.length) {
 						goodsData.hot.push({
 							store: store.store,
-							list:hotList
+							list: hotList
 						})
 					}
-					if(platformList.length){
+					if (platformList.length) {
 						goodsData.platform.push({
 							store: store.store,
-							list:platformList
+							list: platformList
 						})
 					}
-					if(couponList.length){
+					if (couponList.length) {
 						goodsData.coupon.push({
 							store: store.store,
-							list:couponList
+							list: couponList
 						})
 					}
 				})
 				console.log("goodsData", goodsData)
-				wx.setStorageSync('goodsData',goodsData)
+				wx.setStorageSync('goodsData', goodsData)
 				uni.navigateTo({
 					url: `/pages/home/order/createOrder`
 				})

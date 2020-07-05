@@ -2,6 +2,15 @@
 	.container {
 		padding: 0 25upx;
 	}
+	.rich{
+		// margin-top: 20upx;
+		font-size:25upx;
+		font-family:PingFang SC;
+		font-weight:400;
+		color:rgba(18,18,18,1);
+		line-height:38upx;
+		}
+		
 	.header {
 		background-image: url(../../static/home/index_bg.png);
 		background-size: 100% 100%;
@@ -10,22 +19,31 @@
 		position: relative;
 		text-align: center;
 		padding-top: 38upx;
+
 		.icons {
 			position: absolute;
 			width: 100%;
 			top: 25upx;
+			.col{
+				width: 100upx;
+				height: 32upx;
+				float: left;
+			}	
 			.icon {
 				display: inline-block;
 				width: 32upx;
 				height: 32upx;
+			
 				&.love {
 					float: left;
 					margin-left: 25upx;
 				}
+
 				&.qrcode {
 					float: right;
 					margin-right: 25upx;
 				}
+
 				&.turn {
 					float: right;
 					margin-right: 25upx;
@@ -81,11 +99,13 @@
 			}
 		}
 	}
+
 	.lables {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin: 30upx 0 20upx 0;
+
 		.lable {
 			width: 186upx;
 			height: 65upx;
@@ -94,6 +114,7 @@
 			font-size: 33upx;
 			text-align: center;
 			color: #525252;
+
 			&.active {
 				background-color: #FF474C;
 				color: #fff;
@@ -269,6 +290,7 @@
 
 						.store-box {
 							display: inline-block;
+
 							.box {
 								display: flex;
 								height: 30upx;
@@ -278,12 +300,15 @@
 								border-radius: 16upx;
 								font-size: 17upx;
 								color: #808080;
+
 								.pass {
 									margin-right: 4upx;
+
 									.num {
 										color: #333;
 									}
 								}
+
 								.leve {
 									.num {
 										color: #FF474C;
@@ -308,6 +333,20 @@
 			font-size: 26upx;
 			color: #616161;
 			margin-top: 26upx;
+			display: -webkit-box;
+			
+			overflow: hidden;
+			
+			text-overflow: ellipsis;
+			
+			word-wrap: break-word;
+			
+			white-space: normal !important;
+			
+			-webkit-line-clamp: 2;
+			
+			-webkit-box-orient: vertical;
+	
 		}
 
 		.pictures {
@@ -337,7 +376,8 @@
 		.introduce-title {
 			display: flex;
 			align-items: center;
-
+			margin-top: 58upx;	
+			margin-bottom: 38rpx;
 			.logo {
 				width: 120upx;
 				height: 120upx;
@@ -356,10 +396,15 @@
 	}
 </style>
 <template>
+	
 	<view class="container">
+		<official-account></official-account>
 		<view class="header">
 			<view class="icons">
-				<image class="icon love" src="../../static/icon/home/love.png" @click="toFavorite"></image>
+				<view class="col" @click="toFavorite">
+					<image v-if='!col' class="icon love" src="../../static/icon/home/love.png" ></image>
+					<image v-if='col' class="icon love" src="../../static/icon/home/loveH.png" ></image>
+				</view>
 				<button class="share" open-type="share">
 					<image class="icon turn" src="../../static/icon/home/turn.png"></image>
 				</button>
@@ -395,7 +440,7 @@
 				<view class="guess-section">
 					<view v-for="(item, index) in goodsList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'hot')">
 						<view class="image-wrapper">
-							<image :src="ctx+item.firstImg" mode="aspectFill"></image>
+							<image :src="ctx+item.firstImg" ></image>
 						</view>
 						<text class="title clamp">{{item.proName}}</text>
 						<text class="text">{{item.subheading}}</text>
@@ -429,14 +474,14 @@
 				<view class="guess-section coupon">
 					<view v-for="(item, index) in couponList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'coupon')">
 						<view class="image-wrapper">
-							<image :src="ctx+item.imgPath" mode="aspectFill"></image>
+							<image :src="ctx+item.imgPath" ></image>
 						</view>
 						<text class="title clamp">{{item.name}}</text>
 						<text class="text">{{item.instro}}</text>
 						<view class="store-box">
 							<view class="box">
-								<view class="pass">已抢<text class="num">{{productInfo.sales}}</text>件</view>
-								<view class="leve">仅剩<text class="num">{{productInfo.stock}}</text>件</view>
+								<view class="pass">已抢<text class="num">{{item.purchased}}</text>件</view>
+								<view class="leve">仅剩<text class="num">{{item.quantityTotal}}</text>件</view>
 							</view>
 						</view>
 						<view class="price-box bottom">
@@ -468,13 +513,14 @@
 				<view class="guess-section">
 					<view v-for="(item, index) in platformList" :key="index" class="guess-item" @tap.stop="navToDetailPage(item,'platform')">
 						<view class="image-wrapper">
-							<image :src="ctx+item.firstImg" mode="aspectFill"></image>
+							<image :src="ctx+item.firstImg" ></image>
 						</view>
 						<text class="title clamp">{{item.proName}}</text>
 						<text class="text">{{item.subheading}}</text>
 						<view class="price-box">
 							<view class="price-box">
 								<text class="price">{{item.price/100}}</text>
+								<text class="default">{{item.marketPrice/100}}</text>
 							</view>
 						</view>
 					</view>
@@ -492,19 +538,13 @@
 						</view>
 					</view>
 				</view>
-				<view class="store-title">东坡故里 泡博会探寻东坡味道</view>
+				<view class="store-title">{{dynamic.title}}</view>
 				<view class="sub-title">
-					第十一届中国泡菜食品 国际博览会，11月13日在四川眉山正式开幕，“健康食品 世界共享”。
+					{{dynamicText}}
 				</view>
 				<view class="pictures">
-					<image class="picture" src=""></image>
-					<image class="picture" src=""></image>
-					<image class="picture" src=""></image>
-					<image class="picture" src=""></image>
-					<image class="picture" src=""></image>
-					<image class="picture" src=""></image>
-					<image class="picture" src=""></image>
-					<image class="picture" src=""></image>
+					<image v-for="(url, i) in  dynamicImg" v-if="i<3" class="picture" :src="url" :key="i"></image>
+
 				</view>
 			</view>
 			<view class="swiper-item">
@@ -516,17 +556,19 @@
 						</view>
 					</view>
 				</view>
-				<image class="store-banner" :src='ctx+companyInfo.introduceImg'></image>
+				<image class="store-banner" :src='ctx+companyInfo.descImgs'></image>
 				<view class="introduce-title">
 					<image class="logo" :src="ctx+companyInfo.logoPath" />
 					<view class="name">{{companyInfo.name}}</view>
 				</view>
+				  <rich-text :nodes="companyInfo.desc" class="rich"></rich-text>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {dealRich} from '@/common/common'
 	export default {
 		data() {
 			return {
@@ -535,7 +577,11 @@
 				couponList: [],
 				platformList: [],
 				companyInfo: {},
-				companyUser: {}
+				companyUser: {},
+				dynamic: {},
+				dynamicImg: [],
+				dynamicText: '',
+				col:false
 			}
 		},
 		//设置分享内容
@@ -544,13 +590,15 @@
 				console.log(res.target)
 			}
 			return {
-				title: '友哆哆',
-				path: "/pages/home/home",
-				imageUrl: ''
+				title:this.companyInfo.name,
+				path: `/pages/home/home?storeId=${this.companyInfo.id}`,
+				imageUrl: this.ctx+this.companyInfo.introduceImg
 			}
 		},
 		methods: {
 			getData() {
+				const reg=new RegExp('/src=\"\/(ydd1\/)?upload/g')
+				const regex = new RegExp('<img', 'gi');
 				var url = '/api/v2/vue/ydd/index/resList.jsp'
 				let data = {
 					data: JSON.stringify({
@@ -576,15 +624,15 @@
 				this.$getJson('/api/v3/vue/home/hotGoods.jsp', {
 					storeId: 202
 				}, 'POST', res => {
-					console.log(res.data, 'sssssssssssssss')
+
 					this.goodsList = res.data
 				})
 				//获取商圈券
 				this.$getJson('/api/v3/vue/home/yyCoupon.jsp', {
 					storeId: 202
 				}, 'POST', res => {
-					console.log(res.data, 'sssssssssssssss')
 					this.couponList = res.data
+					console.log(this.couponList,'couponList')
 				})
 
 				//获取巨划算
@@ -597,8 +645,18 @@
 				this.$getJson('/api/v3/vue/home/dt.jsp', {
 					storeId: 202
 				}, 'POST', res => {
-					console.log(res, 'ss')
+					console.log(res, 'dys')
+					var imgList = [];
+					console.log(dealRich(res.data.detail),'aaaa')
+					dealRich(res.data.detail).replace(/<img [^>]*src=['"]([^'"]+)[^>]*>/g, (match, capture) => {
+						this.dynamicImg = [...this.dynamicImg, capture];
+					});
+					this.dynamicText = res.data.detail.replace(/<[^<>]+>/g, "").replace(/&nbsp;/gi, "")
+					console.log(this.dynamicImg, 'dynamic')
 				})
+			
+		
+					
 				//店铺介绍
 				this.$getJson('/api/v2/vue/sqPlus/company/companyInfo.jsp', {
 					data: JSON.stringify({
@@ -606,24 +664,28 @@
 					})
 				}, 'POST', res => {
 					this.companyInfo = res.data.cjCompany
-					this.companyUser = res.data.cjCompany.cjUser
-					console.log(this.companyInfo, 'sss')
+					this.companyUser = res.data.cjCompany.cjUser 
+					this.companyInfo = {...res.data.cjCompany,desc:dealRich(res.data.cjCompany.desc)}
+					console.log(this.companyInfo, 'companyInfo')
 				})
-
-
 			},
 			//收藏
 			toFavorite() {
+				const $this=this
 				this.$getJson('/api/v3/my/store/collect.jsp', {
 					storeId: 202,
 					action: 1
 				}, 'POST', res => {
 					if (res.success) {
+						$this.col=true
 						uni.showToast({
 							title: '收藏成功',
 							icon: 'none'
 						})
 					} else {
+						if(res.message==='已收藏'){
+							$this.col=true
+						}
 						uni.showToast({
 							title: res.message,
 							icon: 'none'

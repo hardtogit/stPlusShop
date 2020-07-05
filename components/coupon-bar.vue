@@ -106,7 +106,7 @@
 					{{goods.coupon.instro}}
 				</view>
 				<view class="bottom">
-					<view class="price">{{goods.coupon.value}}</view>
+					<view class="price">{{goods.coupon.value/100}}</view>
 					<view class="distance">{{goods.distance}}</view>
 				</view>
 			</div>

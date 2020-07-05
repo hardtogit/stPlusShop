@@ -13,30 +13,24 @@
 		<view class="introduce-section">
 			<text class="title">{{productInfo.prodName}}</text>
 			<view class="price-store">
-				<view class="price-box">
+				<view class="price-box store-detail">
 					<text class="price-tip">¥</text>
-					<text class="price">{{productInfo.price}}</text>
+					<text class="price">{{productInfo.price/100}}</text>
+						<text class="default">{{productInfo.marketPrice/100}}</text>
 				</view>
 				<view class="store-box">
 					<view class="box">
-						<view class="pass">已抢<text class="num">{{productInfo.sales}}</text>件</view>
-						<view class="leve">仅剩<text class="num">{{productInfo.stock}}</text>件</view>
+						<view class="pass">已抢<text class="num">{{parseInt(productInfo.sales) }}</text>件</view>
+						<view class="leve">仅剩<text class="num">{{parseInt(productInfo.stock) }}</text>件</view>
 					</view>
 				</view>
-			</view>
-		</view>
-		<view class="introduce-section" v-if="productInfo.goods.isFaceToFace == 1 || productInfo.goods.isFaceToFace == '1'">
-			<text class="title">{{productInfo.resources.name}}</text>
-			<view class="price-box">
-				<text class="price-tip">¥</text>
-				<text class="price">面议</text>
 			</view>
 		</view>
 		<view class="detail-desc">
 			<view class="d-header">
 				<text>图文详情</text>
 			</view>
-			<rich-text :nodes="desc" @tap="saveQrcode(2)"></rich-text>
+			  <rich-text :nodes="productInfo.intro" class="rich"></rich-text>
 		</view>
 
 		<!-- 底部操作菜单 -->
@@ -50,7 +44,7 @@
 				<image class="icon" v-if="!favorite" src="../../../../static/icon/home/shouchang.png"></image>
 				<text>收藏</text>
 			</view>
-			<view class="p-b-btn" @click="toFavorite">
+			<view class="p-b-btn" @click="kefu()">
 				<image class="icon" src="../../../../static/icon/home/kefu.png"></image>
 				<text>客服</text>
 			</view>
@@ -63,19 +57,18 @@
 			<text class="yticon icon-gouwuche"></text>
 			<text class="number" v-if="cartCount">{{cartCount}}</text>
 		</navigator>
-
 		<!-- 规格-模态层弹窗 -->
 		<view class="popup spec" :class="specClass" @touchmove.stop.prevent="stopPrevent" @click="toggleSpec">
 			<!-- 遮罩层 -->
 			<view class="mask"></view>
 			<view class="layer attr-content" @click.stop="stopPrevent">
 				<view class="a-t">
-					<image src="https://gd3.alicdn.com/imgextra/i3/0/O1CN01IiyFQI1UGShoFKt1O_!!0-item_pic.jpg_400x400.jpg"></image>
+					<image :src="ctx+productInfo.firstImg"></image>
 					<view class="right">
 						<view class="name">{{productInfo.prodName}}</view>
 						<view class="price-box">
-							<text class="price">{{productInfo.price}}</text>
-							<text class="default">{{productInfo.marketPrice}}</text>
+							<text class="price">{{productInfo.price/100}}</text>
+							<text class="default">{{productInfo.marketPrice/100}}</text>
 						</view>
 						<view class="store-box">
 							<view class="box">
@@ -148,6 +141,10 @@
 
 <script>
 	import uniPop from '@/components/uniPop.vue';
+	import {
+		randomString
+	} from '@/common/wxpay';
+	import {dealRich} from '@/common/common'
 	import uniPopup from "@/components/uni-popup/uni-popup.vue"
 	export default {
 		components: {
@@ -156,6 +153,8 @@
 		},
 		data() {
 			return {
+				store: {},
+				options: {},
 				banners: [],
 				cartCount: '',
 				specClass: 'none',
@@ -180,41 +179,45 @@
 				classification: "",
 				optionType: "buy", //选择规格后是购买还是收藏
 				specList: [],
+				shareId: randomString(16),
 				selectedSpec: {},
 			};
 		},
 		onShareAppMessage(res) {
+			this.$getJson('/api/v3/share/record.jsp', {
+				shareId: this.shareId,
+				storeId: 202,
+				busiType: 4,
+				busiValue: this.productInfo.id,
+				platform: 'wx'
+			}, 'POST', res => {
+
+			})
 			return {
-				title: '你是好友的',
-				path: "/pages/product/product?id=" + this.id + "&inviteCode=" + this.yddMember.inviterCode + "&companyId=" + this.companyId +
-					"&cheapPurchaseCompanyId=" + this.cheapPurchaseCompanyId + "&classification=" + this.classification,
-				imageUrl: this.$ctx + this.productInfo.resources.smallBannerImgArr[0],
+				title: `${this.yddMember.realName}推荐你购买${this.productInfo.prodName}`,
+				path: `/pages/home/detail/goods/goods?goodsId=${this.id}&storeId=202&shareId=${this.shareId}&shareUserId=${this.yddMember.id}`,
+				imageUrl: `${this.ctx+this.productInfo.firstImg}`,
 			}
 		},
 		onLoad(options) {
 			console.log(options)
 			//接收传值,id里面放的是标题，因为测试数据并没写id 
-			this.id = 347
-			if (options.id) {
-				this.id = options.id
+			this.id = options.id
+			if (options.goodsId) {
+				this.id = options.goodsId;
+				this.options = options
 			}
 			this.inviteCode = options.inviteCode
 			//规格 默认选中第一条
-			/* this.specList.forEach(item=>{
-				for(let cItem of this.specChildList){
-					if(cItem.pid === item.id){
-						this.$set(cItem, 'selected', true);
-						this.specSelected.push(cItem);
-						break; //forEach不能使用break
-					}
-				}
-			})
-			this.shareList = await this.$api.json('shareList'); */
+
 		},
 		onShow() {
+			if (this.options.goodsId) {
+				this.id = this.options.goodsId
+			}
 			this.loadData()
 			this.getCarts()
-			this.login(); //微信登录
+
 		},
 		methods: {
 			loadData() {
@@ -225,14 +228,26 @@
 				}
 				this.$getJson('/jsp/api/resources/resoucesInfo.jsp', data, 'POST', res => {
 					console.log('----list------------', res);
+					const reg=new RegExp('/src=\"\/(ydd1\/)?upload/g')
+					const regex = new RegExp('<img', 'gi');
 					if (res.data) {
 						this.productInfo = res.data.goods
+						this.productInfo ={...res.data.goods,
+						intro:dealRich(res.data.goods.intro) 
+						}
 						this.specList = res.data.specs
 						this.selectedSpec = res.data.specs[0]
 						this.banners = this.productInfo.bimgs.split(',')
 						//获取店铺详情
-						this.$getJson('/jsp/api/resources/resoucesInfo.jsp', data, 'POST', res => {
-							
+						this.$getJson('/api/v2/vue/sqPlus/company/companyInfo.jsp', {
+							data: JSON.stringify({
+								companyId: this.productInfo.storeId
+							})
+						}, 'POST', result => {
+							console.log(result, 'ss')
+							this.store = { ...result.data.cjCompany,
+								storeId: result.data.cjCompany.id
+							}
 						})
 					}
 				});
@@ -254,6 +269,17 @@
 					});
 				}
 
+			},
+			//客服
+			kefu(){
+				console.log('ssa')
+				if(this.productInfo.type==1){
+					wx.makePhoneCall({
+						phoneNumber: this.store.serviceNo
+					})
+				}else{
+					
+				}
 			},
 			//分享
 			shareShowBtn(e) {
@@ -295,17 +321,34 @@
 			},
 			//生成小程序二维码
 			getQrcode() {
-				console.log('sssssss-------------', this.id + "&" + this.yddMember.inviterCode + "&" + uni.getStorageSync(
-					`companyId`) + "&" + uni.getStorageSync(
-					`cheapPurchaseCompanyId`) + "&" + uni.getStorageSync(`classification`));
-				let data = {
-					data: JSON.stringify({
-						page: "pages/product/product",
-						scene: this.id + "&" + this.yddMember.inviterCode + "&" + uni.getStorageSync(`companyId`) + "&" + uni.getStorageSync(
-							`cheapPurchaseCompanyId`) + "&" + uni.getStorageSync(`classification`),
-					})
-				}
-				this.$getJson('/api/v2/vue/stPlusShop/common/getQrcode.jsp', data, 'POST', res => {
+				// console.log('sssssss-------------', this.id + "&" + this.yddMember.inviterCode + "&" + uni.getStorageSync(
+				// 	`companyId`) + "&" + uni.getStorageSync(
+				// 	`cheapPurchaseCompanyId`) + "&" + uni.getStorageSync(`classification`));
+				// let data = {
+				// 	data: JSON.stringify({
+				// 		page: "pages/product/product",
+				// 		scene: this.id + "&" + this.yddMember.inviterCode + "&" + uni.getStorageSync(`companyId`) + "&" + uni.getStorageSync(
+				// 			`cheapPurchaseCompanyId`) + "&" + uni.getStorageSync(`classification`),
+				// 	})
+				// }
+				this.$getJson('/api/v3/share/record.jsp', {
+					shareId: this.shareId,
+					storeId: 202,
+					busiType: 4,
+					busiValue: this.productInfo.id,
+					platform: 'wx'
+				}, 'POST', res => {
+				
+				})
+				// ?page=pages/home/home&storeId=1&shareUserId=2&busiType=3&busiValue=4&width=430
+				this.$getJson('/api/v3/qrCode/wxacode.jsp', {
+					page:'/pages/home/detail/goods/goods',
+					storeId:'202',
+					shareUserId:this.yddMember.id,
+					busiType: 4,
+					busiValue: this.productInfo.id,
+					width:430
+				}, 'GET', res => {
 					console.log('----list------------', res);
 					if (res.data) {
 						this.qrcodePaths = []
@@ -314,6 +357,10 @@
 						// this.qrcodePaths[0] ='../../static/logo.jpg'
 					}
 				});
+				
+				
+				
+				
 			},
 			//点击查看大图病可以保存
 			saveQrcode(e) {
@@ -411,21 +458,32 @@
 
 				if (this.productInfo.type == 1) {
 					goodsData.hot.push({
-						store: {},
+						store: this.store,
 						list: [{
 							cpCart: {
 								goodsCount: 1
 							},
-							goods: this.productInfo
+							goods: this.productInfo,
+							spec:{
+								id:this.selectedSpec.id,
+								sname:this.selectSpec.sname
+							}
 						}]
 
 					})
 				} else if (this.productInfo.type == 2) {
 					goodsData.platform.push({
-						cpCart: {
-							goodsCount: 1
-						},
-						goods: this.productInfo
+						store: this.store,
+						list: [{
+							cpCart: {
+								goodsCount: 1
+							},
+							goods: this.productInfo,
+							spec:{
+								id:this.selectedSpec.id,
+								sname:this.selectSpec.sname
+							}
+						}]
 					})
 				}
 				uni.setStorageSync('goodsData', goodsData)
@@ -480,6 +538,38 @@
 		background: $page-color-base;
 		padding-bottom: 160upx;
 	}
+	.store-detail{
+		.default{
+			font-size: 25upx;
+			display: inline-block;
+			align-items: baseline;
+			color: #808080;
+			text-decoration: line-through;
+			&:before {
+				content: '￥';
+				font-size: 22upx;
+				margin-left: 4upx;
+				text-decoration: line-through;
+			}
+		}
+	}
+	.rich{
+		margin-top: 20upx;
+		font-size:25upx;
+		font-family:PingFang SC;
+		font-weight:400;
+		color:rgba(18,18,18,1);
+		line-height:38upx;
+		img{
+			width: 100%;
+			display: block;
+		}
+		image{
+			width: 100%;
+			display: block;
+		}
+	}
+	
 
 	.icon-you {
 		font-size: $font-base + 2upx;
@@ -799,7 +889,7 @@
 	.detail-desc {
 		background: #fff;
 		margin-top: 16upx;
-
+		padding: 30upx;	
 		.d-header {
 			display: flex;
 			justify-content: center;

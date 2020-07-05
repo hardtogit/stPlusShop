@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "爆品",
   "usingComponents": {
-    "goods-item": "/components/goods-item"
+    "goods-item": "/components/goods-item",
+    "coupon-bar": "/components/coupon-bar"
   }
 }

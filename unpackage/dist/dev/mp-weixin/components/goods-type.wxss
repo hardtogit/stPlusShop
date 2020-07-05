@@ -6,7 +6,19 @@
 /* 图片加载中颜色 */
 /* 行为相关颜色 */
 .industry {
-  display: inline-block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
   width: 100%;
+}
+.industry .add {
+  color: #FF474D;
+  font-size: 26rpx;
 }
 

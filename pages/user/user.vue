@@ -86,6 +86,20 @@
 		}
 	}
 	.custom{
+		.card{
+			background-color: #fff;
+			border-radius:9px;
+			padding: 0 30upx;
+			margin-bottom: 20upx;
+			.title{
+				font-size: 33upx;
+				color: #333;
+				display: flex;
+				align-items: center;
+				height: 100upx;
+				border-bottom: 1upx solid #E4E7ED;
+			}
+		}
 		.top{
 			position: relative;
 			height: 342upx;
@@ -129,6 +143,7 @@
 					.icon{
 						width: 46upx;
 						height: 46upx;
+				
 					}
 					.text{ 
 						color: #fff;
@@ -168,6 +183,9 @@
 				}
 				.panel-body{
 					padding: 80upx 0 60upx 0;
+					&.coupon{
+						// height: 400upx;
+					}
 					.item{
 						display: inline-block;
 						text-align: center;
@@ -179,6 +197,22 @@
 							width: 49upx;
 							height: 46upx;
 							display: inline-block;
+							position: relative;
+							.badge{
+								height: 28upx;
+								min-width: 28upx;
+								border-radius: 14upx;
+								color: #fff;
+								background-color: #FF474C;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								position: absolute;
+								right: -10upx;
+								top:-10upx;
+								z-index: 10;
+								font-size: 20upx;
+							}
 						}
 						.text{
 							font-size: 28upx;
@@ -261,24 +295,49 @@
 						</view>
 						<view class="panel-body">
 							<view class="item" @tap="navTo('/pagesA/user/order/order?index=0')">
-								<image class="icon" src="../../static/icon/user/o1.png" alt="">
-									<view class="text">待付款</view>
+								<view class="icon">
+									<view class="badge" v-if="orderCount.unpay">
+										{{orderCount.unpay}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o1.png" alt="">
+								</view>
+								<view class="text">待付款</view>
 							</view>
 							<view class="item" @tap="navTo('/pagesA/user/order/order?index=1')">
-								<image class="icon" src="../../static/icon/user/o2.png" alt="">
-									<view class="text">已付款</view>
+								<view class="icon">
+									<view class="badge" v-if="orderCount.unUse">
+										{{orderCount.unUse}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o2.png" alt="">
+								</view>
+								<view class="text">已付款</view>
 							</view>
 							<view class="item" @tap="navTo('/pagesA/user/order/order?index=2')">
-								<image class="icon" src="../../static/icon/user/o3.png" alt="">
-									<view class="text">已完成</view>
+								<view class="icon">
+									<view class="badge" v-if="orderCount.unUse">
+										{{orderCount.unUse}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o3.png" alt="">
+								</view>
+								<view class="text">已完成</view>
 							</view>
 							<view class="item" @tap="navTo('/pagesA/user/order/order?index=3')">
-								<image class="icon" src="../../static/icon/user/o4.png" alt="">
-									<view class="text">已取消</view>
+								<view class="icon">
+									<view class="badge" v-if="orderCount.unUse">
+										{{orderCount.unUse}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o4.png" alt="">
+								</view>
+								<view class="text">已取消</view>
 							</view>
 							<view class="item last" @tap="navTo('/pagesA/user/order/order?index=4')">
-								<image class="icon" src="../../static/icon/user/o5.png" alt="">
-									<view class="text">售后</view>
+								<view class="icon">
+									<view class="badge" v-if="orderCount.unUse">
+										{{orderCount.unUse}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o5.png" alt="">
+								</view>
+								<view class="text">售后</view>
 							</view>
 						</view>
 						</vie>
@@ -288,21 +347,44 @@
 							<view class="left">我的商圈券</view>
 							<view class="right">查看全部<text class="cell-more yticon icon-you"></text></view>
 						</view>
-						<view class="panel-body">
+						<view class="panel-body coupon">
+
 							<view class="item" @tap="navTo('/pagesA/user/order/coupon?index=0')">
-								<image class="icon" src="../../static/icon/user/o6.png" alt="">
-									<view class="text">未使用</view>
+								<view class="icon">
+									<view class="badge" v-if="couponCount.unUse">
+										{{couponCount.unUse}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o6.png" alt="">
+								</view>
+								<view class="text">未使用</view>
 							</view>
 							<view class="item" @tap="navTo('/pagesA/user/order/coupon?index=1')">
-								<image class="icon" src="../../static/icon/user/o7.png" alt="">
-									<view class="text">已使用</view>
+								<view class="icon">
+									<view class="badge" v-if="couponCount.used">
+										{{couponCount.used}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o7.png" alt="">
+								</view>
+								<view class="text">已使用</view>
 							</view>
 							<view class="item" @tap="navTo('/pagesA/user/order/coupon?index=2')">
-								<image class="icon" src="../../static/icon/user/o8.png" alt="">
-									<view class="text">已过期</view>
+								<view class="icon">
+									<view class="badge" v-if="couponCount.expired">
+										{{couponCount.expired}}
+									</view>
+									<image class="icon" src="../../static/icon/user/o8.png" alt="">
+								</view>
+								<view class="text">已过期</view>
 							</view>
+
+
 						</view>
 						</vie>
+					</view>
+					<view class="card">
+						<list-cell title="用户协议" @eventClick="navTo('/pages/collection/collection')"></list-cell>
+						<list-cell title="关于我们" @eventClick="navTo('/pages/collection/collection')"></list-cell>
+						<list-cell title="联系客服" @eventClick="conect"></list-cell>
 					</view>
 				</view>
 			</view>
@@ -318,6 +400,7 @@
 	import listCell from '@/components/mix-list-cell';
 	import uniPop from '@/components/uniPop.vue';
 	import uniPopup from "@/components/uni-popup/uni-popup.vue"
+	import uniBadge from "@/components/uni-badge/uni-badge.vue"
 	export default {
 		data() {
 			return {
@@ -332,95 +415,69 @@
 				ctx: this.$ctx,
 				userInfo: uni.getStorageSync(`userInfo`) || null,
 				cjUser: uni.getStorageSync(`cjUser`) || null,
+				orderCount: {},
+				couponCount: {}
 			}
 		},
 		components: {
 			listCell,
 			uniPop,
-			uniPopup
+			uniPopup,
+			uniBadge
 		},
 		methods: {
 			navTo(url) {
-				console.log('s')
+
 				uni.navigateTo({
 					url
 				})
 			},
-			login() {
-				var _this = this
-				wx.login({
-					success: res => {
-						console.info('res', res)
-						_this.loginCode = res.code
-						console.log("_this.loginCode:", _this.loginCode);
-						_this.$refs.uniPop.show({
-							title: '登录',
-							content: '是否同意获取手机号？',
-							shade: true,
-							shadeClose: true,
-							time: 5,
-							anim: 'fadeIn',
-							isVisible: true,
-							position: 'bottom',
-							loginCode: res.code,
-							isUrl: true
-						})
-					}
+			//获取商品数量统计
+			getCount() {
+				this.$getJson('/api/v3/my/store/collectList.jsp', {
+					pageNumber: 1
+				}, 'POST', res => {
+
+				})
+				this.$getJson('/api/v3/my/order/statics.jsp', {}, 'POST', res => {
+					console.log(res)
+					this.orderCount = res.data
+
+				});
+				this.$getJson('/api/v3/my/coupon/statics.jsp', {}, 'POST', res => {
+					console.log(res)
+					this.couponCount = res.data
+				});
+
+
+			},
+
+			conect() {
+				wx.makePhoneCall({
+					phoneNumber: '400-1667600'
 				})
 			},
-			childClick(e) {
-				if (e != true) {
-					// console.log(e,'asas----------')
-					uni.setStorageSync('userInfo', e);
-					uni.setStorageSync('mobile', e.mobile);
-					// uni.setStorageSync('openid', e.openid);
-					this.userInfo = e;
-					this.$getJson('/api/v2/vue/stPlusShop/common/getUserInfo.jsp', {
-						data: JSON.stringify({
-							mobile: e.mobile,
-							companyId: uni.getStorageSync('companyId')
-						})
-					}, 'POST', res => {
-						// this.$emit("changes",res.data);
-						uni.setStorageSync('cjUser', res.data);
-						this.cjUser = uni.getStorageSync('cjUser');
-						console.log("--------------------------", uni.getStorageSync('cjUser'))
-					})
-					this.mobile = e.mobile;
-					this.$refs.popup.close()
-				}
-			}
 		},
 		onShow() {
-			this.login(); //微信登录
-			if (!uni.getStorageSync('mobile')) {
-				//弹出登录
-				this.$refs.popup.open()
-				//防止点击遮罩关闭
-				this.$refs.popup.clickClose(false)
-			} else {
-				this.$refs.popup.close()
-				this.mobile = uni.getStorageSync(`mobile`)
-				this.userInfo = uni.getStorageSync(`userInfo`)
-				this.cjUser = uni.getStorageSync(`cjUser`)
-				console.log("this.cjUser", this.cjUser);
-				this.$getJson('/api/v2/vue/stPlusShop/common/getUserInfo.jsp', {
-					data: JSON.stringify({
-						mobile: uni.getStorageSync('mobile'),
-						companyId: uni.getStorageSync('companyId')
-					})
-				}, 'POST', res => {
-					// this.$emit("changes",res.data);
-					uni.setStorageSync('cjUser', res.data);
-					this.cjUser = uni.getStorageSync('cjUser');
+			this.$refs.popup.close()
+			this.mobile = uni.getStorageSync(`mobile`)
+			this.userInfo = uni.getStorageSync(`userInfo`)
+			this.cjUser = uni.getStorageSync(`cjUser`)
+			console.log("this.cjUser", this.cjUser);
+			this.getCount()
+			this.$getJson('/api/v2/vue/stPlusShop/common/getUserInfo.jsp', {
+				data: JSON.stringify({
+					mobile: uni.getStorageSync('mobile'),
+					companyId: uni.getStorageSync('companyId')
 				})
-			}
-
+			}, 'POST', res => {
+				// this.$emit("changes",res.data);
+				uni.setStorageSync('cjUser', res.data);
+				this.cjUser = uni.getStorageSync('cjUser');
+			})
 			this.$getJson('/api/v2/vue/stPlus/company/companyList.jsp', {}, 'POST', res => {
-				console.log(res)
-				return;
-				this.cjCompanyUsers = res.data.cjCompanyUsers;
-				this.cjUser = res.data.cjUser;
+				console.log(res,'companyList')
+			
 			});
 		},
 	}

@@ -9,86 +9,86 @@
   padding: 0 25rpx;
 }
 .search .search-box.data-v-1b8ba9ba {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    padding: 20rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 20rpx 0;
 }
 .search .search-box .left.data-v-1b8ba9ba {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-              flex: 1;
-      position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  position: relative;
 }
 .search .search-box .left .input.data-v-1b8ba9ba {
-        width: 557rpx;
-        height: 69rpx;
-        border-radius: 34.5rpx;
-        background-color: #eee;
-        padding-left: 80rpx;
+  width: 557rpx;
+  height: 69rpx;
+  border-radius: 34.5rpx;
+  background-color: #eee;
+  padding-left: 80rpx;
 }
 .search .search-box .left .search-icon.data-v-1b8ba9ba {
-        position: absolute;
-        width: 37rpx;
-        height: 37rpx;
-        left: 24rpx;
-        top: 18rpx;
+  position: absolute;
+  width: 37rpx;
+  height: 37rpx;
+  left: 24rpx;
+  top: 18rpx;
 }
 .search .search-box .left .close.data-v-1b8ba9ba {
-        position: absolute;
-        z-index: 10;
-        width: 37rpx;
-        height: 37rpx;
-        right: 54rpx;
-        top: 18rpx;
+  position: absolute;
+  z-index: 10;
+  width: 37rpx;
+  height: 37rpx;
+  right: 54rpx;
+  top: 18rpx;
 }
 .search .search-box .right.data-v-1b8ba9ba {
-      height: 69rpx;
-      width: 112rpx;
-      border-radius: 34.5rpx;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-              align-items: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-              justify-content: center;
-      font-size: 33rpx;
-      color: #fff;
-      background-color: #FF474C;
+  height: 69rpx;
+  width: 112rpx;
+  border-radius: 34.5rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  font-size: 33rpx;
+  color: #fff;
+  background-color: #FF474C;
 }
 .search .no-data.data-v-1b8ba9ba {
-    text-align: center;
-    margin-top: 200rpx;
+  text-align: center;
+  margin-top: 200rpx;
 }
 .search .history.data-v-1b8ba9ba {
-    padding: 40rpx 0;
+  padding: 40rpx 0;
 }
 .search .history .title.data-v-1b8ba9ba {
-      font-size: 28rpx;
-      color: #333;
+  font-size: 28rpx;
+  color: #333;
 }
 .search .history .his_c.data-v-1b8ba9ba {
-      display: inline-block;
-      margin: 20rpx 20rpx 0 0;
+  display: inline-block;
+  margin: 20rpx 20rpx 0 0;
 }
 .search .history .his_c .his.data-v-1b8ba9ba {
-        font-size: 21rpx;
-        color: #333;
-        padding: 0 20rpx;
-        height: 44rpx;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-                align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-                justify-content: center;
-        background: #eeeeee;
-        border-radius: 22rpx;
+  font-size: 21rpx;
+  color: #333;
+  padding: 0 20rpx;
+  height: 44rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  background: #eeeeee;
+  border-radius: 22rpx;
 }
 

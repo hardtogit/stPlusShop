@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -20,7 +20,9 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
@@ -54,23 +56,8 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pagesA/user/backSale/backSale",
-					"pathName": "pagesA/user/backSale/backSale",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pagesA/user/backSale/backSale",
-					"pathName": "pagesA/user/backSale/backSale",
-					"query": "id=556&orderNo=1820051592576262",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/user",
-					"pathName": "pages/user/user",
-					"query": "id=556&orderNo=1820051592576262",
+					"name": "pagesA/store/store",
+					"pathName": "pagesA/store/store",
 					"scene": null
 				}
 			]

@@ -117,6 +117,10 @@
 			return {
 				
 			};
+			methods:{
+				
+				
+			}
 		}
 	}
 </script>

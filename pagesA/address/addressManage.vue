@@ -108,7 +108,8 @@
 						   ...$this.addressData,
 						   province:res.result.address_component.province, 
 						   city:res.result.address_component.city, 
-						   county:res.result.address_component.district
+						   county:res.result.address_component.district,
+						   
 					   }
 					},
 					fail: function(error) {
@@ -191,7 +192,7 @@
 					this.$api.msg('请选择地区');
 					return;
 				}
-				if (!data.addrDetail) {
+				if (!data.addrDescription) {
 					this.$api.msg('请填写详细地址信息');
 					return;
 				}

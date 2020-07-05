@@ -18,7 +18,7 @@
 /*公共样式*/
 .indexItem:after,.formListAfter:after,.memberDel:after,.indexTop .labelAmend:after,.homePageBottom .arrow:after,.shopItem .handle .visual:after,.payMethod .list:after,.LabelAddress:after,.confirmAddress:after,.businessMoreList:after,.businessCardIco .icoBtn:after{font-family: "iconfont" !important; font-size: 16px;font-style: normal;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 .buttonFixed{position: fixed; bottom: 0; left: 0;width: 100%; z-index: 100; width: 100%; background: #fff;}
-.buttonBigWidth{width:90%; margin:2% 5%; background: #549ef3; color: #fff; border-radius: 5px; height: 90upx; line-height: 90upx; text-align: center; font-size: 34upx;}
+.buttonBigWidth{width:90%; margin:2% 5%; background: #FF474B; color: #fff; border-radius: 5px; height: 90upx; line-height: 90upx; text-align: center; font-size: 34upx;}
 .buttonBigWidth:active{background: #549ff2;}
 
 .ellipsis{
@@ -52,7 +52,7 @@ uni-checkbox .uni-checkbox-input.uni-checkbox-input-checked:before{ font-size: 3
 .formRadioTwo  .formRadioList{width: 50%;display: inline-block;float: left;margin: 10upx 0;text-align: left; font-size: 30upx;}
 .formRadioTwo  .formRadioList .radioName{font-size: 28upx; color: #444;}
 .formList .formListAfter {padding-right:66upx; }
-.formListAfter:after{content: '\e6ff';position: absolute; right: 10upx; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #ccc; font-size:60upx;}
+.formListAfter:after{content: '\e606';position: absolute; right: 10upx; top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%); color: #ccc; font-size:60upx;}
 .formListCon .inConSmall,.formRadioList .labelTip{ font-size: 26upx !important; color: #999 !important;}
 .formRadioList .labelTip{ margin-left: 20upx;}
 .formListCon .rightLeft{ width: 100%; text-align: left; float: left;}

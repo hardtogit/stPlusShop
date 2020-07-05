@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/uni-popup/uni-popup":1,"components/uniPop":1,"components/uni-load-more/uni-load-more":1,"components/uni-number-box":1,"components/share":1,"components/goods-item":1,"components/coupon-bar":1,"components/empty":1,"components/mix-list-cell":1,"components/upload-images":1,"components/article-edit":1,"components/goods-type":1};
+/******/ 		var cssChunks = {"components/uni-popup/uni-popup":1,"components/uniPop":1,"components/uni-load-more/uni-load-more":1,"components/uni-number-box":1,"components/share":1,"components/coupon-bar":1,"components/goods-item":1,"components/empty":1,"components/mix-list-cell":1,"components/uni-badge/uni-badge":1,"components/uni-editor/uni-editor":1,"components/upload-images":1,"components/article-edit":1,"components/goods-type":1,"components/mpvue-picker/mpvuePicker":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/uniPop":"components/uniPop","components/uni-load-more/uni-load-more":"components/uni-load-more/uni-load-more","components/uni-number-box":"components/uni-number-box","components/share":"components/share","components/goods-item":"components/goods-item","components/coupon-bar":"components/coupon-bar","components/empty":"components/empty","components/mix-list-cell":"components/mix-list-cell","components/upload-images":"components/upload-images","components/article-edit":"components/article-edit","components/goods-type":"components/goods-type","components/industry":"components/industry"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/uniPop":"components/uniPop","components/uni-load-more/uni-load-more":"components/uni-load-more/uni-load-more","components/uni-number-box":"components/uni-number-box","components/share":"components/share","components/coupon-bar":"components/coupon-bar","components/goods-item":"components/goods-item","components/empty":"components/empty","components/mix-list-cell":"components/mix-list-cell","components/uni-badge/uni-badge":"components/uni-badge/uni-badge","components/uni-editor/uni-editor":"components/uni-editor/uni-editor","components/upload-images":"components/upload-images","components/article-edit":"components/article-edit","components/goods-type":"components/goods-type","components/industry":"components/industry","components/mpvue-picker/mpvuePicker":"components/mpvue-picker/mpvuePicker"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
@@ -129,6 +129,7 @@
 /******/ 				linkTag.onerror = function(event) {
 /******/ 					var request = event && event.target && event.target.src || fullhref;
 /******/ 					var err = new Error("Loading CSS chunk " + chunkId + " failed.\n(" + request + ")");
+/******/ 					err.code = "CSS_CHUNK_LOAD_FAILED";
 /******/ 					err.request = request;
 /******/ 					delete installedCssChunks[chunkId]
 /******/ 					linkTag.parentNode.removeChild(linkTag)

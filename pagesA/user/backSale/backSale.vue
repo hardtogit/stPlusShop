@@ -18,7 +18,7 @@
 					退货退款
 				</view>
 				<view class="right">
-					<radio color="#FF474C" :checked="type==2" @click="changeType(3)"></radio>
+					<radio color="#FF474C" :checked="type==2" @click="changeType(2)"></radio>
 				</view>
 			</view>
 			<view class="dis">（退货退款需要将商品退回店家，店家才会处理退货退款申请）</view>

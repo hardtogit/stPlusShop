@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "添加动态",
   "usingComponents": {
+    "uni-editor": "/components/uni-editor/uni-editor",
     "article-edit": "/components/article-edit"
   }
 }

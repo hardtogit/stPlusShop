@@ -93,8 +93,8 @@
 					{{goods.subheading}}
 				</view>
 				<view class="bottom">
-					<view class="price">{{goods.price}}</view>
-					<view class="default">{{goods.marketPrice}}</view>
+					<view class="price">{{goods.price/100}}</view>
+					<view class="default">{{goods.marketPrice/100}}</view>
 					<image class="add-icon"></image>
 				</view>
 			</div>

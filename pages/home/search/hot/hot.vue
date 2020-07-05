@@ -146,6 +146,9 @@
 					let setArr=wx.getStorageSync('keywords')||[]
 					setArr.unshift(this.keywords)
 					setArr=[...new Set(setArr)]
+					if(setArr.length===21){
+						setArr.pop()
+					}
 					this.history=setArr
 					wx.setStorageSync('keywords',setArr)
 				}

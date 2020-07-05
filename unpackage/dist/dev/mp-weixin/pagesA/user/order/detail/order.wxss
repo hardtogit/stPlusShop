@@ -12,138 +12,138 @@ page {
   padding: 20rpx 15rpx;
 }
 .order-detail .card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 2px 18px 1px rgba(169, 169, 169, 0.17);
-    padding: 28rpx;
-    margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 18px 1px rgba(169, 169, 169, 0.17);
+  padding: 28rpx;
+  margin-bottom: 20rpx;
 }
 .order-detail .card .title {
-      font-size: 33rpx;
-      font-family: PingFang SC;
-      font-weight: 500;
-      color: #090909;
-      padding-bottom: 28rpx;
+  font-size: 33rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #090909;
+  padding-bottom: 28rpx;
 }
 .order-detail .card .content {
-      border-top: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
 }
 .order-detail .card .content .goods {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-                align-items: center;
-        padding: 30rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 30rpx 0;
 }
 .order-detail .card .content .goods .left {
-          width: 90rpx;
+  width: 90rpx;
 }
 .order-detail .card .content .goods .left .img {
-            display: block;
-            width: 90rpx;
-            height: 90rpx;
+  display: block;
+  width: 90rpx;
+  height: 90rpx;
 }
 .order-detail .card .content .goods .right {
-          -webkit-box-flex: 1;
-          -webkit-flex: 1;
-                  flex: 1;
-          padding-left: 26rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding-left: 26rpx;
 }
 .order-detail .card .content .goods .right .name {
-            font-size: 25rpx;
+  font-size: 25rpx;
 }
 .order-detail .card .content .goods .right .spec {
-            font-size: 21rpx;
-            display: inline-block;
-            color: #6C6C6C;
-            padding: 2rpx 10rpx;
-            border-radius: 7rpx;
-            background-color: #F2F2F2;
+  font-size: 21rpx;
+  display: inline-block;
+  color: #6C6C6C;
+  padding: 2rpx 10rpx;
+  border-radius: 7rpx;
+  background-color: #F2F2F2;
 }
 .order-detail .card .content .dis {
-        color: #141414;
+  color: #141414;
 }
 .order-detail .card .content .dis .item {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-align: end;
-          -webkit-align-items: flex-end;
-                  align-items: flex-end;
-          height: 60rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+  height: 60rpx;
 }
 .order-detail .card .content .dis .item .left {
-            -webkit-box-flex: 1;
-            -webkit-flex: 1;
-                    flex: 1;
-            font-size: 28rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 28rpx;
 }
 .order-detail .card .content .dis .item .right {
-            font-size: 25rpx;
-            text-align: right;
-            -webkit-box-flex: 1;
-            -webkit-flex: 1;
-                    flex: 1;
+  font-size: 25rpx;
+  text-align: right;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .order-detail .card .content > .options {
-        text-align: right;
-        border-top: 1rpx solid #eee;
-        margin-top: 20rpx;
-        padding-top: 20rpx;
+  text-align: right;
+  border-top: 1rpx solid #eee;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
 }
 .order-detail .card .content > .options .btn {
-          display: inline-block;
-          text-align: center;
-          width: 153rpx;
-          height: 45rpx;
-          line-height: 45rpx;
-          font-size: 25rpx;
-          color: #FF2B42;
-          border: 1rpx solid #ff2b42;
-          margin-left: 36rpx;
-          border-radius: 10rpx;
+  display: inline-block;
+  text-align: center;
+  width: 153rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 25rpx;
+  color: #FF2B42;
+  border: 1rpx solid #ff2b42;
+  margin-left: 36rpx;
+  border-radius: 10rpx;
 }
 .order-detail .card .content > .discription .item {
-        padding: 30rpx 0;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-                align-items: center;
-        border-bottom: 1rpx solid #eee;
+  padding: 30rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  border-bottom: 1rpx solid #eee;
 }
 .order-detail .card .content > .discription .item .left {
-          -webkit-box-flex: 1;
-          -webkit-flex: 1;
-                  flex: 1;
-          font-size: 28rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 28rpx;
 }
 .order-detail .card .content > .discription .item .right {
-          font-size: 25rpx;
-          text-align: right;
-          -webkit-box-flex: 2;
-          -webkit-flex: 2;
-                  flex: 2;
+  font-size: 25rpx;
+  text-align: right;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
 }
 .order-detail .card .content > .discription .item .right .copy {
-            color: #fff;
-            background-color: #FF474C;
-            border-radius: 7rpx;
-            padding: 0 8rpx;
-            margin-left: 10rpx;
+  color: #fff;
+  background-color: #FF474C;
+  border-radius: 7rpx;
+  padding: 0 8rpx;
+  margin-left: 10rpx;
 }
 .order-detail .card .content .subTitle {
-        font-size: 25rpx;
-        color: #141441;
-        margin-top: 30rpx;
+  font-size: 25rpx;
+  color: #141441;
+  margin-top: 30rpx;
 }
 .order-detail .card .content .qrcode {
-        display: block;
-        width: 266rpx;
-        height: 266rpx;
-        margin: 30rpx auto;
+  display: block;
+  width: 266rpx;
+  height: 266rpx;
+  margin: 30rpx auto;
 }
 

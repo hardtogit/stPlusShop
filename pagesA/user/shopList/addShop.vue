@@ -194,14 +194,14 @@
 
 							<view class="formListCon">
 								<view class="name">商品副标题描述：</view>
-								<view class="right"><input type="text" placeholder="请填写价格" class="inInput" v-model="goods.subHeading" name="price"
+								<view class="right"><input type="text" placeholder="填写商品副标题" class="inInput" v-model="goods.subHeading" name="price"
 									 maxlength="10" /></view>
 							</view>
 							<view class="formListCon">
 								<view class="name">选择商品类别：</view>
 								<view class="right">
 
-									<goods-type v-on:onChange="handlegoodsTypeChange">
+									<goods-type v-on:onChange="handlegoodsTypeChange" style="width: 100%;">
 										<view v-if="!goodsTypeEtity" class="choice">请选择商品类别<text class="cell-more yticon icon-you"></text></view>
 										<view v-if="goodsTypeEtity" class="choiced">{{goodsTypeEtity.name}}</view>
 									</goods-type>
@@ -220,22 +220,23 @@
 									</view>
 								</view>
 							</view>
-							<view class="formListCon">
-								<view class="name">单价：</view>
-								<view class="right"><input v-model="goods.marketPrice" type="number" placeholder="请填写市场价" class="inInput" name="marketPrice"
+							<view class="formListCon" >
+								<view class="name">销售价</view>
+								<view class="right"><input v-model="goods.price" type="number" placeholder="请填写销售价格" class="inInput" name="marketPrice"
 									 maxlength="10" /></view>
 								<view class="unit">
 									元
 								</view>
 							</view>
 							<view class="formListCon" v-if='isExplosive==1'>
-								<view class="name">优惠价</view>
-								<view class="right"><input v-model="goods.price" type="number" placeholder="请填写优惠价" class="inInput" name="marketPrice"
+								<view class="name">划线价：</view>
+								<view class="right"><input v-model="goods.marketPrice" type="number" placeholder="请填写划线价格" class="inInput" name="marketPrice"
 									 maxlength="10" /></view>
 								<view class="unit">
 									元
 								</view>
 							</view>
+						
 							<view class="sku">
 								<view class="header">
 									<view class="title">
@@ -244,9 +245,9 @@
 									<view class="btn" @click="specPop()">添加</view>
 								</view>
 								<view class="spec-item" v-for="(item,index) in spec" :key="index">
-									<view class="left">规格：{{item.label}}</view>
+									<view class="left">规格：{{item.sname}}</view>
 									<view class="right">
-										<view>库存：{{item.number}}件</view>
+										<view>库存：{{item.snum}}件</view>
 										<view class="icons">
 											<image src="../../../static/icon/user/edit.png" class="edit icon" @click="specPop(index)"></image>
 											<image class="del icon" src="../../../static/icon/user/del.png" @click="delSpec(index)"></image>
@@ -268,6 +269,17 @@
 							<view class="sku">
 								<view class="header">
 									<view class="title">
+										商品封面图：
+									</view>
+								</view>
+								<view class="content">
+									<upload-images ref="firstImg" length="1">
+									</upload-images>
+								</view>
+							</view>
+							<view class="sku">
+								<view class="header">
+									<view class="title">
 										商品banner图：
 									</view>
 								</view>
@@ -283,7 +295,7 @@
 									</view>
 								</view>
 								<view class="content">
-									<article-edit ref="intro"></article-edit>
+									<uni-editor ref='intro'></uni-editor>
 								</view>
 
 							</view>
@@ -300,8 +312,8 @@
 		<!-- 弹窗 -->
 		<uni-popup ref="specPop" type="center" :show=true>
 			<view class="specContainer">
-				<input class="label input" type="text" placeholder="输入详细规格：如颜色+大小" v-model="currentSpec.label">
-				<input class="number input" type="number" placeholder="输入库存：如100件" v-model="currentSpec.number">
+				<input class="label input" type="text" placeholder="输入详细规格：如颜色+大小" v-model="currentSpec.sname">
+				<input class="number input" type="number" placeholder="输入库存：如100件" v-model="currentSpec.snum">
 				<view class="btn" @click="saveSpec()">确定</view>
 			</view>
 		</uni-popup>
@@ -316,22 +328,20 @@
 	import articleEdit from '@/components/article-edit'
 	import uploadImages from '@/components/upload-images'
 	import goodsType from '@/components/goods-type.vue'
+	import uniEditor from '@/components/uni-editor/uni-editor.vue'
+	
 	export default {
 		components: {
 			uniPopup,
 			articleEdit,
 			uploadImages,
-			goodsType
+			goodsType,
+			uniEditor
 		},
 		data() {
 			return {
-				spec: [{
-					label: '红色XL码',
-					number: 100
-				}, {
-					label: '红色XXL码',
-					number: 100
-				}],
+				spec: [],
+				url:this.$ctx,
 				currentSpec: {},
 				currentSpecIndex: null,
 				goodsTypeEtity: null, //商品类型
@@ -382,7 +392,7 @@
 			changeIsFx(isFx) {
 				this.isFx = isFx
 			},
-
+		
 			submit() {
 				let params = {}
 				params = {
@@ -390,29 +400,25 @@
 					isExplosive: this.isExplosive,
 					catId: this.goodsTypeEtity && this.goodsTypeEtity.id,
 					bimgs: this.$refs.bimgs.imageList.map((item) => item.src).join(','),
-					intro: JSON.stringify(this.$refs.intro.dataSource),
-					specs: [],
-					storeId:203
+					intro: this.$refs.intro.html,
+					specs: JSON.stringify(this.spec),
+					storeId:202
 				}
 				// console.log(params)
 				// console.log(this.$refs.bimgs.imageList)
 				// console.log(this.$refs.intro.dataSource)
 				// params={
-				// 	// id:335,
-				// 	prodName:'看着糊涂___',
-				// 	storeId:203,
-				// 	subHeading:'副标题',
-				// 	catId:1,
-				// 	price:100,
-				// 	marketPrice:1000,
-				// 	isExplosive:1,
-				// 	specs:'',
-				// 	isFx:0,
-				// 	ers:100,
-				// 	fxsA:200,
-				// 	fxsB:300,
-				// 	fxsC:400,
-				// 	bimgs:'bimgs1.png,bimgs'
+				// 	prodName: '测试',
+				// 	subHeading: '个大红色的',
+				// 	marketPrice: 22,
+				// 	price: 33,
+				// 	ers: 12,
+				// 	isExplosive: 1,
+				// 	catId: 31,
+				// 	bimgs: "/upload/9c/9cacc78e906a6ebd359ceeae1e2b6a9e/file.png",
+				// 	intro: '<p>打啊打啊</p>',
+				// 	specs: '',
+				// 	storeId: 202
 				// }	
 				this.$getJson(
 					'/jsp/api/resources/saveOeEditResources.jsp', params,
@@ -422,6 +428,6 @@
 					}
 				);
 			}
-		}
+		} 
 	}
 </script>

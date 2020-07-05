@@ -1,0 +1,5 @@
+
+.mainBottom {
+	display: inline-block;
+}
+

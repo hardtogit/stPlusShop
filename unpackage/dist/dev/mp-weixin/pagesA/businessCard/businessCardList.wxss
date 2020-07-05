@@ -1,0 +1,26 @@
+
+page {
+	background: #fff;
+}
+.RecordHandle {
+	position: relative;
+	background: #8cd8ff;
+}
+.businessCardOne,
+.businessCardTwo,
+.businessCardThree,
+.businessCardFore,
+.businessCardFive,
+.businessCardSix,
+.businessCardSeven,
+.businessCardEight,
+.businessCardNine,
+.businessCardTen,
+.businessCardEleven,
+.businessCardTwelve,
+.businessCardThirteen,
+.businessCardFourteen,
+.businessCardFifteen {
+	margin: 6% 4% 0 4%;
+}
+

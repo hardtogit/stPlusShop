@@ -24,6 +24,7 @@
 				background-color: #fff;
 				z-index: 10;
 				font-size: 28upx;
+				margin-bottom: 20upx;
 
 				.inner {
 					padding: 0 30upx;
@@ -144,6 +145,10 @@
 								<view class="text">全部</view>
 								<image v-if="selectClassfiy==''" class="choice" src="../../../../static/icon/home/dui.png"></image>
 							</view>
+							<view class="type-item" @click="changeClassfiy('yhq')">
+								<view class="text">优惠券</view>
+								<image v-if="selectClassfiy=='yhq'" class="choice" src="../../../../static/icon/home/dui.png"></image>
+							</view>
 							<view class="type-item" v-for="item in classfiy" :key="item.id" @click="changeClassfiy(item.id)">
 								<view class="text">{{item.name}}</view>
 								<image v-if="selectClassfiy==item.id" class="choice" src="../../../../static/icon/home/dui.png"></image>
@@ -170,7 +175,8 @@
 				</view>
 				<view class="content">
 					<view style="margin-bottom: 14upx;" v-for="(item,index) in goodsItems" :key="index">
-						<goods-item :goods='item' />
+						<goods-item v-if="loadUrl==='/api/v2/vue/sqPlus/resources/resourcesList.jsp'" :goods='item' />
+						<coupon-bar v-if="loadUrl==='/api/v2/vue/sqPlus/coupon/couponList.jsp'" :goods='item' />
 					</view>
 
 				</view>
@@ -182,9 +188,11 @@
 
 <script>
 	import goodsItem from '@/components/goods-item.vue';
+	import couponBar from '@/components/coupon-bar.vue';
 	export default {
 		components: {
-			goodsItem
+			goodsItem,
+			couponBar
 		},
 		data() {
 			return {
@@ -198,6 +206,7 @@
 				pageNumber: 1, //分页相关
 				pageSize: 6, //
 				noMore:false,
+				loadUrl:'/api/v2/vue/sqPlus/resources/resourcesList.jsp'
 			};
 		},
 		methods: {
@@ -219,6 +228,11 @@
 			changeClassfiy(id){
 			  this.selectClassfiy=id;
 			  this.classfiyVis=false;
+			  if(id='yhq'){
+				  this.loadUrl='/api/v2/vue/sqPlus/coupon/couponList.jsp'
+			  }else{
+				  this.loadUrl='/api/v2/vue/sqPlus/resources/resourcesList.jsp'
+			  }
 			  this.initLoad()
 			},
 			changeSort(sort){
@@ -247,17 +261,22 @@
 			   this.getData()
 			},
 			getData() {
+				const $this=this
 				if(this.noMore){
 					return
 				}
-				this.$getJson('/api/v2/vue/sqPlus/resources/resourcesList.jsp', {
+				this.$getJson(this.loadUrl, {
 					companyId: 202,
 					pageNumber: this.pageNumber,
 					catId:this.selectClassfiy,
 					pageSize: this.pageSize,
 					sort:this.sort+','+this.subSort
 				}, 'POST', res => {
-					const result=res.data||[]
+					let result=res.data||[]
+					if($this.loadUrl=='/api/v2/vue/sqPlus/coupon/couponList.jsp'){
+						result=result.map((item)=>({coupon:item}))
+					} 
+					console.log(result)
 					if(this.pageNumber==1){
 						this.goodsItems = result
 					}else{

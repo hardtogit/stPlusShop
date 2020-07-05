@@ -57,7 +57,7 @@ page {
 	margin-top: 10rpx;
 }
 .shopDetailsLabel .LabelAddress:after {
-	content: '\E9AE';
+	content: '\e9ae';
 	position: absolute;
 	left: 0;
 	top: 50%;

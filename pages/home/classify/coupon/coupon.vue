@@ -256,6 +256,7 @@
 					sort:this.sort+','+this.subSort
 				}, 'POST', res => {
 					const result=res.data||[]
+					console.log(result)
 					if(this.pageNumber==1){
 						this.goodsItems = result
 					}else{
@@ -264,7 +265,6 @@
 					if(result.length<this.pageSize){
 						this.noMore=true
 					}
-				
 				    this.pageNumber=this.pageNumber+1
 				})
 			   
