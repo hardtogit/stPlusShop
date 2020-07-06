@@ -31,4 +31,24 @@
   width: 100%;
   display: block;
 }
+.dynamic-detail .share {
+  width: 28rpx;
+  height: 28rpx;
+  float: right;
+  margin-top: 20rpx;
+  position: relative;
+}
+.dynamic-detail .share .share-btn {
+  position: absolute;
+  width: 28rpx;
+  height: 28rpx;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.dynamic-detail .share .icon {
+  display: block;
+  width: 28rpx;
+  height: 28rpx;
+}
 

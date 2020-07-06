@@ -1,6 +1,6 @@
 /*首页*/
 .mainContent{position: relative; top: 100upx;width: 100%; display:block; overflow: hidden;}
-.mainBottom{margin-bottom: 140upx;width: 100%; display:inline-block; overflow: hidden;}
+.mainBottom{margin-bottom: 40upx;width: 100%; display:inline-block; overflow: hidden;}
 .indexTop{text-align: center; width: 100%; display:block; overflow: hidden; position: relative; }
 .indexTopBG{ width: 100%; display: block;}
 .indexTopCon{ position: absolute; top: 0; left: 0; width: 100%;padding: 20upx 0;}

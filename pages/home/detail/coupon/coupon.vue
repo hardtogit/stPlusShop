@@ -357,7 +357,7 @@
 			<view class="left">
 				<view class="price">
 					<view class="unit">¥</view>
-					<view class="num">{{coupon.value}}</view>
+					<view class="num">{{coupon.value/100}}</view>
 				</view>
 				<!-- 	<view class="default">
 					<view class="unit">¥</view>

@@ -2854,7 +2854,7 @@ function _classCallCheck(instance, Constructor) {if (!(instance instanceof Const
 
 var apiUrl = 'https://api.51youduoduo.com/ydd1';
 // const apiUrl = 'http://192.168.4.4:8080';
-var timer;
+var goLoginFlag = true;
 
 // 请求方式
 var urlRequest = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(url, param, way, callBack, json) {var token;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
@@ -2893,14 +2893,15 @@ var urlRequest = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PU
 
 
                 if (res.data.message == '请登录') {
-                  if (timer) {
-                    clearInterval(timer);
-                  }
-                  timer = setTimeout(function () {
+                  if (goLoginFlag) {
+                    goLoginFlag = false;
                     uni.navigateTo({
                       url: '/pages/login/login' });
 
-                  }, 500);
+                    setTimeout(function () {
+                      goLoginFlag = true;
+                    }, 10000);
+                  }
 
                 }
                 callBack(res.data);

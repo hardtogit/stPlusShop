@@ -7,7 +7,7 @@ import { contactPhone } from '@/common/util.js';
 // #ifdef MP-WEIXIN
 const apiUrl = 'https://api.51youduoduo.com/ydd1';
 // const apiUrl = 'http://192.168.4.4:8080';
- let timer;
+ let goLoginFlag=true;
 // #endif
 // 请求方式
 const urlRequest = async (url, param, way, callBack,json) => {
@@ -46,14 +46,15 @@ const urlRequest = async (url, param, way, callBack,json) => {
 			contactPhone({type: 'logOut'});
 			// #endif  
              if(res.data.message=='请登录'){
-				 if(timer){
-					 clearInterval(timer)
-				 }
-				timer=setTimeout(()=>{
+				 if(goLoginFlag){
+					 goLoginFlag=false
 					 uni.navigateTo({
 					 	url:'/pages/login/login'
 					 })
-				 },500)
+					 setTimeout(()=>{
+						 goLoginFlag=true
+					 },10000)
+				 }
 				
 			 }
 			callBack(res.data);

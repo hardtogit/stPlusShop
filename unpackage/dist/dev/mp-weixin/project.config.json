@@ -39,15 +39,7 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
-			"current": -1,
-			"list": []
-		},
-		"gamePlugin": {
 			"current": -1,
 			"list": []
 		},
@@ -55,10 +47,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "pagesA/store/store",
-					"pathName": "pagesA/store/store",
-					"scene": null
+					"name": "",
+					"path": "",
+					"query": "",
+					"id": 0
 				}
 			]
 		}

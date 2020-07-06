@@ -55,10 +55,17 @@
         "user/order/detail/order",
         "user/backSale/backSale",
         "businessCard/businessCard",
+        "businessCard/cardDetail",
+        "businessCard/businessCardAmend",
+        "businessCard/businessCardList",
         "store/store",
+        "personal/personal",
+        "store/order/order",
         "user/dynamic/list",
         "user/dynamic/edit",
-        "storeInfo/storeInfo"
+        "storeInfo/storeInfo",
+        "backSale/backSale",
+        "user/shopList/editShop"
       ]
     }
   ],

@@ -1,5 +1,11 @@
 <template>
 	<view class="dynamic-detail">
+		<view class="share-box">
+			<view class="share">
+				<button class="share-btn" open-type="share"></button>
+				<image class="icon" src="../../../static/icon/home/share.png"></image>
+			</view>
+		</view>
        <view class="title">
 		   {{entity.title}}
 	   </view>
@@ -66,6 +72,28 @@
 	img{
 		width: 100%;
 		display: block;
+	}
+	.share {
+		width: 28upx;
+		height: 28upx;
+		float: right;
+		margin-top: 20upx;
+		position: relative;
+	
+		.share-btn {
+			position: absolute;
+			width: 28upx;
+			height: 28upx;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+	
+		.icon {
+			display: block;
+			width: 28rpx;
+			height: 28rpx;
+		}
 	}
 }
 </style>
